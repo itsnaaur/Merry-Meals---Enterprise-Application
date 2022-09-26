@@ -23,3 +23,12 @@ Route::get('/home', function () {
 Route::get('/menuPage', function () {
     return view('menu');
 });
+Route::get('/delivery-partner', function () {
+    return view('deliverystatuspartner');
+});
+Route::get('/delivery-volunteer', function() {
+    return view('deliverystatusvolunteer');
+});
+Route::get('orderstatus-page', function() {
+    return view('orderstatusmember');
+});
