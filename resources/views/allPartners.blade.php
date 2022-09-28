@@ -126,31 +126,20 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Members and Care Givers</h3>
+						<h3>Partners</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
 					</div>
 				</div>
 			</div>
 			<div class="container">
 				<div class="row text-center">
-					<div class="col-md-4 col-sm-4">
+                    <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
+							<h3>Partener's Name</h3>
 							<p>Adress</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                            <i class="icon-trash"></i></span>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Adress</p>
-                            <p>Due Date</p>
+                            <p>Contact</p>
+							<p>email</p>
                             <span><i class="icon-edit"> </i>
                                 <i class="icon-trash"></i></span>
 						</div>
@@ -158,10 +147,10 @@
                     <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
+							<h3>Partener's Name</h3>
 							<p>Adress</p>
-                            <p>Due Date</p>
+                            <p>Contact</p>
+							<p>email</p>
                             <span><i class="icon-edit"> </i>
                                 <i class="icon-trash"></i></span>
 						</div>
@@ -169,10 +158,10 @@
                     <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
+							<h3>Partener's Name</h3>
 							<p>Adress</p>
-                            <p>Due Date</p>
+                            <p>Contact</p>
+							<p>email</p>
                             <span><i class="icon-edit"> </i>
                                 <i class="icon-trash"></i></span>
 						</div>
@@ -180,10 +169,10 @@
                     <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
+							<h3>Partener's Name</h3>
 							<p>Adress</p>
-                            <p>Due Date</p>
+                            <p>Contact</p>
+							<p>email</p>
                             <span><i class="icon-edit"> </i>
                                 <i class="icon-trash"></i></span>
 						</div>
@@ -191,11 +180,21 @@
                     <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
+							<h3>Partener's Name</h3>
 							<p>Adress</p>
-                            <p>Due Date</p>
-                            <p>email</p>
+                            <p>Contact</p>
+							<p>email</p>
+                            <span><i class="icon-edit"> </i>
+                                <i class="icon-trash"></i></span>
+						</div>
+					</div>
+                    <div class="col-md-4 col-sm-4">
+						<div class="services animate-box">
+							<span><i class="icon-profile-male"></i></span>
+							<h3>Partener's Name</h3>
+							<p>Adress</p>
+                            <p>Contact</p>
+							<p>email</p>
                             <span><i class="icon-edit"> </i>
                                 <i class="icon-trash"></i></span>
 						</div>
@@ -255,3 +254,4 @@
 
 	</body>
 </html>
+

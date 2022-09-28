@@ -126,78 +126,29 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Members and Care Givers</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
+						<h3>Member's Profile</h3>
 					</div>
 				</div>
 			</div>
 			<div class="container">
-				<div class="row text-center">
-					<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Adress</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                            <i class="icon-trash"></i></span>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Adress</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Adress</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Adress</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Adress</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Adress</p>
-                            <p>Due Date</p>
-                            <p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
+				<div class="row display-flex justify-content">
+					<div class="col-md-8 col-sm-8 col-md-offset-3">
+						<div class=" animate-box">
+							
+							<div class="col-md-4 ">
+								<h4>Member's Name</h4>
+								<h4>Care Giver's Name</h4>
+								<h4>Email</h4>
+								<h4>Adress</h4>
+								<h4>Due Date</h4>
+							</div>
+							<div class="col-md-8">
+								<h4>El Caputo</h4>
+								<h4>El Draken</h4>
+								<h4>test@mail.com</h4>
+								<h4>Empty Street</h4>
+								<h4>Null</h4>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -255,3 +206,4 @@
 
 	</body>
 </html>
+
