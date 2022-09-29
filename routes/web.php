@@ -33,6 +33,9 @@ Route::get('/delivery-partner', function () {
 Route::get('/delivery-volunteer', function() {
     return view('deliverystatusvolunteer');
 });
-Route::get('orderstatus-page', function() {
+Route::get('/orderstatus-member', function() {
     return view('orderstatusmember');
+});
+Route::get('/donor', function() {
+    return view('donor');
 });
