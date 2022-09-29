@@ -28,13 +28,15 @@ Route::get('/menuPage', function () {
     return view('menu');
 });
 Route::get('/delivery-partner', function () {
-    return view('deliverystatuspartner');
+    return view('delivery-partner');
 });
 Route::get('/delivery-volunteer', function() {
-    return view('deliverystatusvolunteer');
+    return view('delivery-volunteer');
 });
-Route::get('/orderstatus-member', function() {
-    return view('orderstatusmember');
+
+Route::get('/order-member', function() {
+    return view('order-member');
+
 });
 Route::get('/donor', function() {
     return view('donor');
