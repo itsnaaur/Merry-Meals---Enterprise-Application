@@ -38,6 +38,17 @@ Route::get('/order-member', function() {
     return view('order-member');
 
 });
-Route::get('/donor', function() {
+
+// donation
+Route::get('/donation   ', function() {
     return view('donor');
+});
+Route::get('/billing', function() {
+    return view('billing');
+});
+Route::get('/payment', function() {
+    return view('payment');
+});
+Route::get('/completion', function() {
+    return view('completion');
 });
