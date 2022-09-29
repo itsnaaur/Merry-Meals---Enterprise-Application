@@ -36,10 +36,6 @@ a:hover {
 }
 
 p, ul, ol {
-<<<<<<< HEAD
-  margin-bottom: 0.5em;
-=======
->>>>>>> cc8c4e89fd7e8b8ffb538fdce361e99db64e3964
   margin-bottom: 1.5em;
   font-size: 16px;
   color: #848484;
@@ -50,13 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #5a5a5a;
   font-family: "Open Sans", Arial, sans-serif;
   font-weight: 400;
-<<<<<<< HEAD
-  margin: 0 0 10px 0;
   margin: 0 0 30px 0;
-
-=======
-  margin: 0 0 30px 0;
->>>>>>> cc8c4e89fd7e8b8ffb538fdce361e99db64e3964
 }
 
 figure {
