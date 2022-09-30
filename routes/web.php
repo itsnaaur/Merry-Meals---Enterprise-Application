@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,18 +19,50 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
+// Route::middleware(['auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    if (Auth::check()) {
+
+        if (Auth::user()->role == 'member') {
+            return redirect()->route('member#index');
+        } else if (Auth::user()->role == 'partner') {
+            return redirect()->route('partner#index');
+        } else if (Auth::user()->role == 'volunteer') {
+            return redirect()->route('volunteer#index');
+        } else if (Auth::user()->role == 'admin') {
+            return redirect()->route('admin#index');
+        }
+    }
+})->name('welcome');
+
+//Member
+Route::group(['prefix' => 'member'], function () {
+    Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard 
+
 });
-Route::get('/menuPage', function () {
-    return view('menu');
+
+//Partner
+Route::group(['prefix' => 'partner'], function () {
+    Route::get('/', [PartnerController::class, 'index'])->name('partner#index'); //partner dashboard 
+
 });
-Route::get('/delivery-partner', function () {
-    return view('deliverystatuspartner');
+
+//Volunteer
+Route::group(['prefix' => 'volunteer'], function () {
+    Route::get('/', [VolunteerController::class, 'index'])->name('volunteer#index'); //partner dashboard 
+
 });
-Route::get('/delivery-volunteer', function() {
-    return view('deliverystatusvolunteer');
-});
-Route::get('orderstatus-page', function() {
-    return view('orderstatusmember');
+
+//Administrator
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //partner dashboard 
+
 });
