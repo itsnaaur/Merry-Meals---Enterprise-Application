@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,38 +19,50 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Test', function () {
-    return view('test');
+// Route::middleware(['auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    if (Auth::check()) {
+
+        if (Auth::user()->role == 'member') {
+            return redirect()->route('member#index');
+        } else if (Auth::user()->role == 'partner') {
+            return redirect()->route('partner#index');
+        } else if (Auth::user()->role == 'volunteer') {
+            return redirect()->route('volunteer#index');
+        } else if (Auth::user()->role == 'admin') {
+            return redirect()->route('admin#index');
+        }
+    }
+})->name('welcome');
+
+//Member
+Route::group(['prefix' => 'member'], function () {
+    Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard 
+
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/menuPage', function () {
-    return view('menu');
-});
-Route::get('/delivery-partner', function () {
-    return view('delivery-partner');
-});
-Route::get('/delivery-volunteer', function() {
-    return view('delivery-volunteer');
-});
-
-Route::get('/order-member', function() {
-    return view('order-member');
+//Partner
+Route::group(['prefix' => 'partner'], function () {
+    Route::get('/', [PartnerController::class, 'index'])->name('partner#index'); //partner dashboard 
 
 });
 
-// donation
-Route::get('/donation   ', function() {
-    return view('donor');
+//Volunteer
+Route::group(['prefix' => 'volunteer'], function () {
+    Route::get('/', [VolunteerController::class, 'index'])->name('volunteer#index'); //partner dashboard 
+
 });
-Route::get('/billing', function() {
-    return view('billing');
-});
-Route::get('/payment', function() {
-    return view('payment');
-});
-Route::get('/completion', function() {
-    return view('completion');
+
+//Administrator
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //partner dashboard 
+
 });

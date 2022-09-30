@@ -136,18 +136,18 @@
 						<div class=" animate-box">
 							
 							<div class="col-md-4 ">
-								<h4>Member's Name</h4>
-								<h4>Care Giver's Name</h4>
-								<h4>Email</h4>
-								<h4>Adress</h4>
-								<h4>Due Date</h4>
+								<h4 class="userManagement">Member's Name</h4>
+								<h4 class="userManagement">Care Giver's Name</h4>
+								<h4 class="userManagement">Email</h4>
+								<h4 class="userManagement">Address</h4>
+								<h4 class="userManagement">Due Date</h4>
 							</div>
 							<div class="col-md-8">
-								<h4>El Caputo</h4>
-								<h4>El Draken</h4>
-								<h4>test@mail.com</h4>
-								<h4>Empty Street</h4>
-								<h4>Null</h4>
+								<h4 class="userManagement">El Caputo</h4>
+								<h4 class="userManagement">El Draken</h4>
+								<h4 class="userManagement">test@mail.com</h4>
+								<h4 class="userManagement">Empty Street</h4>
+								<h4 class="userManagement">Null</h4>
 							</div>
 						</div>
 					</div>

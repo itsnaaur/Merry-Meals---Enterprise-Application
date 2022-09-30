@@ -138,7 +138,7 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Donor's Name</h3>
 							<h4>Donation Fee</h4>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -150,7 +150,7 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Donor's Name</h3>
 							<h4>Donation Fee</h4>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -162,7 +162,7 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Donor's Name</h3>
 							<h4>Donation Fee</h4>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -174,7 +174,7 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Donor's Name</h3>
 							<h4>Donation Fee</h4>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -186,7 +186,7 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Donor's Name</h3>
 							<h4>Donation Fee</h4>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -198,7 +198,7 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Donor's Name</h3>
 							<h4>Donation Fee</h4>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
