@@ -86,7 +86,7 @@
                     @else
                     <ul class="sf-menu" id="fh5co-primary-menu">
                         <li class="active">
-                            <a href="/home">Home</a>
+                            <a href="/">Home</a>
                         </li>
                         <li><a href="blog.html">Get Meal</a></li>
                         <li>
@@ -109,10 +109,9 @@
                             </ul>
                         </li> --}}
                         <li><a href="about.html">About</a></li>
-                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         
-                       
-
+                        
                         <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
 
                         @if (Route::has('register'))
