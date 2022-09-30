@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+@section('title')
+    Register
+@endsection
+
+@extends('layouts.app')
+
+@section('content')
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -117,4 +122,4 @@
       </div>
     </section>
   </body>
-</html>
+@endsection
