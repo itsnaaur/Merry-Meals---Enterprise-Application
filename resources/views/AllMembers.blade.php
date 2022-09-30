@@ -127,7 +127,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h3>Members and Care Givers</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
+						<p>All the members that registered to MerryMeals charity</p>
 					</div>
 				</div>
 			</div>
@@ -138,7 +138,8 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Member's Name</h3>
                             <h4>Care Giver's Name</h4>
-							<p>Adress</p>
+							<p>Address</p>
+							<p>email</p>
                             <p>Due Date</p>
                             <span><i class="icon-edit"> </i>
                             <i class="icon-trash"></i></span>
@@ -149,7 +150,8 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Member's Name</h3>
                             <h4>Care Giver's Name</h4>
-							<p>Adress</p>
+							<p>Address</p>
+							<p>email</p>
                             <p>Due Date</p>
                             <span><i class="icon-edit"> </i>
                                 <i class="icon-trash"></i></span>
@@ -160,7 +162,8 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Member's Name</h3>
                             <h4>Care Giver's Name</h4>
-							<p>Adress</p>
+							<p>Address</p>
+							<p>email</p>
                             <p>Due Date</p>
                             <span><i class="icon-edit"> </i>
                                 <i class="icon-trash"></i></span>
@@ -171,7 +174,8 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Member's Name</h3>
                             <h4>Care Giver's Name</h4>
-							<p>Adress</p>
+							<p>Address</p>
+							<p>email</p>
                             <p>Due Date</p>
                             <span><i class="icon-edit"> </i>
                                 <i class="icon-trash"></i></span>
@@ -182,7 +186,8 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Member's Name</h3>
                             <h4>Care Giver's Name</h4>
-							<p>Adress</p>
+							<p>Address</p>
+							<p>email</p>
                             <p>Due Date</p>
                             <span><i class="icon-edit"> </i>
                                 <i class="icon-trash"></i></span>
@@ -193,9 +198,9 @@
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Member's Name</h3>
                             <h4>Care Giver's Name</h4>
-							<p>Adress</p>
-                            <p>Due Date</p>
+							<p>Address</p>
                             <p>email</p>
+                            <p>Due Date</p>
                             <span><i class="icon-edit"> </i>
                                 <i class="icon-trash"></i></span>
 						</div>

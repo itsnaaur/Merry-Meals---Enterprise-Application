@@ -126,28 +126,29 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Member's Profile</h3>
+						<h3>Update Profile</h3>
 					</div>
 				</div>
 			</div>
 			<div class="container">
 				<div class="row display-flex justify-content">
-					<div class="col-md-8 col-sm-8 col-md-offset-3">
+					<div class="col-md-6 col-sm-6 col-md-offset-3">
 						<div class=" animate-box">
-							
-							<div class="col-md-4 ">
-								<h4 class="userManagement">Member's Name</h4>
-								<h4 class="userManagement">Care Giver's Name</h4>
-								<h4 class="userManagement">Email</h4>
-								<h4 class="userManagement">Address</h4>
-								<h4 class="userManagement">Due Date</h4>
-							</div>
-							<div class="col-md-8">
-								<h4 class="userManagement">El Caputo</h4>
-								<h4 class="userManagement">El Draken</h4>
-								<h4 class="userManagement">test@mail.com</h4>
-								<h4 class="userManagement">Empty Street</h4>
-								<h4 class="userManagement">Null</h4>
+							<div class="col-md-12 ">
+                                <form action="">
+                                    <label class="userManagement">Member's Name</label><br>
+                                    <input class="input-md col-md-12" type="text" value=""/><br><br>
+                                    <label class="userManagement">Care Giver's Name</label><br>
+                                    <input class="input-md col-md-12" type="text" value=""/><br><br>
+                                    <label class="userManagement">Email</label><br>
+                                    <input class="input-md col-md-12" type="text" value=""/><br><br>
+                                    <label class="userManagement">Address</label><br>
+                                    <input class="input-md col-md-12" type="text" value=""/><br><br>
+                                    <div class="text-center"> 
+                                        <button class="btn-primary">Update</button> &nbsp;
+                                        <a href="">Cancel</a>
+                                    </div>
+                                </form>
 							</div>
 						</div>
 					</div>

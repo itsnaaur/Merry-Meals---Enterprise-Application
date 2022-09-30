@@ -127,7 +127,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h3>Volunteers</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
+						<p>All the volunteers that registered to paticipate in MerryMeals charity.</p>
 					</div>
 				</div>
 			</div>
@@ -137,7 +137,7 @@
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Volunteer's Name</h3>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -148,7 +148,7 @@
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Volunteer's Name</h3>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -159,7 +159,7 @@
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Volunteer's Name</h3>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -170,7 +170,7 @@
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Volunteer's Name</h3>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -181,7 +181,7 @@
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Volunteer's Name</h3>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -192,7 +192,7 @@
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
 							<h3>Volunteer's Name</h3>
-							<p>Adress</p>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>

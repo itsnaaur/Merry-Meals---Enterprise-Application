@@ -136,16 +136,16 @@
 						<div class=" animate-box">
 							
 							<div class="col-md-4 ">
-								<h4>Partner's Name</h4>
-								<h4>Email</h4>
-								<h4>Adress</h4>
-								<h4>Contact</h4>
+								<h4 class="userManagement">Partner's Name</h4>
+								<h4 class="userManagement">Email</h4>
+								<h4 class="userManagement">Address</h4>
+								<h4 class="userManagement">Contact</h4>
 							</div>
 							<div class="col-md-8">
-								<h4>El Caputo</h4>
-								<h4>test@mail.com</h4>
-								<h4>Empty Street</h4>
-								<h4>+0128893</h4>
+								<h4 class="userManagement">El Caputo</h4>
+								<h4 class="userManagement">test@mail.com</h4>
+								<h4 class="userManagement">Empty Street</h4>
+								<h4 class="userManagement">+0128893</h4>
 							</div>
 						</div>
 					</div>

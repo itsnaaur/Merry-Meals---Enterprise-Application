@@ -127,7 +127,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h3>Partners</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
+						<p>All the partners that registered to paticipate in MerryMeals charity</p>
 					</div>
 				</div>
 			</div>
@@ -136,8 +136,8 @@
                     <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Partener's Name</h3>
-							<p>Adress</p>
+							<h3>Partner's Name</h3>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -147,8 +147,8 @@
                     <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Partener's Name</h3>
-							<p>Adress</p>
+							<h3>Partner's Name</h3>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -158,8 +158,8 @@
                     <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Partener's Name</h3>
-							<p>Adress</p>
+							<h3>Partner's Name</h3>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -169,8 +169,8 @@
                     <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Partener's Name</h3>
-							<p>Adress</p>
+							<h3>Partner's Name</h3>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -180,8 +180,8 @@
                     <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Partener's Name</h3>
-							<p>Adress</p>
+							<h3>Partner's Name</h3>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
@@ -191,8 +191,8 @@
                     <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Partener's Name</h3>
-							<p>Adress</p>
+							<h3>Partner's Name</h3>
+							<p>Address</p>
                             <p>Contact</p>
 							<p>email</p>
                             <span><i class="icon-edit"> </i>
