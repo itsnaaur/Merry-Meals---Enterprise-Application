@@ -38,13 +38,6 @@
                     Check Distance
                 </a>
 
-                {{-- <a href="#">
-                <button type="button" class="btn btn-outline-danger" id="delete">
-                    <i class="fa fa-trash"></i></button>
-                </a>
-                </td> --}}
-
-                
             </tr>
         @endforeach
     </tbody>
