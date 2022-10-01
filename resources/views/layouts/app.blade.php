@@ -107,14 +107,8 @@
                                 <li><a href="#">Medical Mission</a></li>
                             </ul>
                         </li> --}}
-<<<<<<< HEAD
                         <li><a href="/about">About</a></li>
                          <li><a href="/contact">Contact</a></li>
-=======
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        
->>>>>>> 6f83d5e6524616397a6c4392cfc44332c87bd592
                         
                         <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
 
