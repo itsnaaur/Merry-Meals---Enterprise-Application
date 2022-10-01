@@ -18,6 +18,15 @@ use App\Http\Controllers\MemberController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/terms', function () {
+    return view('terms');
+});
 
 // Route::middleware(['auth:sanctum',
 //     config('jetstream.auth_session'),
@@ -46,7 +55,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //Member
 Route::group(['prefix' => 'member'], function () {
     Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard 
-
+    Route::get('/member/{id}', [MemberController::class, 'saveMemberMealPlan'])->name('member#saveMemberMealPlan');
 });
 
 //Partner

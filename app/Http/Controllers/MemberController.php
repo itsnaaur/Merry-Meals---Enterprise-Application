@@ -43,6 +43,20 @@ class MemberController extends Controller
         //
     }
 
+    public function saveMemberMealPlan(Request $request, $id)
+    {
+
+        //find selected member
+        $memberSelected = Member::where('id', $id)->first();
+
+        //save selected member meal type based on distance
+        $memberSelected->member_meal_type = $request->input('member_meal_type');
+        $memberSelected->save();
+
+        return redirect()->route('member#index');
+    }
+
+
     /**
      * Display the specified resource.
      *

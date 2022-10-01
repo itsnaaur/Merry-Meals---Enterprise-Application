@@ -31,8 +31,8 @@
                     <div class="fh5co-overlay"></div>
                     <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
                         <div class="desc animate-box">
-                            <h2><strong>Donate</strong> for the <strong>Poor Children</strong></h2>
-                            <span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span>
+                            <h2><strong>Donate</strong> to give meals to <strong> Those In Need</strong></h2>
+                            {{-- <span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span> --}}
                             <span><a class="btn btn-primary btn-lg" href="#">Donate Now</a></span>
                         </div>
                     </div>
@@ -173,7 +173,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_3.jpg); ">
+                                    <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_2.jpg); ">
                                         <a href="#" class="color-6">
                                             <div class="case-studies-summary">
                                                 <span>Give Love</span>
@@ -201,7 +201,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                                <h3>Our Philantrophist</h3>
+                                <h3>Our Volunteers</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
                             </div>
                         </div>
@@ -246,62 +246,7 @@
                 </div>
                 <!-- fh5co-content-section -->
         
-                <div id="fh5co-services-section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                                <h3>Our Projects. Support Us</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row text-center">
-                            <div class="col-md-4 col-sm-4">
-                                <div class="services animate-box">
-                                    <span><i class="icon-heart"></i></span>
-                                    <h3>Water Project In Kenya</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="services animate-box">
-                                    <span><i class="icon-heart"></i></span>
-                                    <h3>Shelter Giving</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="services animate-box">
-                                    <span><i class="icon-heart"></i></span>
-                                    <h3>Shelter Giving</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="services animate-box">
-                                    <span><i class="icon-heart"></i></span>
-                                    <h3>Water Project In Kenya</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="services animate-box">
-                                    <span><i class="icon-heart"></i></span>
-                                    <h3>Water Project In Kenya</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="services animate-box">
-                                    <span><i class="icon-heart"></i></span>
-                                    <h3>Midical Mission</h3>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
         
                 <!-- END What we do -->
         
@@ -322,7 +267,7 @@
                                     <a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
                                     <div class="blog-text">
                                         <div class="prod-title">
-                                            <h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
+                                            <h3><a href=""#>Meals on Wheels Mission in Location A</a></h3>
                                             <span class="posted_by">Sep. 15th</span>
                                             <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
                                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -336,7 +281,7 @@
                                     <a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
                                     <div class="blog-text">
                                         <div class="prod-title">
-                                            <h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
+                                            <h3><a href=""#>Meals on Wheels Mission in Location B</a></h3>
                                             <span class="posted_by">Sep. 15th</span>
                                             <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
                                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -351,7 +296,7 @@
                                     <a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
                                     <div class="blog-text">
                                         <div class="prod-title">
-                                            <h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
+                                            <h3><a href=""#>Meals on Wheels Mission in Location C</a></h3>
                                             <span class="posted_by">Sep. 15th</span>
                                             <span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
                                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
