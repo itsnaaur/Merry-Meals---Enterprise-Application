@@ -55,15 +55,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //Member
 Route::group(['prefix' => 'member'], function () {
-<<<<<<< HEAD
     Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard 
     Route::get('/member/{id}', [MemberController::class, 'saveMemberMealPlan'])->name('member#saveMemberMealPlan');
-=======
-    Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard
-    Route::get('/foodSafety', [MemberController::class, 'foodSafety'])->name('member#foodSafety'); //calling food safety declaration page
-    Route::get('/menu', [MemberController::class, 'viewAllMenu'])->name('member#viewAllMenu'); //member view all menu
-    Route::get('/viewMenu/{id}', [MemberController::class, 'viewMenu'])->name('member#viewMenu'); //member view a specific menu
->>>>>>> 6f83d5e6524616397a6c4392cfc44332c87bd592
 });
 
 //Partner
@@ -87,5 +80,4 @@ Route::group(['prefix' => 'volunteer'], function () {
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //partner dashboard 
     Route::get('/', [AdminController::class, ''])->name('admin#allPartners');
-
 });
