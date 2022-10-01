@@ -90,6 +90,10 @@ class MemberController extends Controller
     {
         //
     }
+    public function foodSafety()
+    {
+        return view('Users.Member.foodSafetyDeclaration');
+    }
     public function viewAllMenu()
     {
         $menuData = Menu::all();

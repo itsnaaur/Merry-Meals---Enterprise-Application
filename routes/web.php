@@ -46,7 +46,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //Member
 Route::group(['prefix' => 'member'], function () {
-    Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard 
+    Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard
+    Route::get('/foodSafety', [MemberController::class, 'foodSafety'])->name('member#foodSafety'); //calling food safety declaration page
     Route::get('/menu', [MemberController::class, 'viewAllMenu'])->name('member#viewAllMenu'); //member view all menu
     Route::get('/viewMenu/{id}', [MemberController::class, 'viewMenu'])->name('member#viewMenu'); //member view a specific menu
 });

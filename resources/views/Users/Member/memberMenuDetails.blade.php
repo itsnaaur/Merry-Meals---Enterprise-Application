@@ -36,7 +36,7 @@
 								</div>
 								<div class="col">
 									<div class="form-group animate-box">
-										<a href="/menuFoodSafety"> <input type="submit" value="Food Safety" class="btn btn-primary"></a>
+										<a href="{{ route('member#foodSafety') }}"> <input type="submit" value="Food Safety" class="btn btn-primary"></a>
 									</div>
 								</div>
                               </div>
