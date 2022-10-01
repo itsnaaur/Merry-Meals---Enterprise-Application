@@ -1,5 +1,5 @@
 @section('title')
-    Welcome
+    Food Safety
 @endsection
 
 @extends('Users.Member.layouts.app')

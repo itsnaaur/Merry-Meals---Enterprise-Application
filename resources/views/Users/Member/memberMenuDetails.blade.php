@@ -1,5 +1,5 @@
 @section('title')
-    Welcome
+	{{ $viewMenu->menu_title }} Details
 @endsection
 
 @extends('Users.Member.layouts.app')

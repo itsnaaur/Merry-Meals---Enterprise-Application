@@ -1,5 +1,5 @@
 @section('title')
-    Welcome
+    Update {{ $updateMenu->menu_title }}
 @endsection
 
 @extends('Users.Partner.layouts.app')

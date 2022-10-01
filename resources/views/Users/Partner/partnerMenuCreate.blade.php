@@ -1,5 +1,5 @@
 @section('title')
-    Welcome
+    Menu Create
 @endsection
 
 @extends('Users.Partner.layouts.app')

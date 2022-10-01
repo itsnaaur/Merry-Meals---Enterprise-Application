@@ -177,7 +177,7 @@ class PartnerController extends Controller
        $updateData['menu_image'] = $newImageName;
 
        Menu::where('id',$id)->update($updateData);
-       return redirect()->route('partner#index')->with(['updateData' => 'Meal Has Been Updated Sucessfully!']);
+       return redirect()->route('partner#index')->with(['updateData' => 'Menu Has Been Updated Sucessfully!']);
     }
     private function requestUpdateMenuData($request){
         $menuArray = [
