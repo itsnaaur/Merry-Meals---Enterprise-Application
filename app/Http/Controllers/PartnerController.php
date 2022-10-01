@@ -149,7 +149,7 @@ class PartnerController extends Controller
             File::delete(public_path().'/uploads/meal/'.$deleteImage);
         }
 
-        return back()->with(['menuDeleted' => 'Menu Has Been Deleted Successfully!']);
+        return redirect()->route('partner#index')->with(['menuDeleted' => 'Menu Has Been Deleted Successfully!']);
     }
     public function updateMenu($id)
     {
