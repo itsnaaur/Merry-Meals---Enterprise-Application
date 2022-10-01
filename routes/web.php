@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,13 +47,19 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //Member
 Route::group(['prefix' => 'member'], function () {
     Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard 
-
+    Route::get('/menu', [MemberController::class, 'viewAllMenu'])->name('member#viewAllMenu'); //member view all menu
+    Route::get('/viewMenu/{id}', [MemberController::class, 'viewMenu'])->name('member#viewMenu'); //member view a specific menu
 });
 
 //Partner
 Route::group(['prefix' => 'partner'], function () {
     Route::get('/', [PartnerController::class, 'index'])->name('partner#index'); //partner dashboard 
-
+    Route::get('/createMenu', [PartnerController::class, 'createMenu'])->name('partner#createMenu'); //calling the menu creation page
+    Route::post('/saveMenu', [PartnerController::class, 'saveMenu'])->name('partner#saveMenu'); //saving a new menu into the database
+    Route::get('/viewMenu/{id}', [PartnerController::class, 'viewMenu'])->name('partner#viewMenu'); //partner view a specific menu
+    Route::get('/deleteMenu/{id}', [PartnerController::class, 'deleteMenu'])->name('partner#deleteMenu'); //deleting a specific menu
+    Route::get('/updateMenu/{id}', [PartnerController::class, 'updateMenu'])->name('partner#updateMenu'); //calling the updation page
+    Route::post('/saveUpdate/{id}', [PartnerController::class, 'saveUpdate'])->name('partner#saveUpdate'); //saving the updated data
 });
 
 //Volunteer
