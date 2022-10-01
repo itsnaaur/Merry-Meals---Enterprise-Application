@@ -84,7 +84,7 @@
                         <li class="active">
                             <a href="{{ route('member#index') }}">Home</a>
                         </li>
-                        <li><a href="blog.html">Menu</a></li>
+                        <li><a href="{{ route('member#viewAllMenu') }}">Menu</a></li>
                         
                         <li><a href="about.html">About</a></li>
                          <li><a href="contact.html">Contact</a></li>
