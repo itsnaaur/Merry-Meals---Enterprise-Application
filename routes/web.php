@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,14 +55,26 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //Member
 Route::group(['prefix' => 'member'], function () {
+<<<<<<< HEAD
     Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard 
     Route::get('/member/{id}', [MemberController::class, 'saveMemberMealPlan'])->name('member#saveMemberMealPlan');
+=======
+    Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard
+    Route::get('/foodSafety', [MemberController::class, 'foodSafety'])->name('member#foodSafety'); //calling food safety declaration page
+    Route::get('/menu', [MemberController::class, 'viewAllMenu'])->name('member#viewAllMenu'); //member view all menu
+    Route::get('/viewMenu/{id}', [MemberController::class, 'viewMenu'])->name('member#viewMenu'); //member view a specific menu
+>>>>>>> 6f83d5e6524616397a6c4392cfc44332c87bd592
 });
 
 //Partner
 Route::group(['prefix' => 'partner'], function () {
     Route::get('/', [PartnerController::class, 'index'])->name('partner#index'); //partner dashboard 
-
+    Route::get('/createMenu', [PartnerController::class, 'createMenu'])->name('partner#createMenu'); //calling the menu creation page
+    Route::post('/saveMenu', [PartnerController::class, 'saveMenu'])->name('partner#saveMenu'); //saving a new menu into the database
+    Route::get('/viewMenu/{id}', [PartnerController::class, 'viewMenu'])->name('partner#viewMenu'); //partner view a specific menu
+    Route::get('/deleteMenu/{id}', [PartnerController::class, 'deleteMenu'])->name('partner#deleteMenu'); //deleting a specific menu
+    Route::get('/updateMenu/{id}', [PartnerController::class, 'updateMenu'])->name('partner#updateMenu'); //calling the updation page
+    Route::post('/saveUpdate/{id}', [PartnerController::class, 'saveUpdate'])->name('partner#saveUpdate'); //saving the updated data
 });
 
 //Volunteer
@@ -73,5 +86,6 @@ Route::group(['prefix' => 'volunteer'], function () {
 //Administrator
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //partner dashboard 
+    Route::get('/', [AdminController::class, ''])->name('admin#allPartners');
 
 });

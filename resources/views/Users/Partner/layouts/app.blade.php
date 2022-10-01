@@ -87,7 +87,7 @@
                         <li>
                           <a href="#" class="fh5co-sub-ddown">Menu</a>
                           <ul class="fh5co-sub-menu">
-                              <li><a href="#">Create Menu</a></li>
+                              <li><a href="{{ route('partner#createMenu') }}">Create Menu</a></li>
                               <li><a href="#">Menu Status (Update)</a></li>
                           </ul>
                       </li>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use App\Models\Menu;
+use App\Models\Partner;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -100,5 +103,25 @@ class MemberController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function foodSafety()
+    {
+        return view('Users.Member.foodSafetyDeclaration');
+    }
+    public function viewAllMenu()
+    {
+        $menuData = Menu::all();
+        return view('Users.Member.memberMenu')->with(['menuData' => $menuData]);
+    }
+    public function viewMenu($id)
+    {
+        $partner_data =  Partner::get();
+        $user_data = User::get();
+        $viewMenu = Menu::where ('id', $id)
+                    ->first();
+        return view('Users.Member.memberMenuDetails')->with(['viewMenu' => $viewMenu,
+        'userData' => $user_data, 
+        'partnerData' => $partner_data,
+    ]);
     }
 }
