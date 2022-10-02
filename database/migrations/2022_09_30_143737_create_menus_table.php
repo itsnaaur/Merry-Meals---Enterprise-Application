@@ -13,16 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
-            $table->id();
-            $table->integer('partner_id');
-            $table->string('menu_title');
-            $table->string('menu_description');
-            $table->string('menu_image');
-            $table->string('menu_time_availability');
-            $table->string('menu_type');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('menus')) {
+            Schema::create('menus', function (Blueprint $table) {
+                $table->id();
+                $table->integer('partner_id');
+                $table->string('menu_title');
+                $table->string('menu_description');
+                $table->string('menu_image');
+                $table->string('menu_time_availability');
+                $table->string('menu_type');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

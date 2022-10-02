@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('partnership_restaurant');
             $table->string('partnership_duration');
+            $table->string('partnership_address');
             $table->timestamps();
         });
     }
