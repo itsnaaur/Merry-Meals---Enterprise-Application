@@ -7,6 +7,12 @@
 @section('content')
 
 <div class="container m4" >
+    @if (Session::has('orderCreated'))
+		<div class="alert alert-warning animate-box" role="alert">
+			{{ Session::get('orderCreated') }}<a href="{{ route('order#showOrderDelivery', Auth()->user()->id) }}"> Click here to view your order delivery status</a>
+		</div>
+	@endif
+    <h1>Member Details</h1>
 <table class="table table-bordered" >
 
     <thead>
@@ -23,19 +29,19 @@
     </thead>
 
     <tbody>
-        @foreach ($memberData as $member)
+       
             <tr>
-                <td>{{ $member->id }}</td>
-                <td>{{ $member->member_caregiver_name }}</td>
-                <td>{{ $member->member_caregiver_relation }}</td>
-                <td>{{ $member->member_medical_condition }}</td>
-                <td>{{ $member->location }}</td>
-                <td>{{ $member->member_meal_type }}</td>
-                <td>{{ $member->member_meal_duration }}</td>
+                <td>{{ $memberData->id }}</td>
+                <td>{{ $memberData->member_caregiver_name }}</td>
+                <td>{{ $memberData->member_caregiver_relation }}</td>
+                <td>{{ $memberData->member_medical_condition }}</td>
+                <td>{{ $memberData->location }}</td>
+                <td>{{ $memberData->member_meal_type }}</td>
+                <td>{{ $memberData->member_meal_duration }}</td>
                 <td>
                 
                 <?php
-                    $string = $member->location ;
+                    $string = $memberData->location ;
                     // echo $string;
                     $str_arr = preg_split ("/\,/", $string); 
                     // print_r($str_arr);
@@ -89,7 +95,7 @@
 
                             ?>
                     <a href="#">
-                        <form action="{{ route('member#saveMemberMealPlan', $member->id) }}" method="GET" >
+                        <form action="{{ route('member#saveMemberMealPlan', $memberData->id) }}" method="GET" >
                             
                     {{-- <input type="number" value=<?php echo $DistanceKM; ?> name="member_distance" /> --}}
                     <input type="hidden" value=<?php echo $mealType; ?> name="member_meal_type" />
@@ -102,7 +108,7 @@
                 
                 </td>
             </tr>
-        @endforeach
+        
     </tbody>
 </table>
 </div>
