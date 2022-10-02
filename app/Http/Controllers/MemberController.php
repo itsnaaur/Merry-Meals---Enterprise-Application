@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Member;
 use App\Models\Menu;
-use App\Models\Partner;
 use App\Models\User;
+use App\Models\Order;
+use App\Models\Member;
+use App\Models\Deliver;
+use App\Models\Partner;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class MemberController extends Controller
 {
@@ -19,9 +22,9 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $memberData = Member::paginate(4);
+        $member_data = Member::where('user_id', Auth::id())->first();
         // dd($member);
-        return view('Users.Member.memberIndex')->with('memberData', $memberData);
+        return view('Users.Member.memberIndex')->with(['memberData' => $member_data]);
     }
 
 
@@ -117,11 +120,26 @@ class MemberController extends Controller
     {
         $partner_data =  Partner::get();
         $user_data = User::get();
-        $viewMenu = Menu::where ('id', $id)
-                    ->first();
-        return view('Users.Member.memberMenuDetails')->with(['viewMenu' => $viewMenu,
-        'userData' => $user_data, 
-        'partnerData' => $partner_data,
-    ]);
+        $viewMenu = Menu::where('id', $id)
+            ->first();
+        return view('Users.Member.memberMenuDetails')->with([
+            'viewMenu' => $viewMenu,
+            'userData' => $user_data,
+            'partnerData' => $partner_data,
+        ]);
+    }
+
+    public function orderConfirmation($partner_id, $menu_id, $user_id)
+    {
+        $partner_data = Partner::where('id', $partner_id)->first();
+        $menu_data = Menu::where('id', $menu_id)->first();
+        $user_data = User::where('id', $user_id)->first();
+        $member_data = Member::where('user_id', $user_id)->first();
+        return view('Users.Member.memberOrderConfirmation')->with([
+            'memberData' => $member_data,
+            'partnerData' => $partner_data,
+            'menuData' => $menu_data,
+            'userData' => $user_data,
+        ]);
     }
 }
