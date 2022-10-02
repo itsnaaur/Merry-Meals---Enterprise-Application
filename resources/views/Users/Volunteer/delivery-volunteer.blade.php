@@ -1,12 +1,11 @@
 @section('title')
-    Welcome
+    Delivery Status - Volunteer
 @endsection
 
 @extends('Users.Volunteer.layouts.app')
 
 @section('content')
-
-<div id="fh5co-service-section">
+<div id="fh5co-services-section">
     <div class="container">
         <div class="row">
             <div class="delivery-volunteer">
@@ -115,3 +114,4 @@
         </div>
     </div>
 </div>
+@endsection
