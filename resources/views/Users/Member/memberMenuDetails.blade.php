@@ -34,6 +34,13 @@
                                 	<h3>Meal Type</h3>
                                 	<p>{{ $viewMenu->menu_type }}</p>
 								</div>
+								<!--Test Order-->
+								{{-- Partner ID<input type="text" value="{{ $viewMenu -> partner_id }}"  /></br>
+								Menu ID<input type="text" value="{{ $viewMenu-> id }}" /></br>
+								logged In User ID<input type="text" value="{{ Auth()->user()->id }}" ></br> --}}
+								<!-- User ID equals to Member ID because saved in both table during registration-->
+								{{-- logged In User name<input type="text" value="{{ Auth()->user()->name }}" ></br> --}}
+								<!--Test Order-->
 								<div class="col">
 									<div class="form-group animate-box">
 										<a href="{{ route('member#foodSafety') }}"> <input type="submit" value="Food Safety" class="btn btn-primary"></a>
@@ -45,8 +52,8 @@
                     </div>
 					<div class="row animate-box">
 						<div class="col-sm-1">
-							<div class="form-group">
-								<input type="submit" value="Order" class="btn btn-primary">
+							<div class="form-group animate-box">
+								<a href="{{ route('member#orderConfirmation', [ 'partner_id' => $viewMenu -> partner_id, 'menu_id' => $viewMenu-> id, 'user_id' => Auth()->user()->id]) }}"> <input type="submit" value="Order" class="btn btn-primary"></a>
 							</div>
 						</div>
 					</div>
