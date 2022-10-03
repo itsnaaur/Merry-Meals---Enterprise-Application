@@ -84,7 +84,7 @@
                         <li class="active">
                             <a href="{{ route('volunteer#index') }}">Home</a>
                         </li>
-                        <li><a href="about.html">Menu</a></li>
+                        <li><a href="{{ route('volunteer#viewAllMenu') }}">Menu</a></li>
                         
                         <li><a href="about.html">About</a></li>
                          <li><a href="contact.html">Contact</a></li>
@@ -96,7 +96,7 @@
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
                               <li><a class="dropdown-item" href="#">Update </a></li>
-                              <li><a class="dropdown-item" href="#">Orders </a></li>
+                              <li><a class="dropdown-item" href="{{ route('deliver#AllDeliveryForVolunteer') }}">Deliveries </a></li>
                               <li>
                                   <a class="dropdown-item" href="#">
                                       <form action="{{ route('logout') }}" method="post">

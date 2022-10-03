@@ -102,7 +102,7 @@
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
                               <li><a class="dropdown-item" href="#">Update </a></li>
-                              <li><a class="dropdown-item" href="#">Orders </a></li>
+                              <li><a class="dropdown-item" href="{{ route('order#AllOrderForPartner', Auth()->user()->id) }}">Orders </a></li>
                               <li>
                                   <a class="dropdown-item" href="#">
                                       <form action="{{ route('logout') }}" method="post">

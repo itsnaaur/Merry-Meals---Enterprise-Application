@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MemberController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\DeliverController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\VolunteerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,7 @@ Route::get('/about', function () {
 Route::get('/terms', function () {
     return view('terms');
 });
+
 
 // Route::middleware(['auth:sanctum',
 //     config('jetstream.auth_session'),
@@ -64,6 +67,7 @@ Route::group(['prefix' => 'member'], function () {
     Route::get('/orderConfirmation/{partner_id}/{menu_id}/{user_id}', [MemberController::class, 'orderConfirmation'])->name('member#orderConfirmation');
     Route::post('/saveOrder', [OrderController::class, 'saveOrder'])->name('order#saveOrder');
     Route::get('/showOrderDelivery/{id}', [OrderController::class, 'showOrderDelivery'])->name('order#showOrderDelivery');
+    Route::get('/updateMemberOrder/{id}', [MemberController::class, 'updateMemberOrder'])->name('member#updateMemberOrder');
 });
 
 //Partner
@@ -75,12 +79,17 @@ Route::group(['prefix' => 'partner'], function () {
     Route::get('/deleteMenu/{id}', [PartnerController::class, 'deleteMenu'])->name('partner#deleteMenu'); //deleting a specific menu
     Route::get('/updateMenu/{id}', [PartnerController::class, 'updateMenu'])->name('partner#updateMenu'); //calling the updation page
     Route::post('/saveUpdate', [PartnerController::class, 'saveUpdate'])->name('partner#saveUpdate'); //saving the updated data
+    Route::get('/AllOrderForPartner/{id}', [OrderController::class, 'AllOrderForPartner'])->name('order#AllOrderForPartner');
+    Route::get('/updateOrder/{id}', [OrderController::class, 'updateOrder'])->name('order#updateOrder');
 });
 
 //Volunteer
 Route::group(['prefix' => 'volunteer'], function () {
-    Route::get('/', [VolunteerController::class, 'index'])->name('volunteer#index'); //partner dashboard 
-
+    Route::get('/', [VolunteerController::class, 'index'])->name('volunteer#index'); //volunteer dashboard 
+    Route::get('/viewAllMenu', [VolunteerController::class, 'viewAllMenu'])->name('volunteer#viewAllMenu');
+    Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('delivery#updateDelivery');
+    Route::get('/AllDeliveryForVolunteer', [DeliverController::class, 'AllDeliveryForVolunteer'])->name('deliver#AllDeliveryForVolunteer');
+    Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('deliver#updateDelivery');
 });
 
 //Administrator

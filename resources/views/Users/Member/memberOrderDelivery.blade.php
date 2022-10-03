@@ -7,18 +7,18 @@
 @section('content')
 <body>
     <!-- main  -->
-    <div class="container-fluid pt-4">
-      <div class="container mt-4">
-        <div class="row">
-          <div class="order-member">
-            <div class="col-md-12 offset-md-0">
-              <div class="mt-5 p-4">
-                <h1 class="text-secondary text-center mb-5 display-5">
-                  Order Status - Member
-                </h1>
+    <div class="fh5co-services-section">
+      <div class="container-fluid pt-4">
+          <div class="row">
+              <div class="delivery-status">
+                  <div class="col-md-12 offset-md-0">
+                      <div class="mt-5 p-4">
+                          <h1 class="text-secondary text-center mb-5 display-5">
+                              Order Status - Member
+                          </h1>
                 <div class="row">
                   <div class="mb-5 col-md-12">
-                    <a href="#ordermealsagain" class="btn btn-primary"
+                    <a href="{{ route('member#viewAllMenu') }}" class="btn btn-primary"
                       >Order Meal</a
                     >
                   </div>
@@ -30,7 +30,7 @@
                         <th>Meal Name</th>
                         <th>Order Date</th>
                         <th>Order Time</th>
-                        <th>Cook Status</th>
+                        <th>Menu Preparation Status</th>
                         <th>Assigned Rider</th>
                         <th>Delivery Status</th>
                         <th>Confirm Receive</th>
@@ -51,9 +51,12 @@
                         <td><?php echo $time;  ?></td>
                         <td>{{ $orderData -> order_cooking_status }}</td>
                         <td>{{ $deliverData -> volunteer_name }}</td>
-                        <td>{{ $orderData -> order_received_status }}</td>
+                        <td>{{ $deliverData -> delivery_status }}</td>
                         <td>
-                          <a href="#receive" class="btn btn-primary">Receive</a>
+                          <form action="{{ route('member#updateMemberOrder', $orderData ->id) }}" method="GET" >
+                            <input type="text" name="order_received_status" value="{{ $orderData -> order_received_status}}" readonly/>
+                            <button  type="submit" class="btn btn-primary">Received?</button>
+                            </form>
                         </td>
                       </tr>
                       

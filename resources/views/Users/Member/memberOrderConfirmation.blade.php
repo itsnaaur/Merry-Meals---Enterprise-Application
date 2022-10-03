@@ -7,7 +7,7 @@
 @section('content')
 
 <div style="margin: 60px;">
-	<a style="text-decoration: underline; color:blue;" >Click here to cancel order and go back to menu</a>
+	<a href="javascript:history.go(-1)" style="text-decoration: underline; color:blue;" >Click here to cancel order and go back to menu</a>
 	
 	<div class="grid-container">
 		<div class="item1"><h1 style="margin: 10px auto;">Confirm Your Order</h1></div>
@@ -55,11 +55,11 @@
 							@endif
 
 							<input type="hidden" name="order_menu_image" value="{{ $menuData->menu_image}}" />
-								menu id<input type="text" name="menu_id" value="{{  $menuData->id}}" />
-								partner id<input type="text" name="partner_id" value="{{  $partnerData->id}}" />
-								member id<input type="text" name="member_id" value="{{  $memberData->id}}" />
-                user id <input type="text" name="user_id" value="{{  Auth()->user()->id}}" />
-								partner_address<input type="text" name="partner_address" value="{{  $partnerData->partnership_address }}" />
+								<input type="hidden" name="menu_id" value="{{  $menuData->id}}" />
+								<input type="hidden" name="partner_id" value="{{  $partnerData->id}}" />
+								<input type="hidden" name="member_id" value="{{  $memberData->id}}" />
+                <input type="hidden" name="user_id" value="{{  Auth()->user()->id}}" />
+								<input type="hidden" name="partner_address" value="{{  $partnerData->partnership_address }}" />
 						</div>
             <label class="checkout-label" for="cname">Menu Name</label>
             <input class="checkout-input" type="text" id="cname" name="order_menu_name" value="{{ $menuData-> menu_title }}" readonly>
