@@ -57,8 +57,8 @@
 							<h1>{{ $menu->menu_title }}</h1>
 							<p>{{ $menu->menu_description }}</p>
 							@if ( Auth::user() -> role == 'admin')
-								<p><a href="{{ route('partner#updateMenu', $menu->id) }}">Update Menu >>></p>
-								<p><a href="{{ route('partner#deleteMenu', $menu->id) }}">Delete Menu >>></a></p>
+								<p><a href="{{ route('admin#updateMenu', $menu->id) }}">Update Menu >>></p>
+								<p><a href="{{ route('admin#deleteMenu', $menu->id) }}">Delete Menu >>></a></p>
 							@endif
 						</div>
 					</div>

@@ -15,7 +15,7 @@
 
     @if($memberData->member_meal_duration == 0)
     <div class="alert alert-warning animate-box" role="alert">
-        Please Undergo Reassesment to continue with your 30 days meal plan<a href=""> Click here to apply for reassesment</a>
+        Please Undergo Reassesment to continue with your 30 days meal plan<a href="{{ route('member#reassesment', Auth()->user()->id) }}"> Click here to apply for reassesment</a>
     </div>
     @endif
     <h1>Member Details</h1>

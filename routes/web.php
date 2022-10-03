@@ -69,6 +69,8 @@ Route::group(['prefix' => 'member'], function () {
     Route::post('/saveOrder', [OrderController::class, 'saveOrder'])->name('order#saveOrder');
     Route::get('/showOrderDelivery/{id}', [OrderController::class, 'showOrderDelivery'])->name('order#showOrderDelivery');
     Route::get('/updateMemberOrder/{id}', [MemberController::class, 'updateMemberOrder'])->name('member#updateMemberOrder');
+    Route::get('/reassesment/{id}', [MemberController::class, 'reassesment'])->name('member#reassesment');
+    Route::post('/newReassesment//{id}', [MemberController::class, 'newReassesment'])->name('member#newReassesment');
 });
 
 //Partner
@@ -105,7 +107,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/deleteMenu/{id}', [AdminController::class, 'deleteMenu'])->name('admin#deleteMenu'); //delete a menu
     Route::get('/updateMenu/{id}', [AdminController::class, 'updateMenu'])->name('admin#updateMenu'); //get the updation menu page
-    Route::post('/saveUpdate{id}', [AdminController::class, 'saveUpdateMenu'])->name('admin#saveUpdate'); //save the updated menu
+    Route::post('/saveUpdateMenu{id}', [AdminController::class, 'saveUpdateMenu'])->name('admin#saveUpdateMenu'); //save the updated menu
 
     Route::get('/deleteMember/{id}', [AdminController::class, 'deleteMember'])->name('admin#deleteMember'); //delete a member
     Route::get('/deletePartner/{id}', [AdminController::class, 'deletePartner'])->name('admin#deletePartner'); //delete a partner

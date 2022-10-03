@@ -32,7 +32,7 @@
 							<p>{{ DB::table('users')->where('id',$partner->user_id)->value('email')}}</p>
 							<p>Duration: {{ $partner->partnership_duration }}</p>
 							<span>
-								<a href="{{ route('admin#updatePartner', $volunteer->user_id) }}">
+								<a href="{{ route('admin#updatePartner', $partner->user_id) }}">
 									<i class="icon-edit"> </i>
 								</a>
 								<a href="{{ route('admin#deletePartner', $partner->user_id) }}">

@@ -79,7 +79,7 @@ class AdminController extends Controller
         $user_data = User::get();
         $updateMenu = Menu::where('id', $id)
             ->first();
-        return view('Users.Partner.partnerUpdateMenu')->with(['updateMenu' => $updateMenu, 'userData' => $user_data, 'partnerData' => $partner_data]);
+        return view('Users.Admin.updateMenu')->with(['updateMenu' => $updateMenu, 'userData' => $user_data, 'partnerData' => $partner_data]);
     }
     public function saveUpdateMenu(Request $request, $id)
     {
@@ -100,6 +100,24 @@ class AdminController extends Controller
 
         Menu::where('id', $id)->update($updateData);
         return redirect()->route('admin#allMenus')->with(['updateData' => 'Menu Has Been Updated Sucessfully!']);
+    }
+    private function requestUpdateMenuData($request)
+    {
+        $menuArray = [
+            'menu_title' => $request->menu_title,
+            'menu_description' => $request->menu_description,
+            'menu_time_availability' => $request->menu_time_availability,
+            'menu_type' => $request->menu_type,
+            'partner_id' => $request->partner,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ];
+
+        if (isset($request->menu_image)) {
+            $menuArray['menu_image'] = $request->menu_image;
+        }
+
+        return $menuArray;
     }
 
     //Delete Member
@@ -175,7 +193,7 @@ class AdminController extends Controller
         $updateMember = $this->requestUpdateMember($request);
         Member::where('user_id', $user_id)->update($updateMember);
 
-        return back()->with(['updateData' => 'Profile Has Been Updated Sucessfully!']);
+        return back()->with(['dataInform' => 'Profile Has Been Updated Sucessfully!']);
 
     }
 
@@ -193,7 +211,7 @@ class AdminController extends Controller
         return $arr;
     }
 
-    //Save Update Member
+    //Save Update Partner
     public function saveUpdateP(Request $request, $user_id){
         $updatePartner = $this->requestUpdatePartner($request);
         Partner::where('id', $user_id)->update($updatePartner);
@@ -211,7 +229,7 @@ class AdminController extends Controller
         return $arr;
     }
 
-    //Save Update Member
+    //Save Update Volunteer
     public function saveUpdateV(Request $request, $user_id){
         $updateVolunteer = $this->requestUpdateVolunteer($request);
         Volunteer::where('id', $user_id)->update($updateVolunteer);

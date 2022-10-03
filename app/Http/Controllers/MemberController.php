@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Menu;
 use App\Models\User;
 use App\Models\Order;
@@ -162,5 +163,30 @@ class MemberController extends Controller
         $order_selected->save();
 
         return redirect()->route('order#showOrderDelivery', Auth::id());
+    }
+
+    public function reassesment($user_id){
+        $memberData = Member::where('user_id', $user_id)->first();
+
+        return view('Users.Member.reassesment')->with([
+            'memberData' => $memberData,
+        ]);
+    }
+
+    public function newReassesment(Request $request, $user_id){
+        $updateReassesment = $this->requestReassesment($request);
+        Member::where('user_id', $user_id)->update($updateReassesment);
+
+        return redirect()->route('member#index');
+    }
+
+    protected function requestReassesment($request){
+        $arr = [
+            'member_meal_duration' => $request->member_meal_duration,
+            'member_extends_reason'=> $request->member_extends_reason,
+            'updated_at' => Carbon::now(),
+        ];
+
+        return $arr;
     }
 }
