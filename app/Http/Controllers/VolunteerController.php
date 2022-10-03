@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\User;
 use App\Models\Volunteer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -90,5 +91,13 @@ class VolunteerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    //GET UPDATE PROFILE
+    public function updateProfile($user_id){
+        $volunteerData = Volunteer::where('user_id', $user_id)->First();
+        $userData = User::where('id', $user_id)->First();
+
+        return view('Users.Volunteer.updateVolunteer2')->with(['volunteerData' => $volunteerData, 'userData' => $userData, ]);
     }
 }

@@ -95,7 +95,7 @@
                               {{ Auth()->user()->name }}
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="#">Update </a></li>
+                              <li><a class="dropdown-item" href="{{ route('volunteeer#updateProfile', Auth()->user()->id) }}">Update </a></li>
                               <li><a class="dropdown-item" href="{{ route('deliver#AllDeliveryForVolunteer') }}">Deliveries </a></li>
                               <li>
                                   <a class="dropdown-item" href="#">

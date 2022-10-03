@@ -206,4 +206,12 @@ class PartnerController extends Controller
 
         return $menuArray;
     }
+
+    //GET UPDATE PROFILE
+    public function updateProfile($user_id){
+        $partnerData = Partner::where('user_id', $user_id)->First();
+        $userData = User::where('id', $user_id)->First();
+
+        return view('Users.Partner.updatePartner2')->with(['partnerData' => $partnerData, 'userData' => $userData, ]);
+    }
 }

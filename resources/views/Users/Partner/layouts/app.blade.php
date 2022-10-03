@@ -100,7 +100,7 @@
                               {{ Auth()->user()->name }}
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="#">Update </a></li>
+                              <li><a class="dropdown-item" href="{{ route('partner#updateProfile', Auth()->user()->id) }}">Update </a></li>
                               <li><a class="dropdown-item" href="{{ route('order#AllOrderForPartner', Auth()->user()->id) }}">Orders </a></li>
                               <li>
                                   <a class="dropdown-item" href="#">

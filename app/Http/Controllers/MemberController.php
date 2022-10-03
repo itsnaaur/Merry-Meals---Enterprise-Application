@@ -165,6 +165,15 @@ class MemberController extends Controller
         return redirect()->route('order#showOrderDelivery', Auth::id());
     }
 
+    //GET UPDATE PROFILE
+    public function updateProfile($user_id){
+        $memberData = Member::where('user_id', $user_id)->First();
+        $userData = User::where('id', $user_id)->First();
+
+        return view('Users.Member.updateMember2')->with(['memberData' => $memberData, 'userData' => $userData, ]);
+    }
+
+    //REASSESSMENT
     public function reassesment($user_id){
         $memberData = Member::where('user_id', $user_id)->first();
 
