@@ -16,8 +16,6 @@ class Member extends Model
         'member_medical_condition',
         'member_medical_number',
         'member_meal_type',
-        'member_meal_distance',
-        'location',
         'member_meal_duration',
     ];
 

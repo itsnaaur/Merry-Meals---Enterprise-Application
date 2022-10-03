@@ -29,6 +29,7 @@ class User extends Authenticatable
         'age',
         'phone',
         'address',
+        'geolocation',
         'role',
         'email',
         'password'

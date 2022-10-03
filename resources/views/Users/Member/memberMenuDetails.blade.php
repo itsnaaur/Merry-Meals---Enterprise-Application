@@ -50,13 +50,81 @@
                         </div>
 						
                     </div>
-					<div class="row animate-box">
-						<div class="col-sm-1">
-							<div class="form-group animate-box">
-								<a href="{{ route('member#orderConfirmation', [ 'partner_id' => $viewMenu -> partner_id, 'menu_id' => $viewMenu-> id, 'user_id' => Auth()->user()->id]) }}"> <input type="submit" value="Order" class="btn btn-primary"></a>
-							</div>
-						</div>
-					</div>
+										<?php $partner_id = DB::table('menus')->where('id',$viewMenu->id)->value('partner_id');
+										//echo $partner_id;
+										$partner_user_id = DB::table('partners')->where('id',$partner_id)->value('user_id');
+										//echo $partner_user_id;
+										$partner_geolocation = DB::table('users')->where('id',$partner_user_id)->value('geolocation');
+										//echo $partner_geolocation;
+										$user_geolocation = DB::table('users')->where('id',Auth()->user()->id)->value('geolocation');
+										//echo $user_geolocation;
+
+									$user_arr = preg_split ("/\,/", $user_geolocation); 
+									$partner_arr = preg_split ("/\,/", $partner_geolocation);
+									// print_r($str_arr);
+									// echo $str_arr[0]. "<br/>";
+									// echo $str_arr[1]. "<br/>";
+
+									$Lat1 = $user_arr[0];
+									$Long1 =  $user_arr[1];
+									$Lat2 = $partner_arr[0] ;
+									$Long2 = $partner_arr[1];
+									$DistanceKM = 0;
+									$DistanceMeter = 0;
+
+									if (isset($_POST['Lat1'])) {
+
+									$Lat1 = $_POST['Lat1'];
+									$Long1 = $_POST['Long1'];
+									$Lat2 = $_POST['Lat2'];
+									$Long2 = $_POST['Long2'];
+									}
+
+									$R = 6371;
+
+									$Lat = $Lat2 - $Lat1;
+									$Long = $Long2 - $Long1;
+
+									$dLat1 = deg2rad($Lat);
+									$dlong1 = deg2rad($Long);
+
+									$a =
+									sin($dLat1 / 2) * sin($dLat1 / 2) +
+									cos(deg2rad($Lat1)) * cos(deg2rad($Lat2)) *
+									sin($dlong1 / 2) * sin($dlong1 / 2);
+
+									$c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+
+									$DistanceKM = $R * $c;
+
+									$DistanceMeter = $DistanceKM * 1000;
+
+									$DistanceKM = round($DistanceKM, 3);
+
+									if ($DistanceKM > 10 ) {
+										$message ="Out Of Delivery Range";
+									}else{
+										$message ="Within Delivery Range";
+									}
+									// $DistanceMeter = round($DistanceMeter, 0) . " METER";
+
+									//echo $DistanceKM;
+									// echo $DistanceMeter;
+
+									
+						 ?>
+										@if( $memberData->member_meal_duration != 0 )
+										@if($DistanceKM < 10)
+										<div class="row animate-box">
+											<div class="col-sm-1">
+												<div class="form-group animate-box">
+													<a href="{{ route('member#orderConfirmation', [ 'partner_id' => $viewMenu -> partner_id, 'menu_id' => $viewMenu-> id, 'user_id' => Auth()->user()->id]) }}"> <input type="submit" value="Order" class="btn btn-primary"></a>
+												</div>
+											</div>
+										</div>
+										@endif
+										@endif
+				
 				</div>
 				
 			</div>
