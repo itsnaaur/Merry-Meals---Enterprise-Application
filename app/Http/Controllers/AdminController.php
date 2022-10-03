@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Member;
 use App\Models\Partner;
 use App\Models\Volunteer;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -23,21 +24,18 @@ class AdminController extends Controller
 
     public function allMembers()
     {
-        $userData = User::get();
         $memberData = Member::get();
         return view('Users.Admin.allMembers')->with('memberData', $memberData);
     }
 
     //All Partners
     public function allPartners(){
-        $userData = User::get();
         $partnerData = Partner::get();
         return view('Users.Admin.allPartners')->with('partnerData', $partnerData);
     }
 
     //All Volunteers
     public function allVolunteers(){
-        $userData = User::get();
         $volunteerData = Volunteer::get();
         return view('Users.Admin.allVolunteers')->with('volunteerData', $volunteerData);
     }
@@ -108,35 +106,128 @@ class AdminController extends Controller
     public function deleteMember($id){
         Member::where('user_id', $id)->delete();
         User::where('id', $id)->delete();
-        return back()->with(['memberDeleted' => 'Member Has Been Deleted Successfully!']);
+        return back()->with(['dataInform' => 'Member Has Been Deleted Successfully!']);
     }
 
     //Delete Partner
     public function deletePartner($id){
         Member::where('user_id', $id)->delete();
         User::where('id', $id)->delete();
-        return back()->with(['partnerDeleted' => 'Partner Has Been Deleted Successfully!']);
+        return back()->with(['dataInform' => 'Partner Has Been Deleted Successfully!']);
     }
 
     //Delete Volunteer
     public function deleteVolunteer($id){
         Volunteer::where('user_id', $id)->delete();
         User::where('id', $id)->delete();
-        return back()->with(['volunteerDeleted' => 'Volunteer Has Been Deleted Successfully!']);
+        return back()->with(['dataInform' => 'Volunteer Has Been Deleted Successfully!']);
     }
     
     //Update Member
-    public function updateMember($id){
-        
+    public function updateMembers($user_id){
+        $memberData = Member::where('user_id', $user_id)->First();
+        $userData = User::where('id', $user_id)->First();
+
+        return view('Users.Admin.updateMember')->with(['memberData' => $memberData, 'userData' => $userData, ]);
     }
 
     //Update Partner
-    public function updatePartner($id){
+    public function updatePartner($user_id){
+        $partnerData = Partner::where('user_id', $user_id)->First();
+        $userData = User::where('id', $user_id)->First();
 
+        return view('Users.Admin.updatePartner')->with(['partnerData' => $partnerData, 'userData' => $userData, ]);
     }
 
     //Update Volunteer
-    public function updateVolunteer($id){
+    public function updateVolunteer($user_id){
+        $volunteerData = Volunteer::where('user_id', $user_id)->First();
+        $userData = User::where('id', $user_id)->First();
 
+        return view('Users.Admin.updateVolunteer')->with(['volunteerData' => $volunteerData, 'userData' => $userData, ]);
+    }
+
+    //Save Update User
+    public function saveUpdateUser(Request $request, $id){
+        $updateData = $this->requestUpdateUserData($request);
+        User::where('id', $id)->update($updateData);
+
+        return back()->with(['dataInform' => 'Profile Has Been Updated Sucessfully!']);
+    }
+
+    private function requestUpdateUserData($request){
+        $arr = [
+            'name' => $request->name,
+            'gender'=> $request->gender,
+            'age'=> $request->age,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'email' => $request->email,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ];
+
+        return $arr;
+    }
+
+    //Save Update Member
+    public function saveUpdateM(Request $request, $user_id){
+        $updateMember = $this->requestUpdateMember($request);
+        Member::where('user_id', $user_id)->update($updateMember);
+
+        return back()->with(['updateData' => 'Profile Has Been Updated Sucessfully!']);
+
+    }
+
+    private function requestUpdateMember($request){
+        $arr = [
+            'member_caregiver_name' => $request-> member_caregiver_name,
+            'member_caregiver_relation'=> $request->member_caregiver_relation,
+            'member_medical_condition'=> $request->member_medical_condition,
+            'member_medical_number' => $request->member_medical_number,
+            'member_meal_type' => $request->member_meal_type,
+            'member_meal_duration' => $request->member_meal_duration,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ];
+        return $arr;
+    }
+
+    //Save Update Member
+    public function saveUpdateP(Request $request, $user_id){
+        $updatePartner = $this->requestUpdatePartner($request);
+        Partner::where('id', $user_id)->update($updatePartner);
+
+        return back()->with(['dataInform' => 'Profile Has Been Updated Sucessfully!']);
+    }
+
+    private function requestUpdatePartner($request){
+        $arr = [
+            'partnership_restaurant' => $request-> partnership_restaurant,
+            'partnership_duration'=> $request->partnership_duration,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ];
+        return $arr;
+    }
+
+    //Save Update Member
+    public function saveUpdateV(Request $request, $user_id){
+        $updateVolunteer = $this->requestUpdateVolunteer($request);
+        Volunteer::where('id', $user_id)->update($updateVolunteer);
+
+        return back()->with(['dataInform' => 'Profile Has Been Updated Sucessfully!']);
+    }    
+
+    private function requestUpdateVolunteer($request){
+        $arr = [
+            'volunteer_vaccination	' => $request-> volunteer_vaccination	,
+            'volunteer_duration'=> $request->volunteer_duration,
+            'volunteer_available' => $request->volunteer_available,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ];
+
+        return $arr;
     }
 }

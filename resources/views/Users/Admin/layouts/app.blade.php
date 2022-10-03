@@ -94,16 +94,10 @@
                           </ul>
                       </li>
 
-                      <li>
-                        <a href="#" class="fh5co-sub-ddown">Manage Menus</a>
-                        <ul class="fh5co-sub-menu">
-                            <li><a href="#">Create Menu</a></li>
-                            <li><a href="{{ route('admin#allMenus') }}">All Menus</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">Manage Deliveries</a></li>
+                      <li><a href="{{ route('admin#allMenus') }}">Manage Menus</a></li>
+                        <li><a href="about.html">Manage Deliveries</a></li>
                         <li><a href="/about">About</a></li>
-                         <li><a href="/contact">Contact</a></li>
+                        <li><a href="/contact">Contact</a></li>
                         
                           <button type="button" class="btn btn-blue dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" 
                           style="
