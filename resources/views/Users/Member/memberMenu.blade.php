@@ -1,5 +1,5 @@
 @section('title')
-    Welcome
+    All Menu
 @endsection
 
 @extends('Users.Member.layouts.app')

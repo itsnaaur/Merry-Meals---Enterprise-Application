@@ -75,7 +75,7 @@
     <div class="container">
         <div class="nav-header">
             <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-            <h1 id="fh5co-logo"><a href="index.html">Charity</a></h1>
+            <div id="fh5co-logo"><a href="/" ><img src="{{ url('/images/company_logo.png') }}" alt="company logo"></a></div>
             <!-- START #fh5co-menu-wrap -->
            <!--Start end if -->
        

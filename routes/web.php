@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PartnerController;
 
 /*
@@ -19,6 +20,15 @@ use App\Http\Controllers\PartnerController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/terms', function () {
+    return view('terms');
 });
 
 // Route::middleware(['auth:sanctum',
@@ -48,8 +58,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //Member
 Route::group(['prefix' => 'member'], function () {
     Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard 
-    Route::get('/menu', [MemberController::class, 'viewAllMenu'])->name('member#viewAllMenu'); //member view all menu
-    Route::get('/viewMenu/{id}', [MemberController::class, 'viewMenu'])->name('member#viewMenu'); //member view a specific menu
+    Route::get('/member/{id}', [MemberController::class, 'saveMemberMealPlan'])->name('member#saveMemberMealPlan');
+    Route::get('/viewAllMenu', [MemberController::class, 'viewAllMenu'])->name('member#viewAllMenu');
+    Route::get('/viewMenu/{id}', [MemberController::class, 'viewMenu'])->name('member#viewMenu');
+    Route::get('/foodSafety', [MemberController::class, 'foodSafety'])->name('member#foodSafety');
+    Route::get('/orderConfirmation/{partner_id}/{menu_id}/{user_id}', [MemberController::class, 'orderConfirmation'])->name('member#orderConfirmation');
+    Route::post('/saveOrder', [OrderController::class, 'saveOrder'])->name('order#saveOrder');
+    Route::get('/showOrderDelivery/{id}', [OrderController::class, 'showOrderDelivery'])->name('order#showOrderDelivery');
 });
 
 //Partner
@@ -60,7 +75,7 @@ Route::group(['prefix' => 'partner'], function () {
     Route::get('/viewMenu/{id}', [PartnerController::class, 'viewMenu'])->name('partner#viewMenu'); //partner view a specific menu
     Route::get('/deleteMenu/{id}', [PartnerController::class, 'deleteMenu'])->name('partner#deleteMenu'); //deleting a specific menu
     Route::get('/updateMenu/{id}', [PartnerController::class, 'updateMenu'])->name('partner#updateMenu'); //calling the updation page
-    Route::post('/saveUpdate/{id}', [PartnerController::class, 'saveUpdate'])->name('partner#saveUpdate'); //saving the updated data
+    Route::post('/saveUpdate', [PartnerController::class, 'saveUpdate'])->name('partner#saveUpdate'); //saving the updated data
 });
 
 //Volunteer

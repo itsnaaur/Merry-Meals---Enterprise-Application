@@ -1,5 +1,5 @@
 @section('title')
-    Welcome
+	{{ $viewMenu->menu_title }} Details
 @endsection
 
 @extends('Users.Partner.layouts.app')
@@ -37,6 +37,18 @@
                               </div>
                         </div>						
                     </div>
+					<div class="row animate-box">
+						<div class="col-sm-1">
+							<div class="form-group animate-box">
+								<a href="{{ route('partner#updateMenu', $viewMenu->id) }}"> <input type="submit" value="Update" class="btn btn-primary"></a>
+							</div>
+						</div>
+						<div class="col-sm-3" style="padding-left: 50px">
+							<div class="form-group animate-box">
+								<a href="{{ route('partner#deleteMenu', $viewMenu->id) }}"> <input type="submit" value="Delete" class="btn btn-primary"></a>
+							</div>
+						</div>
+					</div>
 				</div>				
 			</div>
 		</div>

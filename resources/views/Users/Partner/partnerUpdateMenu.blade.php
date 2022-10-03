@@ -1,5 +1,5 @@
 @section('title')
-    Welcome
+    Update {{ $updateMenu->menu_title }}
 @endsection
 
 @extends('Users.Partner.layouts.app')
@@ -26,13 +26,29 @@
 <script src="{{ asset('js/modernizr-2.6.2.min.js') }}" defer></script>
 
 		<div id="fh5co-blog-section" class="fh5co-section-gray">
-
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					<h3><h1>Update {{ $updateMenu->menu_title }}</h1></h3>
+				</div>
+			</div>
 			<div class="container">
 				<div class="row row-bottom-padded-md">
                     <div class="container">
                         <div class="row">
 							<form action="{{ route('partner#saveUpdate', $updateMenu->id) }}" method="POST" enctype="multipart/form-data">
 								@csrf
+								<div class="col-lg-6 animate-box">									
+									@if ($updateMenu->menu_image)
+										<img src="{{ asset('uploads/meal/'. $updateMenu->menu_image) }}" class="img-thumbnail" alt="category image ">
+										<br>
+									@endif
+									<div>
+										<div class="form-group animate-box" style="padding-top: 10px">
+											<label for="basic-url">Menu Picture</label>
+											<input type="file" class="form-control" name="menu_image" value="{{ $updateMenu->menu_image }}" required>
+										</div>
+									</div>
+								</div>
 								<div class="col-lg-6" style="padding-left: 60px">
 									<div class="row">
 										<div>
@@ -41,18 +57,6 @@
 												<input type="text" class="form-control" placeholder="Put your menu title here" name="menu_title" value="{{ old('menu_title', $updateMenu->menu_title) }}" required>
 											</div>
 										</div>
-										<div>
-											<div class="form-group animate-box">
-												<label for="basic-url">Menu Picture</label>
-												<div class="form-floating mb-3 text-center">
-													@if ($updateMenu->menu_image)
-														<img src="{{ asset('uploads/meal/'. $updateMenu->menu_image) }}" class="img-thumbnail" width="150px" height="150px" alt="category image ">
-														<br>
-													@endif
-												</div>
-												<input type="file" class="form-control" name="menu_image" value="{{ $updateMenu->menu_image }}" required>
-											</div>
-										</div>								
 										<div>
 											<div class="form-group animate-box">
 												<label for="basic-url">Menu Description</label>
