@@ -30,14 +30,14 @@ class AdminController extends Controller
     public function allPartners(){
         $userData = User::get();
         $partnerData = Partner::get();
-        return view('Users.Admin.allPartners')->with('partnerData', $partnerData);;
+        return view('Users.Admin.allPartners')->with('partnerData', $partnerData);
     }
 
     //All Volunteers
     public function allVolunteers(){
         $userData = User::get();
         $volunteerData = Volunteer::get();
-        return view('Users.Admin.allVolunteers');
+        return view('Users.Admin.allVolunteers')->with('partnerData', $volunteerData);
     }
 
     //All Donors
