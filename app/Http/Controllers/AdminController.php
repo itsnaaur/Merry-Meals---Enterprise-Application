@@ -1,26 +1,42 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
+use App\Models\Member;
+use App\Models\Partner;
+use App\Models\Volunteer;
 use Illuminate\Http\Request;
 
-class ManageController extends Controller
+class AdminController extends Controller
 {
-    //Admin Dashboard
+        /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        // $memberData = Member::paginate(4);
-        // dd($member);
-        return view('Users.Admin.allMembers');
+        return view('Users.Admin.adminIndex');
+    }
+
+    public function allMembers()
+    {
+        $userData = User::get();
+        $memberData = Member::get();
+        return view('Users.Admin.allMembers')->with('memberData', $memberData);
     }
 
     //All Partners
     public function allPartners(){
-        return view('Users.Admin.allPartners');
+        $userData = User::get();
+        $partnerData = Partner::get();
+        return view('Users.Admin.allPartners')->with('partnerData', $partnerData);;
     }
 
     //All Volunteers
     public function allVolunteers(){
+        $userData = User::get();
+        $volunteerData = Volunteer::get();
         return view('Users.Admin.allVolunteers');
     }
 
@@ -34,21 +50,37 @@ class ManageController extends Controller
         return view('Users.Admin.allDeliveries');
     }
 
-    //Delete User
-    public function deleteUser($id){
+    //Delete Member
+    public function deleteMember($id){
+        Member::where('user_id', $id)->delete();
+        User::where('id', $id)->delete();
+        return back()->with(['memberDeleted' => 'Member Has Been Deleted Successfully!']);
+    }
 
+    //Delete Partner
+    public function deletePartner($id){
+        Member::where('user_id', $id)->delete();
+        User::where('id', $id)->delete();
+    }
+
+    //Delete Volunteer
+    public function deleteVolunteer($id){
+        Volunteer::where('user_id', $id)->delete();
+        User::where('id', $id)->delete();
     }
 
     //Update Member
-    public function updateMember(){
+    public function updateMember($id){
 
     }
 
     //Update Partner
-    public function updatePartner(){
+    public function updatePartner($id){
 
     }
 
     //Update Volunteer
+    public function updateVolunteer($id){
 
+    }
 }

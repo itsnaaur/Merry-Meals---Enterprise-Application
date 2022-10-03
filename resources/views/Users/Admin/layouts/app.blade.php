@@ -87,10 +87,10 @@
                         <li>
                           <a href="#" class="fh5co-sub-ddown">Manage Users</a>
                           <ul class="fh5co-sub-menu">
-                              <li><a href="#">Member and Care Giver</a></li>
-                              <li><a href="#">Partners</a></li>
-                              <li><a href="#">Volunteers</a></li>
-                              <li><a href="#">Donors</a></li>
+                              <li><a href="{{ route('admin#allMembers') }}">Member and Care Giver</a></li>
+                              <li><a href="{{ route('admin#allPartners') }}">Partners</a></li>
+                              <li><a href="{{ route('admin#allVolunteers') }}">Volunteers</a></li>
+                              <li><a href="{{ route('admin#allDonors') }}">Donors</a></li>
                           </ul>
                       </li>
 

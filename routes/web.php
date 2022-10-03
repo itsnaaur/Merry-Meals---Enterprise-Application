@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PartnerController;
 
@@ -64,13 +65,15 @@ Route::group(['prefix' => 'partner'], function () {
 
 //Volunteer
 Route::group(['prefix' => 'volunteer'], function () {
-    Route::get('/', [VolunteerController::class, 'index'])->name('volunteer#index'); //partner dashboard 
+    Route::get('/', [VolunteerController::class, 'index'])->name('volunteer#index'); //volunteer dashboard 
 
 });
 
 //Administrator
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //partner dashboard 
-    Route::get('/', [AdminController::class, ''])->name('admin#allPartners');
-
+    Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //admin dashboard 
+    Route::get('/allMembers', [AdminController::class, 'allMembers'])->name('admin#allMembers');
+    Route::get('/allPartner', [AdminController::class, 'allPartners'])->name('admin#allPartners');
+    Route::get('/allVolunteers', [AdminController::class, 'allVolunteers'])->name('admin#allVolunteers');
+    
 });
