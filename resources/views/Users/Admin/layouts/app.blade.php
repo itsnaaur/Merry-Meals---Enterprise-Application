@@ -98,7 +98,7 @@
                         <a href="#" class="fh5co-sub-ddown">Manage Menus</a>
                         <ul class="fh5co-sub-menu">
                             <li><a href="#">Create Menu</a></li>
-                            <li><a href="#">All Menus</a></li>
+                            <li><a href="{{ route('admin#allMenus') }}">All Menus</a></li>
                         </ul>
                     </li>
                     <li><a href="about.html">Manage Deliveries</a></li>
@@ -111,7 +111,12 @@
                               {{ Auth()->user()->name }}
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="#">Update </a></li>
+                              <li>
+                                <a class="dropdown-item" href="#">
+                                    <button class="btn pt-0 pb-1 px-0 nav-link text-dark" style="button:focus { outline: none; }" >
+                                        Update 
+                                    </button>
+                                </a></li>
                               <li>
                                   <a class="dropdown-item" href="#">
                                       <form action="{{ route('logout') }}" method="post">

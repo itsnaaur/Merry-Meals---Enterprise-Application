@@ -10,6 +10,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					@if (Session::has('menuDeleted'))
+						<h4 class="alert alert-warning animate-box" role="alert">
+							{{ Session::get('memberDeleted') }}
+						</h4>
+					@endif
 						<h3>Members and Care Givers</h3>
 						<p>All the members that registered to MerryMeals charity</p>
 					</div>
