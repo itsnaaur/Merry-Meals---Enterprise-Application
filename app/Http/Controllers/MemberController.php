@@ -142,4 +142,20 @@ class MemberController extends Controller
             'userData' => $user_data,
         ]);
     }
+
+    public function updateMemberOrder($id)
+    {
+
+        //find selected order
+        $order_selected = Order::where('id', $id)->first();
+
+        //save selected order
+        if ($order_selected->order_received_status == null) {
+            $order_selected->order_received_status = "Received Well";
+        }
+
+        $order_selected->save();
+
+        return redirect()->route('order#showOrderDelivery', Auth::id());
+    }
 }
