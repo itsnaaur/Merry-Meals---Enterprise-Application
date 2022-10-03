@@ -21,7 +21,6 @@ class PartnerController extends Controller
     public function index()
     {
         $partnerData = Partner::where('user_id', Auth::id())->first();
-        // dd($partnerData);
         $menuData = Menu::all()->where('partner_id',$partnerData->id);
         return view('Users.Partner.partnerIndex')->with(['menuData' => $menuData, 'partnerData' => $partnerData]);
     }
