@@ -114,28 +114,23 @@ class MemberController extends Controller
     }
     public function viewAllMenu()
     {
-        $memberData = Member::where('user_id', Auth::id())->first();
-        $meal_type =  $memberData->member_meal_type;
+        $menuData = Menu::all();
 
-        if ($meal_type == 'Cold') {
-            $menuData = Menu::all()->where('menu_type', $meal_type);
-            return view('Users.Member.memberMenu')->with(['menuData' => $menuData, 'memberData' => $memberData]);
-        } else {
-            $menuData = Menu::all()->where('menu_type', 'Hot');
-            return view('Users.Member.memberMenu')->with(['menuData' => $menuData, 'memberData' => $memberData]);
-        }
+        return view('Users.Member.memberMenu')->with(['menuData' => $menuData]);
     }
 
     public function viewMenu($id)
     {
         $partner_data =  Partner::get();
         $user_data = User::get();
+        $member_data = Member::where('user_id', Auth::id())->first();
         $viewMenu = Menu::where('id', $id)
             ->first();
         return view('Users.Member.memberMenuDetails')->with([
             'viewMenu' => $viewMenu,
             'userData' => $user_data,
             'partnerData' => $partner_data,
+            'memberData' => $member_data,
         ]);
     }
 

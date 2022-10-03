@@ -70,15 +70,7 @@
 											</div>
 										</div>
 										<div>
-											<div class="form-group animate-box">
-												<label for="basic-url">Partner Organization</label>
-												<select name="partner" class="form-control" required>
-													<option value="" disabled selected hidden>Please Select One Below</option>
-													@foreach ($partnerData as $partner)
-                        								<option value="{{ $partner->id }}">{{ $partner->partnership_restaurant }}</option>
-                    								@endforeach
-												</select>
-											</div>
+											<input type="hidden" class="form-control" placeholder="Put your partner name here" name="partner" value="{{ $partnerData->id }}" required>
 										</div>
 										<div>
 											<div class="form-group animate-box">
