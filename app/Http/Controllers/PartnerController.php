@@ -21,7 +21,6 @@ class PartnerController extends Controller
     public function index()
     {
         $partnerData = Partner::where('user_id', Auth::id())->first();
-        // dd($partnerData);
         $menuData = Menu::all()->where('partner_id',$partnerData->id);
         return view('Users.Partner.partnerIndex')->with(['menuData' => $menuData, 'partnerData' => $partnerData]);
     }
@@ -93,7 +92,7 @@ class PartnerController extends Controller
     }
     public function createMenu()
     {
-        $partner_data = Partner::get();
+        $partner_data = Partner::where('user_id', Auth::id())->first();
         $user_data = User::get();
         return view('Users.Partner.partnerMenuCreate')->with(['partnerData' => $partner_data, 'userData' => $user_data]);
     }
@@ -144,6 +143,10 @@ class PartnerController extends Controller
             'partnerData' => $partner_data,
         ]);
     }
+    public function foodSafety()
+    {
+        return view('Users.Partner.foodSafetyDeclaration');
+    }
     public function deleteMenu($id)
     {
         $deleteData = Menu::select('menu_image')->where('id', $id)->first();
@@ -159,7 +162,7 @@ class PartnerController extends Controller
     }
     public function updateMenu($id)
     {
-        $partner_data =  Partner::get();
+        $partner_data = Partner::where('user_id', Auth::id())->first();
         $user_data = User::get();
         $updateMenu = Menu::where('id', $id)
             ->first();
