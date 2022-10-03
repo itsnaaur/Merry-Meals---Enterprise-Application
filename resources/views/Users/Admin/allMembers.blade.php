@@ -10,6 +10,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					@if (Session::has('memberDeleted'))
+						<h4 class="alert alert-warning animate-box" role="alert">
+							{{ Session::get('memberDeleted') }}
+						</h4>
+					@endif
 						<h3>Members and Care Givers</h3>
 						<p>All the members that registered to MerryMeals charity</p>
 					</div>
@@ -27,8 +32,14 @@
 								<p>{{ DB::table('users')->where('id',$member->user_id)->value('address')}}</p>
 								<p>{{ DB::table('users')->where('id',$member->user_id)->value('email')}}</p>
 								<p>Duration: {{ $member->member_meal_duration }}</p>
-								<span><i class="icon-edit"> </i>
-								<i class="icon-trash"></i></span>
+								<span>
+									<a href="">
+										<i class="icon-edit"> </i>
+									</a>
+									<a href="{{ route('admin#deleteMember', $member->id) }}">
+										<i class="icon-trash"></i>
+									</a>
+								</span>
 							</div>
 						</div>
 					@endforeach

@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('location');
             $table->integer('member_meal_duration');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
