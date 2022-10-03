@@ -64,6 +64,7 @@ class CreateNewUser implements CreatesNewUsers
             $partner->partnership_restaurant = $input['partnership_restaurant'];
             $partner->partnership_duration = $input['partnership_duration'];
             $partner->partnership_address =  $input['address'];
+            $partner->user_id = $user->id;
             $partner->save();
         }
 
@@ -72,6 +73,7 @@ class CreateNewUser implements CreatesNewUsers
             $volunteer->volunteer_vaccination = $input['volunteer_vaccination'];
             $volunteer->volunteer_duration = $input['volunteer_duration'];
             $volunteer->volunteer_available = implode(",", $input['volunteer_available']);
+            $volunteer->user_id = $user->id;
             $volunteer->save();
         }
 
