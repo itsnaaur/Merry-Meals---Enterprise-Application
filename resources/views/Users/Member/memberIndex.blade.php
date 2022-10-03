@@ -23,6 +23,7 @@
         <th>Member Medical Condition</th>
         <th>location</th>
         <th>Meal Type (Check distance for Meal Type)</th>
+        <th>Distance from nearest kitchen (KM)</th>
         <th>Meal Duration</th>
         <th>Action</th>
         </tr>
@@ -37,6 +38,7 @@
                 <td>{{ $memberData->member_medical_condition }}</td>
                 <td>{{ $memberData->location }}</td>
                 <td>{{ $memberData->member_meal_type }}</td>
+                <td>{{ $memberData->member_meal_distance }}</td>
                 <td>{{ $memberData->member_meal_duration }}</td>
                 <td>
                 
@@ -97,7 +99,7 @@
                     <a href="#">
                         <form action="{{ route('member#saveMemberMealPlan', $memberData->id) }}" method="GET" >
                             
-                    {{-- <input type="number" value=<?php echo $DistanceKM; ?> name="member_distance" /> --}}
+                    <input type="hidden" value=<?php echo $DistanceKM; ?> name="member_meal_distance" /> 
                     <input type="hidden" value=<?php echo $mealType; ?> name="member_meal_type" />
                     <button type="submit" class="btn btn-primary" id="edit">
                         Check Distance

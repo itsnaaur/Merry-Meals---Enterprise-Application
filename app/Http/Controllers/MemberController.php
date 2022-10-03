@@ -57,6 +57,7 @@ class MemberController extends Controller
 
         //save selected member meal type based on distance
         $memberSelected->member_meal_type = $request->input('member_meal_type');
+        $memberSelected->member_meal_distance = $request->input('member_meal_distance');
         $memberSelected->save();
 
         return redirect()->route('member#index');
@@ -113,9 +114,18 @@ class MemberController extends Controller
     }
     public function viewAllMenu()
     {
-        $menuData = Menu::all();
-        return view('Users.Member.memberMenu')->with(['menuData' => $menuData]);
+        $memberData = Member::where('user_id', Auth::id())->first();
+        $meal_type =  $memberData->member_meal_type;
+
+        if ($meal_type == 'Cold') {
+            $menuData = Menu::all()->where('menu_type', $meal_type);
+            return view('Users.Member.memberMenu')->with(['menuData' => $menuData, 'memberData' => $memberData]);
+        } else {
+            $menuData = Menu::all()->where('menu_type', 'Hot');
+            return view('Users.Member.memberMenu')->with(['menuData' => $menuData, 'memberData' => $memberData]);
+        }
     }
+
     public function viewMenu($id)
     {
         $partner_data =  Partner::get();
