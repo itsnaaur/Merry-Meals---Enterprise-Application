@@ -86,8 +86,8 @@
                         </li>
                         <li><a href="{{ route('member#viewAllMenu') }}">Menu</a></li>
                         
-                        <li><a href="about.html">About</a></li>
-                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/about">About</a></li>
+                         <li><a href="/contact">Contact</a></li>
                         
                           <button type="button" class="btn btn-blue dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" 
                           style="

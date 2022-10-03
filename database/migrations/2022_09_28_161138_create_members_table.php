@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('member_medical_condition');
             $table->string('member_medical_number');
             $table->string('member_meal_type')->nullable();
+            $table->string('member_meal_distance')->nullable();
             $table->string('location');
             $table->integer('member_meal_duration');
             $table->timestamps();

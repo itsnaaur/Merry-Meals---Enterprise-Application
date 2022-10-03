@@ -15,8 +15,8 @@ class Member extends Model
         'member_caregiver_relation',
         'member_medical_condition',
         'member_medical_number',
-        'member_medical_number',
         'member_meal_type',
+        'member_meal_distance',
         'location',
         'member_meal_duration',
     ];
