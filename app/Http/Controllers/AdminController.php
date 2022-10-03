@@ -115,12 +115,14 @@ class AdminController extends Controller
     public function deletePartner($id){
         Member::where('user_id', $id)->delete();
         User::where('id', $id)->delete();
+        return back()->with(['partnerDeleted' => 'Partner Has Been Deleted Successfully!']);
     }
 
     //Delete Volunteer
     public function deleteVolunteer($id){
         Volunteer::where('user_id', $id)->delete();
         User::where('id', $id)->delete();
+        return back()->with(['volunteerDeleted' => 'Volunteer Has Been Deleted Successfully!']);
     }
     
     //Update Member

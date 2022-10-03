@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Deliver;
+use Carbon\Carbon;
 use App\Models\Order;
 use App\Models\Member;
+use App\Models\Deliver;
+use App\Models\Partner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class OrderController extends Controller
@@ -89,11 +92,22 @@ class OrderController extends Controller
     public function showOrderDelivery($id)
     {
         //show order and delivery status
-        $order_data = Order::where('user_id', $id)->first();
-        $delivery_data = Deliver::where('user_id', $id)->first();
+        $order_data = Order::where('user_id', $id)->latest('created_at')->first();
+        $delivery_data = Deliver::where('user_id', $id)->latest('created_at')->first();
         return view('Users.Member.memberOrderDelivery')->with([
             'orderData' => $order_data,
             'deliverData' => $delivery_data,
+        ]);
+    }
+
+    public function AllOrderForPartner($id)
+    {
+        //show all order partner need to start cooking for
+        $partner = Partner::where('user_id', $id)->first();
+        $partner_id = $partner->id;
+        $order_data = Order::where('partner_id', $partner_id)->get();
+        return view('Users.Partner.partnerOrderDelivery')->with([
+            'orderData' => $order_data,
         ]);
     }
 
@@ -115,9 +129,21 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateOrder(Request $request, $id)
     {
-        //
+        //find selected order
+        $order_selected = Order::where('id', $id)->first();
+
+        //save selected order
+        $date = Carbon::now();
+        if ($order_selected->start_cooking_time == null) {
+            $order_selected->start_cooking_time = $date;
+        }
+
+        $order_selected->order_cooking_status = $request->input('order_cooking_status');
+        $order_selected->save();
+
+        return redirect()->route('order#AllOrderForPartner', Auth::id());
     }
 
     /**
