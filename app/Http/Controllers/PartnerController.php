@@ -8,6 +8,7 @@ use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class PartnerController extends Controller
@@ -19,8 +20,10 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        $menuData = Menu::all();
-        return view('Users.Partner.partnerIndex')->with(['menuData' => $menuData]);
+        $partnerData = Partner::where('user_id', Auth::id())->first();
+        // dd($partnerData);
+        $menuData = Menu::all()->where('partner_id',$partnerData->id);
+        return view('Users.Partner.partnerIndex')->with(['menuData' => $menuData, 'partnerData' => $partnerData]);
     }
 
     /**
