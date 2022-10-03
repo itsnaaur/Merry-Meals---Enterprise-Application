@@ -17,72 +17,22 @@
 			</div>
 			<div class="container">
 				<div class="row text-center">
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Volunteer's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
+					@foreach ($volunteerData as $volunteer)
+						<div class="col-md-4 col-sm-4">
+							<div class="services animate-box">
+								<span><i class="icon-profile-male"></i></span>
+								<h3>{{ DB::table('users')->where('id',$member->user_id)->value('name')}}</h3>
+								<h4>{{ $volunteer->volunteer_duration }}</h4>
+								<p>{{ DB::table('users')->where('id',$partner->user_id)->value('address')}}</p>
+								<p>{{ DB::table('users')->where('id',$partner->user_id)->value('phone')}}</p>
+								<p>{{ DB::table('users')->where('id',$partner->user_id)->value('email')}}</p>
+								<p>{{ $volunteer->volunteer_available }}</p>
+								<p>Vaccination: {{ $volunteer->volunteer_vaccination }}</p>
+								<span><i class="icon-edit"> </i>
+									<i class="icon-trash"></i></span>
+							</div>
 						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Volunteer's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Volunteer's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Volunteer's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Volunteer's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Volunteer's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 		</div>

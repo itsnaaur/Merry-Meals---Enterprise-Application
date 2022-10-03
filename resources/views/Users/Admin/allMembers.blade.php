@@ -17,78 +17,21 @@
 			</div>
 			<div class="container">
 				<div class="row text-center">
-					<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Address</p>
-							<p>email</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                            <i class="icon-trash"></i></span>
+					@foreach ($memberData as $member)
+						<div class="col-md-4 col-sm-4">
+							<div class="services animate-box">
+								<span><i class="icon-profile-male"></i></span>
+								{{-- <h3>{{ $member->user_id->name}}</h3> --}}
+								<h3>{{ DB::table('users')->where('id',$member->user_id)->value('name')}}</h3>
+								<h4>{{ $member->member_caregiver_name }}</h4>
+								<p>{{ DB::table('users')->where('id',$member->user_id)->value('address')}}</p>
+								<p>{{ DB::table('users')->where('id',$member->user_id)->value('email')}}</p>
+								<p>Duration: {{ $member->member_meal_duration }}</p>
+								<span><i class="icon-edit"> </i>
+								<i class="icon-trash"></i></span>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Address</p>
-							<p>email</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Address</p>
-							<p>email</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Address</p>
-							<p>email</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Address</p>
-							<p>email</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Member's Name</h3>
-                            <h4>Care Giver's Name</h4>
-							<p>Address</p>
-                            <p>email</p>
-                            <p>Due Date</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 		</div>
