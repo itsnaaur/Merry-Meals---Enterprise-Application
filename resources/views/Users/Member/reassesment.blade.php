@@ -25,7 +25,7 @@
 						<div class=" animate-box">
 							<div class="col-md-12 ">
                                 <h3>Reassesment</h3>
-                                <form action="{{ route('member#newReassesment', Auth()->user()->id) }}) }}" method="POST">
+                                <form action="{{ route('member#newReassesment', Auth()->user()->id) }}" method="POST">
                                     @csrf
                                     
                                     {{-- REASSESMNET DATA --}}
@@ -35,6 +35,7 @@
                                         <label class="userManagement">Duration (in days)</label><br>
                                         <input name="member_meal_duration" class="input-md col-md-12" type="number" value="{{ old('member_meal_duration', $memberData->member_meal_duration) }}"/><br><br>
                                     {{-- END OF REASSESMENT DATA --}}
+
                                     <div class="text-center"> 
                                         <button class="btn-primary">Update</button> &nbsp;
                                         <a href="{{ route('member#index') }}">Cancel</a>
