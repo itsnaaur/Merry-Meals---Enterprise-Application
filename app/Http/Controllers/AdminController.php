@@ -1,14 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Carbon\Carbon;
 use App\Models\Menu;
 use App\Models\User;
+use App\Models\Donor;
 use App\Models\Order;
 use App\Models\Member;
 use App\Models\Partner;
+use App\Models\DonorFee;
 use App\Models\Volunteer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
@@ -47,10 +51,16 @@ class AdminController extends Controller
         return view('Users.Admin.allMenus')->with(['menuData' => $menuData]);
     }
     
-
     //All Donors
     public function allDonors(){
-        return view('Users.Admin.allDonors');
+        $donorData = Donor::get();
+        $feeData = DonorFee::get();
+        $totalDonate = DB::table('donor_fees')->sum('donor_fee');
+        return view('Users.Admin.allDonors')->with([
+            'donorData' => $donorData,
+            'feeData' => $feeData,
+            'totalDonate' => $totalDonate,
+            ]);
     }
 
     //All Deliveries
@@ -147,7 +157,7 @@ class AdminController extends Controller
         return back()->with(['dataInform' => 'Volunteer Has Been Deleted Successfully!']);
     }
     
-    //Update Member
+    //Get Update Member
     public function updateMembers($user_id){
         $memberData = Member::where('user_id', $user_id)->First();
         $userData = User::where('id', $user_id)->First();
@@ -155,7 +165,7 @@ class AdminController extends Controller
         return view('Users.Admin.updateMember')->with(['memberData' => $memberData, 'userData' => $userData, ]);
     }
 
-    //Update Partner
+    //Get Update Partner
     public function updatePartner($user_id){
         $partnerData = Partner::where('user_id', $user_id)->First();
         $userData = User::where('id', $user_id)->First();
@@ -163,12 +173,19 @@ class AdminController extends Controller
         return view('Users.Admin.updatePartner')->with(['partnerData' => $partnerData, 'userData' => $userData, ]);
     }
 
-    //Update Volunteer
+    //Get Update Volunteer
     public function updateVolunteer($user_id){
         $volunteerData = Volunteer::where('user_id', $user_id)->First();
         $userData = User::where('id', $user_id)->First();
 
         return view('Users.Admin.updateVolunteer')->with(['volunteerData' => $volunteerData, 'userData' => $userData, ]);
+    }
+
+    //Get Update Admin
+    public function updateAdmin($user_id){
+        $userData = User::where('id', $user_id)->First();
+
+        return view('Users.Admin.updateAdmin')->with(['userData' => $userData, ]);
     }
 
     //Save Update User

@@ -11,7 +11,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h3>Hello The Administrator</h3>
-						<p>Please manage your website!!!</p>
+						<p>Please manage this website!!!</p>
 					</div>
 				</div>
 			</div>

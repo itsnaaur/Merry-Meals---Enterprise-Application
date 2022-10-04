@@ -130,6 +130,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/deletePartner/{id}', [AdminController::class, 'deletePartner'])->name('admin#deletePartner'); //delete a partner
     Route::get('/deleteVolunteer/{id}', [AdminController::class, 'deleteVolunteer'])->name('admin#deleteVolunteer'); //delete a volunteer
 
+    Route::get('/updateAdmin/{id}', [AdminController::class, 'updateAdmin'])->name('admin#updateAdmin');
     Route::get('/updateMembers/{id}', [AdminController::class, 'updateMembers'])->name('admin#updateMembers');
     Route::get('/updatePartner/{id}', [AdminController::class, 'updatePartner'])->name('admin#updatePartner');
     Route::get('/updateVolunteer/{id}', [AdminController::class, 'updateVolunteer'])->name('admin#updateVolunteer');
