@@ -114,31 +114,28 @@
                             <h6 class="mb-0">$</h6>
                           </div>
                           <div class="col-md-9 pe-7">
-                            <input name="donor_fee" type="text" class="form-control form-control-lg" />
+                            <input name="donor_fee" type="text" class="form-control form-control-lg" required />
                           </div>
                         </div>
                       </div>
-                      <div class="form-check form-check-inline mb-4 pb-2" style="margin: 0 0 0 15px" >
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" >
-                        <label class="form-check-label fw-normal" for="inlineCheckbox1" style="font-size: 10px;">I’m donating in honor of someone</label>
-                      </div>
+                    
                       <div>
                       <div class="mb-2 pb-2">
                     <div class="form-outline" style="margin: 0 0 0 15px;">
                     <label class="form-label fw-normal" for="form3Examplev4">Tribute Type</label>
-                      <input name="donor_tribute" type="text" id="form3Examplev4" class="form-control form-control-lg" style="width: 370px ;" />
+                      <input name="donor_tribute" type="text" id="form3Examplev4" class="form-control form-control-lg" style="width: 370px ;" required />
                       
                     </div>
                   </div>
                   <div class="mb-4 pb-2">
                     <div class="form-outline" style="margin: 0 0 0 15px;">
                     <label class="form-label fw-normal" for="form3Examplev4">Honoree Name</label>
-                      <input name="donor_honoree_name" type="text" id="form3Examplev4" class="form-control form-control-lg" style="width: 370px ;"/>
+                      <input name="donor_honoree_name" type="text" id="form3Examplev4" class="form-control form-control-lg" style="width: 370px ;" required/>
                       
                     </div>
                   </div>
                       </div>
-                      <button type="submit" class="btn btn-light fw-bold " style="margin: 10px 0 0 150px; background-color: #3CB815; font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" 
+                      <button type="submit" class="btn btn-light fw-bold " style="margin: 50px 0 0 150px; background-color: #3CB815; font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" 
                     data-mdb-ripple-color="dark">NEXT</button>
                       </form>
                   </div>

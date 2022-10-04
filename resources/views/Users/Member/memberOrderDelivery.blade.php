@@ -37,6 +37,7 @@
                       </tr>
                     </thead>
                     <tbody>
+                      
                       <tr>
                         <td>{{ $orderData ->id }}</td>
                         <td>{{ $orderData -> order_menu_restaurant }}</td>
@@ -59,7 +60,7 @@
                             </form>
                         </td>
                       </tr>
-                      
+                    
                     </tbody>
                   </table>
                 </div>

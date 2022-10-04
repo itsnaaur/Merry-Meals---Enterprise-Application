@@ -71,19 +71,19 @@
                       </form>
                       
                       {{-- form billing--}}
-                      <form action="{{ route('donation#getPayment')}}" method="POST">
+                      <form action="{{ route('saveBilling')}}" method="POST">
                         @csrf
                       <div class="row" style="margin: 0 0 0 2px ;">
                         <div class="col-md-6 mb-5 pb-2">
                           <div class="form-outline form-white">
                             <label class="form-label fw-normal" for="form3Examplea7">First Name</label>
-                            <input name="donor_first_name" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" />
+                            <input name="donor_first_name" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" required />
                           </div>
                         </div>
                         <div class="col-md-6 mb-5 pb-2">
                           <div class="form-outline form-white">
                             <label class="form-label fw-normal" for="form3Examplea7">Last Name</label>
-                            <input name="donor_last_name" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" />
+                            <input name="donor_last_name" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" required  />
                           </div>
                         </div>
                       </div>
@@ -91,13 +91,13 @@
                         <div class="col-md-6 mb-5 pb-2">
                           <div class="form-outline form-white">
                             <label class="form-label fw-normal" for="form3Examplea7">Address</label>
-                            <input name="donor_address" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" />
+                            <input name="donor_address" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" required />
                           </div>
                         </div>
                         <div class="col-md-6 mb-5 pb-2">
                           <div class="form-outline form-white">
                             <label class="form-label fw-normal" for="form3Examplea7">City</label>
-                            <input name="donor_city" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" />
+                            <input name="donor_city" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" required />
                           </div>
                         </div>
                       </div>
@@ -105,13 +105,13 @@
                         <div class="col-md-6 mb-5 pb-2">
                           <div class="form-outline form-white">
                             <label class="form-label fw-normal" for="form3Examplea7">State</label>
-                            <input name="donor_state" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" />
+                            <input name="donor_state" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;"required  />
                           </div>
                         </div>
                         <div class="col-md-6 mb-5 pb-2">
                           <div class="form-outline form-white">
                             <label class="form-label fw-normal" for="form3Examplea7">Country</label>
-                            <input name="donor_country" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" />
+                            <input name="donor_country" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;"required  />
                           </div>
                         </div>
                       </div>
@@ -119,13 +119,13 @@
                         <div class="col-md-6 mb-5 pb-2">
                           <div class="form-outline form-white">
                             <label class="form-label fw-normal" for="form3Examplea7">Email</label>
-                            <input name="donor_email" type="email" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" />
+                            <input name="donor_email" type="email" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" required />
                           </div>
                         </div>
                         <div class="col-md-6 mb-5 pb-2">
                           <div class="form-outline form-white">
                             <label class="form-label fw-normal" for="form3Examplea7">Phone</label>
-                            <input name="donor_phone" type="number" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" />
+                            <input name="donor_phone" type="number" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;"required  />
                           </div>
                         </div>
                       </div>

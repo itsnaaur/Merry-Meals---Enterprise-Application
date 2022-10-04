@@ -85,14 +85,13 @@
                         </div>
                       </div>
                       <button type="button" class="btn btn-light fw-bold " style="margin: 150px 0 0 170px; background-color: #3CB815; font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" 
-                    data-mdb-ripple-color="dark"><a href="/completion" style="font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" >DONE</a></button>
+                    data-mdb-ripple-color="dark"><a href="/" style="font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" >DONE</a></button>
 
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 bg-indigo text-white">
-              <img style="height:700px; width: auto; border-radius: 7px; " src="{{url('/images/donation.jpg')}} alt="">
-              </div>
+              <img style="height:700px; width: auto; border-radius: 7px; " src="{{url('/images/donation.jpg')}}" alt="">              </div>
             </div>
           </div>
         </div>
