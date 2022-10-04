@@ -8,6 +8,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\DeliverController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\VolunteerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,7 +99,7 @@ Route::group(['prefix' => 'partner'], function () {
     Route::post('/saveUpdate{id}', [PartnerController::class, 'saveUpdate'])->name('partner#saveUpdate'); //saving the updated data
     Route::get('/AllOrderForPartner/{id}', [OrderController::class, 'AllOrderForPartner'])->name('order#AllOrderForPartner');
     Route::get('/updateOrder/{id}', [OrderController::class, 'updateOrder'])->name('order#updateOrder');
-    Route::get('/updateProfile/{id}', [MemberController::class, 'updateProfile'])->name('partner#updateProfile');
+    Route::get('/updateProfile/{id}', [PartnerController::class, 'updateProfile'])->name('partner#updateProfile');
 });
 
 //Volunteer
@@ -108,16 +109,11 @@ Route::group(['prefix' => 'volunteer'], function () {
     Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('delivery#updateDelivery');
     Route::get('/AllDeliveryForVolunteer', [DeliverController::class, 'AllDeliveryForVolunteer'])->name('deliver#AllDeliveryForVolunteer');
     Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('deliver#updateDelivery');
-    Route::get('/updateProfile/{id}', [MemberController::class, 'updateProfile'])->name('volunteer#updateProfile');
+    Route::get('/updateProfile/{id}', [VolunteerController::class, 'updateProfile'])->name('volunteer#updateProfile');
 });
 
 //Administrator
 Route::group(['prefix' => 'admin'], function () {
-<<<<<<< HEAD
-    Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //partner dashboard 
-    Route::get('/', [AdminController::class, ''])->name('admin#allPartners');
-});
-=======
     Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //admin dashboard 
     Route::get('/allMembers', [AdminController::class, 'allMembers'])->name('admin#allMembers');
     Route::get('/allPartner', [AdminController::class, 'allPartners'])->name('admin#allPartners');
@@ -144,4 +140,3 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/volunteerUpdated/{id}', [AdminController::class, 'saveUpdateV'])->name('admin#volunteerUpdated');
 
 });
->>>>>>> a69cdf6e433c281a2cf1f331206d60a93b5790ce
