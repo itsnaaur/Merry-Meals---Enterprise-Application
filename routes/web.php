@@ -33,16 +33,17 @@ Route::get('/terms', function () {
     return view('terms');
 });
 
-// donation
-Route::group(['prefix' => 'donation'], function () {
-    Route::get('/donationFee', [DonationController::class, 'getDonor'])->name('donation#getDonor');
-    // Route::post('/saveDonationFee', [DonationController::class, 'saveDonationFee'])->name('donation#saveDonor');
-    Route::post('/getBilling', [DonationController::class, 'getBilling'])->name('donation#getBilling');
-    // Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('donation#saveBilling');
+// donation can be done without registration
+//Route::get('/user/{id}', [UserController::class, 'show']);
 
-    Route::post('/getPayment', [DonationController::class, 'getPayment'])->name('donation#getPayment');
-    Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('donation#getCompletion');
-});
+Route::get('/donationFee', [DonationController::class, 'index']);
+Route::post('/saveDonationFee', [DonationController::class, 'saveDonationFee'])->name('saveDonationFee');
+// Route::post('/getBilling', [DonationController::class, 'getBilling']);
+// // Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('donation#saveBilling');
+
+// Route::post('/getPayment', [DonationController::class, 'getPayment'])->name('donation#getPayment');
+// Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('donation#getCompletion');
+
 
 
 // Route::middleware(['auth:sanctum',
@@ -112,6 +113,11 @@ Route::group(['prefix' => 'volunteer'], function () {
 
 //Administrator
 Route::group(['prefix' => 'admin'], function () {
+<<<<<<< HEAD
+    Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //partner dashboard 
+    Route::get('/', [AdminController::class, ''])->name('admin#allPartners');
+});
+=======
     Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //admin dashboard 
     Route::get('/allMembers', [AdminController::class, 'allMembers'])->name('admin#allMembers');
     Route::get('/allPartner', [AdminController::class, 'allPartners'])->name('admin#allPartners');
@@ -138,3 +144,4 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/volunteerUpdated/{id}', [AdminController::class, 'saveUpdateV'])->name('admin#volunteerUpdated');
 
 });
+>>>>>>> a69cdf6e433c281a2cf1f331206d60a93b5790ce

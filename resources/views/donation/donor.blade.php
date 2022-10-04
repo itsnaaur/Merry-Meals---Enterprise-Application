@@ -1,7 +1,7 @@
 @section('title')
     Donation
 @endsection
-@extends('donation.layouts.app')
+@extends('layouts.app')
 
 
 @section('content')
@@ -69,43 +69,44 @@
                           <p style="font-size: 10px;">4 <br> COMPLETION</p>
                         </div>	
                       </form>
-                      <form action="{{ route('donation#getBilling')}}" method="POST">
+                      <form action="{{ route('saveDonationFee') }}" method="POST"
+                      enctype="multipart/form-data">
                         @csrf
                       <div class="form-inline text-center mb-4 mb-2">
                         <div class="form-group" style="padding-right:25px ; padding-left:15px; color: grey;">
-                        <input  type="radio" name="options" id="option4" autocomplete="off" style="display:none;" >
+                        <input  type="radio"  id="option4" autocomplete="off" style="display:none;" >
                           <label class="btn" style="width:170px; height: 45px; font-weight:bold; background-color:#F5F5F5; " for="option4">$1000</label>
                         </div>
                         <div class="form-group" style="padding-right:25px ;color: grey;">
-                          <input  type="radio" name="options" id="option4" autocomplete="off" style="display:none;" >
+                          <input  type="radio"  id="option4" autocomplete="off" style="display:none;" >
                           <label class="btn" style="width:170px; height: 45px; font-weight:bold; background-color:#F5F5F5; " for="option4">$500</label>
                         </div>
                       </div>
                       <div class="form-inline text-center mb-4 mb-2">
                         <div class="form-group" style="padding-right:25px ; padding-left:15px;  color: grey;">
-                        <input  name="donor_fee" value="" type="radio" name="options" id="option4" autocomplete="off" style="display:none;" >
+                        <input  name="donor_fee"  type="radio"  id="option4" autocomplete="off" style="display:none;" >
                           <label class="btn" style="width:105px; height: 45px; font-weight:bold; background-color:#F5F5F5; " for="option4">$300</label>
                         </div>
                         <div class="form-group" style="padding-right:25px ;color: grey;">
-                          <input  type="radio" name="options" id="option4" autocomplete="off" style="display:none;" >
+                          <input  type="radio"  id="option4" autocomplete="off" style="display:none;" >
                           <label class="btn" style="width:105px; height: 45px; font-weight:bold; background-color:#F5F5F5; " for="option4">$200</label>
                         </div>
                         <div class="form-group" style="padding-right:25px ;color: grey;">
-                        <input type="radio" name="options" id="option4" autocomplete="off" style="display:none;" >
+                        <input type="radio"  id="option4" autocomplete="off" style="display:none;" >
                           <label class="btn" style="width:105px; height: 45px; font-weight:bold; background-color:#F5F5F5; " for="option4">$100</label>
                         </div>
                       </div>
                       <div class="form-inline text-center mb-4 mb-2">
                         <div class="form-group" style="padding-right:25px ; padding-left:15px;  color: grey;">
-                        <input  type="radio" name="options" id="option4" autocomplete="off" style="display:none;" >
+                        <input  type="radio"  id="option4" autocomplete="off" style="display:none;" >
                           <label class="btn" style="width:105px; height: 45px; font-weight:bold; background-color:#F5F5F5; " for="option4">$50</label>
                         </div>
                         <div class="form-group" style="padding-right:25px ;color: grey;">
-                          <input  type="radio" name="options" id="option4" autocomplete="off" style="display:none;" >
+                          <input  type="radio"  id="option4" autocomplete="off" style="display:none;" >
                           <label class="btn" style="width:105px; height: 45px; font-weight:bold; background-color:#F5F5F5; " for="option4">$25</label>
                         </div>  
                         <div class="form-group" style="padding-right:25px ;color: grey;">
-                        <input type="radio" name="options" id="option4" autocomplete="off" style="display:none;" >
+                        <input type="radio"  id="option4" autocomplete="off" style="display:none;" >
                           <label class="btn" style="width:105px; height: 45px; font-weight:bold; background-color:#F5F5F5; " for="option4">Other</label>
                         </div>
                         <div class="row align-items-center pt-4 pb-3">
@@ -113,7 +114,7 @@
                             <h6 class="mb-0">$</h6>
                           </div>
                           <div class="col-md-9 pe-7">
-                            <input name='donor_fee' type="text" class="form-control form-control-lg" />
+                            <input name="donor_fee" type="text" class="form-control form-control-lg" />
                           </div>
                         </div>
                       </div>

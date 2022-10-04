@@ -91,7 +91,7 @@
                         <li>
                             <a href="{{ route('register') }}" class="fh5co-sub-ddown">Support Us</a>
                             <ul class="fh5co-sub-menu">
-                                <li><a href="{{ route('donation#getDonor')}}">Donate</a></li>
+                                <li><a href="/donationFee">Donate</a></li>
                                 <li><a href="{{ route('register') }}">Volunteer</a></li>
                                 <li><a href="{{ route('register') }}">Partner</a></li>
                                 {{-- <li><a href="#">Campaign</a></li>

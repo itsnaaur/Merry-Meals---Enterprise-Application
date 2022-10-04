@@ -1,7 +1,7 @@
 @section('title')
     Donation
 @endsection
-@extends('donation.layouts.app')
+@extends('layouts.app')
 
 @section('content')
   <head>
