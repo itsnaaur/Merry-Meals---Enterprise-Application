@@ -59,8 +59,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 text-left fh5co-link">
-                <a href="/contact">Contact</a>
-                <a href="/terms">Terms and Conditions</a>
+                <a href="#">FAQ</a>
+                <a href="#">Contact</a>
+                <a href="#">Terms and Conditions</a>
             </div>
             <div class="col-md-6 col-sm-6 text-right fh5co-social">
                 <a href="#" class="grow"><i class="icon-facebook2"></i></a>
@@ -74,7 +75,7 @@
     <div class="container">
         <div class="nav-header">
             <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-            <div id="fh5co-logo"><a href="/" ><img src="{{ url('/images/company_logo.png') }}" alt="company logo"></a></div>
+            <h1 id="fh5co-logo"><a href="index.html">Charity</a></h1>
             <!-- START #fh5co-menu-wrap -->
            <!--Start end if -->
            @if (Route::has('login'))
@@ -87,13 +88,13 @@
                         <li class="active">
                             <a href="/">Home</a>
                         </li>
-                        <li><a href="{{ route('register') }}">Get Meal</a></li>
+                        <li><a href="blog.html">Get Meal</a></li>
                         <li>
-                            <a href="{{ route('register') }}" class="fh5co-sub-ddown">Support Us</a>
+                            <a href="#" class="fh5co-sub-ddown">Support Us</a>
                             <ul class="fh5co-sub-menu">
                                 <li><a href="{{ route('donation#getDonor')}}">Donate</a></li>
-                                <li><a href="{{ route('register') }}">Volunteer</a></li>
-                                <li><a href="{{ route('register') }}">Partner</a></li>
+                                <li><a href="#">Volunteer</a></li>
+                                <li><a href="#">Partner</a></li>
                                 {{-- <li><a href="#">Campaign</a></li>
                                 <li><a href="#">Philantrophy</a></li>
                                 <li><a href="#">Volunteer</a></li> --}}
@@ -107,8 +108,9 @@
                                 <li><a href="#">Medical Mission</a></li>
                             </ul>
                         </li> --}}
-                        <li><a href="/about">About</a></li>
-                         <li><a href="/contact">Contact</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        
                         
                         <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
 
@@ -133,7 +135,7 @@
 
 <!-- End Content -->
 
-<footer>
+<!-- <footer>
     <div id="footer">
         <div class="container">
             <div class="row">
@@ -150,7 +152,7 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> -->
 
 
 </div>

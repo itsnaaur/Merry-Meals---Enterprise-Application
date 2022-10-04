@@ -7,7 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\DeliverController;
 use App\Http\Controllers\PartnerController;
-use App\Http\Controllers\VolunteerController;
+use App\Http\Controllers\DonationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +31,17 @@ Route::get('/about', function () {
 });
 Route::get('/terms', function () {
     return view('terms');
+});
+
+// donation
+Route::group(['prefix' => 'donation'], function () {
+    Route::get('/donationFee', [DonationController::class, 'getDonor'])->name('donation#getDonor');
+    // Route::post('/saveDonationFee', [DonationController::class, 'saveDonationFee'])->name('donation#saveDonor');
+    Route::post('/getBilling', [DonationController::class, 'getBilling'])->name('donation#getBilling');
+    // Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('donation#saveBilling');
+
+    Route::post('/getPayment', [DonationController::class, 'getPayment'])->name('donation#getPayment');
+    Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('donation#getCompletion');
 });
 
 
@@ -125,4 +136,5 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/memberUpdated/{id}', [AdminController::class, 'saveUpdateM'])->name('admin#memberUpdated');
     Route::post('/partnerUpdated/{id}', [AdminController::class, 'saveUpdateP'])->name('admin#partnerUpdated');
     Route::post('/volunteerUpdated/{id}', [AdminController::class, 'saveUpdateV'])->name('admin#volunteerUpdated');
+
 });
