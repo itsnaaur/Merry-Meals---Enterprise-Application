@@ -33,16 +33,17 @@ Route::get('/terms', function () {
     return view('terms');
 });
 
-// donation
-Route::group(['prefix' => 'donation'], function () {
-    Route::get('/donationFee', [DonationController::class, 'getDonor'])->name('donation#getDonor');
-    // Route::post('/saveDonationFee', [DonationController::class, 'saveDonationFee'])->name('donation#saveDonor');
-    Route::post('/getBilling', [DonationController::class, 'getBilling'])->name('donation#getBilling');
-    // Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('donation#saveBilling');
+// donation can be done without registration
+//Route::get('/user/{id}', [UserController::class, 'show']);
 
-    Route::post('/getPayment', [DonationController::class, 'getPayment'])->name('donation#getPayment');
-    Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('donation#getCompletion');
-});
+Route::get('/donationFee', [DonationController::class, 'index']);
+Route::post('/saveDonationFee', [DonationController::class, 'saveDonationFee'])->name('saveDonationFee');
+// Route::post('/getBilling', [DonationController::class, 'getBilling']);
+// // Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('donation#saveBilling');
+
+// Route::post('/getPayment', [DonationController::class, 'getPayment'])->name('donation#getPayment');
+// Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('donation#getCompletion');
+
 
 
 // Route::middleware(['auth:sanctum',
@@ -115,5 +116,3 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //partner dashboard 
     Route::get('/', [AdminController::class, ''])->name('admin#allPartners');
 });
-
-
