@@ -8,6 +8,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\DeliverController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\VolunteerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,7 +99,7 @@ Route::group(['prefix' => 'partner'], function () {
     Route::post('/saveUpdate{id}', [PartnerController::class, 'saveUpdate'])->name('partner#saveUpdate'); //saving the updated data
     Route::get('/AllOrderForPartner/{id}', [OrderController::class, 'AllOrderForPartner'])->name('order#AllOrderForPartner');
     Route::get('/updateOrder/{id}', [OrderController::class, 'updateOrder'])->name('order#updateOrder');
-    Route::get('/updateProfile/{id}', [MemberController::class, 'updateProfile'])->name('partner#updateProfile');
+    Route::get('/updateProfile/{id}', [PartnerController::class, 'updateProfile'])->name('partner#updateProfile');
 });
 
 //Volunteer
@@ -108,7 +109,7 @@ Route::group(['prefix' => 'volunteer'], function () {
     Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('delivery#updateDelivery');
     Route::get('/AllDeliveryForVolunteer', [DeliverController::class, 'AllDeliveryForVolunteer'])->name('deliver#AllDeliveryForVolunteer');
     Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('deliver#updateDelivery');
-    Route::get('/updateProfile/{id}', [MemberController::class, 'updateProfile'])->name('volunteer#updateProfile');
+    Route::get('/updateProfile/{id}', [VolunteerController::class, 'updateProfile'])->name('volunteer#updateProfile');
 });
 
 //Administrator
