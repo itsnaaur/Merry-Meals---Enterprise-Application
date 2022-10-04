@@ -106,7 +106,7 @@
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
                               <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('admin#updateAdmin', Auth()->user()->id) }}">
                                     <button class="btn pt-0 pb-1 px-0 nav-link text-dark" style="button:focus { outline: none; }" >
                                         Update 
                                     </button>

@@ -147,7 +147,7 @@ class AdminController extends Controller
         return back()->with(['dataInform' => 'Volunteer Has Been Deleted Successfully!']);
     }
     
-    //Update Member
+    //Get Update Member
     public function updateMembers($user_id){
         $memberData = Member::where('user_id', $user_id)->First();
         $userData = User::where('id', $user_id)->First();
@@ -155,7 +155,7 @@ class AdminController extends Controller
         return view('Users.Admin.updateMember')->with(['memberData' => $memberData, 'userData' => $userData, ]);
     }
 
-    //Update Partner
+    //Get Update Partner
     public function updatePartner($user_id){
         $partnerData = Partner::where('user_id', $user_id)->First();
         $userData = User::where('id', $user_id)->First();
@@ -163,12 +163,19 @@ class AdminController extends Controller
         return view('Users.Admin.updatePartner')->with(['partnerData' => $partnerData, 'userData' => $userData, ]);
     }
 
-    //Update Volunteer
+    //Get Update Volunteer
     public function updateVolunteer($user_id){
         $volunteerData = Volunteer::where('user_id', $user_id)->First();
         $userData = User::where('id', $user_id)->First();
 
         return view('Users.Admin.updateVolunteer')->with(['volunteerData' => $volunteerData, 'userData' => $userData, ]);
+    }
+
+    //Get Update Admin
+    public function updateAdmin($user_id){
+        $userData = User::where('id', $user_id)->First();
+
+        return view('Users.Admin.updateAdmin')->with(['userData' => $userData, ]);
     }
 
     //Save Update User
