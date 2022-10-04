@@ -96,7 +96,13 @@
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
                               <li><a class="dropdown-item" href="{{ route('member#updateProfile', Auth()->user()->id) }}">Update </a></li>
+                              <?php 
+                                    $order_id = DB::table('orders')->where('user_id',Auth()->user()->id)->value('id');
+                              ?>
+                              @if($order_id != null)
                               <li><a class="dropdown-item" href="{{ route('order#showOrderDelivery', Auth()->user()->id) }}">My Order</a></li>
+                              @endif
+                              
                               <li>
                                   <a class="dropdown-item" href="#">
                                       <form action="{{ route('logout') }}" method="post">
