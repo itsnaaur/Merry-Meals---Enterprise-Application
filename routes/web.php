@@ -8,6 +8,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\DeliverController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\VolunteerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -113,11 +114,6 @@ Route::group(['prefix' => 'volunteer'], function () {
 
 //Administrator
 Route::group(['prefix' => 'admin'], function () {
-<<<<<<< HEAD
-    Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //partner dashboard 
-    Route::get('/', [AdminController::class, ''])->name('admin#allPartners');
-});
-=======
     Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //admin dashboard 
     Route::get('/allMembers', [AdminController::class, 'allMembers'])->name('admin#allMembers');
     Route::get('/allPartner', [AdminController::class, 'allPartners'])->name('admin#allPartners');
@@ -142,6 +138,4 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/memberUpdated/{id}', [AdminController::class, 'saveUpdateM'])->name('admin#memberUpdated');
     Route::post('/partnerUpdated/{id}', [AdminController::class, 'saveUpdateP'])->name('admin#partnerUpdated');
     Route::post('/volunteerUpdated/{id}', [AdminController::class, 'saveUpdateV'])->name('admin#volunteerUpdated');
-
 });
->>>>>>> a69cdf6e433c281a2cf1f331206d60a93b5790ce

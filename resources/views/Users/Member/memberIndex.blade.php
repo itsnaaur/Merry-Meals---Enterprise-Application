@@ -40,79 +40,25 @@
                 <td>{{ $memberData->member_caregiver_relation }}</td>
                 <td>{{ $memberData->member_medical_condition }}</td>
                 <td>{{ $memberData->member_meal_duration }} days left</td>
-                
-                
-                <?php
-                    // $string = $memberData->location ;
-                    // echo $string;
-                    // $str_arr = preg_split ("/\,/", $string); 
-                    // print_r($str_arr);
-                    // echo $str_arr[0]. "<br/>";
-                    // echo $str_arr[1]. "<br/>";
-
-                    // $Lat1 = $str_arr[0];
-                    // $Long1 =  $str_arr[1];
-                    // $Lat2 = '23.0016554';
-                    // $Long2 = '72.631954';
-                    // $DistanceKM = 0;
-                    // $DistanceMeter = 0;
-
-                    // if (isset($_POST['Lat1'])) {
-
-                    // $Lat1 = $_POST['Lat1'];
-                    // $Long1 = $_POST['Long1'];
-                    // $Lat2 = $_POST['Lat2'];
-                    // $Long2 = $_POST['Long2'];
-                    // }
-
-                    // $R = 6371;
-
-                    // $Lat = $Lat2 - $Lat1;
-                    // $Long = $Long2 - $Long1;
-
-                    // $dLat1 = deg2rad($Lat);
-                    // $dlong1 = deg2rad($Long);
-
-                    // $a =
-                    // sin($dLat1 / 2) * sin($dLat1 / 2) +
-                    // cos(deg2rad($Lat1)) * cos(deg2rad($Lat2)) *
-                    // sin($dlong1 / 2) * sin($dlong1 / 2);
-
-                    // $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
-
-                    // $DistanceKM = $R * $c;
-
-                    // $DistanceMeter = $DistanceKM * 1000;
-
-                    // $DistanceKM = round($DistanceKM, 3) . " KM";
-                    // $DistanceMeter = round($DistanceMeter, 0) . " METER";
-
-                    // // echo $DistanceKM;
-                    // // echo $DistanceMeter;
-                    // if ($DistanceKM > 10) {
-                    //     $mealType = "Cold";
-                    // }else{
-                    //     $mealType = "Hot";
-                    // }
-
-                            ?>
-                    {{-- <a href="#">
-                        <form action="{{ route('member#saveMemberMealPlan', $memberData->id) }}" method="GET" >
-                            
-                    <input type="hidden" value=<?php echo $DistanceKM; ?> name="member_meal_distance" /> 
-                    <input type="hidden" value=<?php echo $mealType; ?> name="member_meal_type" />
-                    <button type="submit" class="btn btn-primary" id="edit">
-                        Check Distance
-                      </button>
-                        </form>
-    
-                    </a> --}}
-                
-                
             </tr>
         
     </tbody>
 </table>
+</div>
+
+<div id="fh5co-page">
+        
+    <div class="fh5co-hero">
+        <div class="fh5co-overlay"></div>
+        <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_2.jpg);">
+            <div class="desc animate-box">
+                <h2><strong>Start</strong> Getting Meals <strong> Today!</strong></h2>
+                {{-- <span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span> --}}
+                <span><a class="btn btn-primary btn-lg" href="{{ route('member#viewAllMenu') }}">View Menu</a></span>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 @endsection
