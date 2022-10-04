@@ -1,14 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Carbon\Carbon;
 use App\Models\Menu;
 use App\Models\User;
+use App\Models\Donor;
 use App\Models\Order;
 use App\Models\Member;
 use App\Models\Partner;
+use App\Models\DonorFee;
 use App\Models\Volunteer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
@@ -47,10 +51,16 @@ class AdminController extends Controller
         return view('Users.Admin.allMenus')->with(['menuData' => $menuData]);
     }
     
-
     //All Donors
     public function allDonors(){
-        return view('Users.Admin.allDonors');
+        $donorData = Donor::get();
+        $feeData = DonorFee::get();
+        $totalDonate = DB::table('donor_fees')->sum('donor_fee');
+        return view('Users.Admin.allDonors')->with([
+            'donorData' => $donorData,
+            'feeData' => $feeData,
+            'totalDonate' => $totalDonate,
+            ]);
     }
 
     //All Deliveries
