@@ -21,9 +21,11 @@ return new class extends Migration
             $table->string('member_medical_condition');
             $table->string('member_medical_number');
             $table->string('member_meal_type')->nullable();
-            $table->string('location');
             $table->integer('member_meal_duration');
             $table->timestamps();
+            $table->string('member_extends_reason')->nullable();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

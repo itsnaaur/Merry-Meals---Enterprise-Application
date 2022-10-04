@@ -43,7 +43,7 @@
 
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="../js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -75,7 +75,7 @@
     <div class="container">
         <div class="nav-header">
             <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-            <h1 id="fh5co-logo"><a href="index.html">Charity</a></h1>
+            <div id="fh5co-logo"><a href="{{ route('member#index') }}" ><img src="{{ url('/images/company_logo.png') }}" alt="company logo"></a></div>
             <!-- START #fh5co-menu-wrap -->
            <!--Start end if -->
        
@@ -86,8 +86,8 @@
                         </li>
                         <li><a href="{{ route('member#viewAllMenu') }}">Menu</a></li>
                         
-                        <li><a href="about.html">About</a></li>
-                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/about">About</a></li>
+                         <li><a href="/contact">Contact</a></li>
                         
                           <button type="button" class="btn btn-blue dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" 
                           style="
@@ -95,7 +95,8 @@
                               {{ Auth()->user()->name }}
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="#">Update </a></li>
+                              <li><a class="dropdown-item" href="{{ route('member#updateProfile', Auth()->user()->id) }}">Update </a></li>
+                              <li><a class="dropdown-item" href="{{ route('order#showOrderDelivery', Auth()->user()->id) }}">My Order</a></li>
                               <li>
                                   <a class="dropdown-item" href="#">
                                       <form action="{{ route('logout') }}" method="post">
@@ -164,7 +165,7 @@
 <script src="js/bootstrap.min.js"></script>
 <!-- Waypoints -->
 <script src="js/jquery.waypoints.min.js"></script>
-<script src="js/sticky.js"></script>
+<script src="../js/sticky.js"></script>
 
 <!-- Stellar -->
 <script src="js/jquery.stellar.min.js"></script>

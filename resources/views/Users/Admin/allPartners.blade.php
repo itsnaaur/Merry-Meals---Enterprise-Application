@@ -17,72 +17,31 @@
 			</div>
 			<div class="container">
 				<div class="row text-center">
+					@foreach ($partnerData as $partner)
                     <div class="col-md-4 col-sm-4">
 						<div class="services animate-box">
 							<span><i class="icon-profile-male"></i></span>
-							<h3>Partner's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
+							@if (Session::has('partnerDeleted'))
+							<h4 class="alert alert-warning animate-box" role="alert">
+								{{ Session::get('partnerDeleted') }}
+							</h4>
+							@endif
+							<h3>{{ $partner->partnership_restaurant }}</h3>
+							<p>{{ DB::table('users')->where('id',$partner->user_id)->value('address')}}</p>
+                            <p>{{ DB::table('users')->where('id',$partner->user_id)->value('phone')}}</p>
+							<p>{{ DB::table('users')->where('id',$partner->user_id)->value('email')}}</p>
+							<p>Duration: {{ $partner->partnership_duration }}</p>
+							<span>
+								<a href="{{ route('admin#updatePartner', $partner->user_id) }}">
+									<i class="icon-edit"> </i>
+								</a>
+								<a href="{{ route('admin#deletePartner', $partner->user_id) }}">
+									<i class="icon-trash"></i>
+								</a>
+							</span>
 						</div>
 					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Partner's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Partner's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Partner's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Partner's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
-                    <div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-profile-male"></i></span>
-							<h3>Partner's Name</h3>
-							<p>Address</p>
-                            <p>Contact</p>
-							<p>email</p>
-                            <span><i class="icon-edit"> </i>
-                                <i class="icon-trash"></i></span>
-						</div>
-					</div>
+                    @endforeach
 				</div>
 			</div>
 		</div>

@@ -117,53 +117,7 @@
             </div>
 
             <div class="row mb-4">
-                  <label for="role" class="col-sm-4 col-form-label">Interest</label>
-                  <div class="col-sm-8">
-                  <select class="form-select form-select-lg" name="role" required>
-                      <option value="">Choose Your Interest</option>
-                      <option value="member">Get Meal</option>
-                      <option value="partner">Partner</option>
-                      <option value="volunteer">Volunteer</option>
-                      {{-- <option value="donor">Donor</option> --}}
-                  </select>
-              </div>
-            </div>
-
-            <!-- Member box -->
-          <div class="member box">
-
-              <div class="row mb-4">
-                  <label for="caregivername" class="col-sm-4 col-form-label">Care Giver Name</label>
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control" name="member_caregiver_name" id="member_caregiver_name"  >
-                    </div>
-              </div>
-
-              <div class="row mb-4">
-                <label for="cgphone" class="col-sm-4 col-form-label">Care Giver Relationship</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" maxlength="11" name="member_caregiver_relation" id="member_caregiver_relation"  >
-                  </div>
-              </div>
-
-              <div class="row mb-4">
-                <label for="cgphone" class="col-sm-4 col-form-label">Requestor Medical Condition</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" maxlength="11" name="member_medical_condition" id="member_medical_condition" >
-                  </div>
-              </div>
-
-              <div class="row mb-4">
-                <label for="cgphone" class="col-sm-4 col-form-label">Medical Card ID</label>
-                  <div class="col-sm-8">
-                    <input type="number" class="form-control" maxlength="11" name="member_medical_number" id="member_medical_number">
-                  </div>
-              </div>
-
-              
-
-            <div class="row mb-4">
-              <label for="mealplan" class="col-sm-4 col-form-label"> Meal Plan <span>(Location is required first)<span></label>
+              <label for="mealplan" class="col-sm-4 col-form-label"> Geo Location <span>(To better improve our services)<span></label>
               <div class="col-sm-8" style="
               display: flex;
               height: fit-content;
@@ -175,7 +129,7 @@
   
                  {{-- <form id="myform" name="myform" action="GeoLocation.php" method="POST"> --}}
                   
-                  <input type="text" name="location" id="location"  />
+                  <input type="text" name="geolocation" id="location"  />
 	
                   <input type="button" value="GetLocation" onclick="getlocation()"/><br/>
                   
@@ -225,6 +179,50 @@
             </div>
 
             <div class="row mb-4">
+                  <label for="role" class="col-sm-4 col-form-label">Interest</label>
+                  <div class="col-sm-8">
+                  <select class="form-select form-select-lg" name="role" required>
+                      <option value="">Choose Your Interest</option>
+                      <option value="member">Get Meal</option>
+                      <option value="partner">Partner</option>
+                      <option value="volunteer">Volunteer</option>
+                      {{-- <option value="donor">Donor</option> --}}
+                  </select>
+              </div>
+            </div>
+
+            <!-- Member box -->
+          <div class="member box">
+
+              <div class="row mb-4">
+                  <label for="caregivername" class="col-sm-4 col-form-label">Care Giver Name</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" name="member_caregiver_name" id="member_caregiver_name"  >
+                    </div>
+              </div>
+
+              <div class="row mb-4">
+                <label for="cgphone" class="col-sm-4 col-form-label">Care Giver Relationship</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" maxlength="11" name="member_caregiver_relation" id="member_caregiver_relation"  >
+                  </div>
+              </div>
+
+              <div class="row mb-4">
+                <label for="cgphone" class="col-sm-4 col-form-label">Requestor Medical Condition</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" maxlength="11" name="member_medical_condition" id="member_medical_condition" >
+                  </div>
+              </div>
+
+              <div class="row mb-4">
+                <label for="cgphone" class="col-sm-4 col-form-label">Medical Card ID</label>
+                  <div class="col-sm-8">
+                    <input type="number" class="form-control" maxlength="11" name="member_medical_number" id="member_medical_number">
+                  </div>
+              </div>
+
+            <div class="row mb-4">
               <label for="cgphone" class="col-sm-4 col-form-label">Meal Plan Duration (days)</label>
                 <div class="col-sm-8">
                   <input type="number" class="form-control" maxlength="11" name="member_meal_duration" value="30" >
@@ -248,7 +246,11 @@
                     <input type="text" class="form-control" name="partnership_duration" >
                   </div>
               </div>
+
+              
             </div>
+
+             
 
             <!-- Volunteer box -->
             <div class="volunteer box">

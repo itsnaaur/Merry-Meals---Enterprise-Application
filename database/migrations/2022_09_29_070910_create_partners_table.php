@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('partnership_restaurant');
             $table->string('partnership_duration');
+            $table->string('partnership_address');
             $table->timestamps();
         });
     }

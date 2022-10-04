@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Member;
+use Carbon\Carbon;
 use App\Models\Menu;
-use App\Models\Partner;
 use App\Models\User;
+use App\Models\Order;
+use App\Models\Member;
+use App\Models\Deliver;
+use App\Models\Partner;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class MemberController extends Controller
 {
@@ -19,9 +23,9 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $memberData = Member::paginate(4);
+        $member_data = Member::where('user_id', Auth::id())->first();
         // dd($member);
-        return view('Users.Member.memberIndex')->with('memberData', $memberData);
+        return view('Users.Member.memberIndex')->with(['memberData' => $member_data]);
     }
 
 
@@ -54,6 +58,7 @@ class MemberController extends Controller
 
         //save selected member meal type based on distance
         $memberSelected->member_meal_type = $request->input('member_meal_type');
+        $memberSelected->member_meal_distance = $request->input('member_meal_distance');
         $memberSelected->save();
 
         return redirect()->route('member#index');
@@ -111,17 +116,86 @@ class MemberController extends Controller
     public function viewAllMenu()
     {
         $menuData = Menu::all();
+
         return view('Users.Member.memberMenu')->with(['menuData' => $menuData]);
     }
+
     public function viewMenu($id)
     {
         $partner_data =  Partner::get();
         $user_data = User::get();
-        $viewMenu = Menu::where ('id', $id)
-                    ->first();
-        return view('Users.Member.memberMenuDetails')->with(['viewMenu' => $viewMenu,
-        'userData' => $user_data, 
-        'partnerData' => $partner_data,
-    ]);
+        $member_data = Member::where('user_id', Auth::id())->first();
+        $viewMenu = Menu::where('id', $id)
+            ->first();
+        return view('Users.Member.memberMenuDetails')->with([
+            'viewMenu' => $viewMenu,
+            'userData' => $user_data,
+            'partnerData' => $partner_data,
+            'memberData' => $member_data,
+        ]);
+    }
+
+    public function orderConfirmation($partner_id, $menu_id, $user_id)
+    {
+        $partner_data = Partner::where('id', $partner_id)->first();
+        $menu_data = Menu::where('id', $menu_id)->first();
+        $user_data = User::where('id', $user_id)->first();
+        $member_data = Member::where('user_id', $user_id)->first();
+        return view('Users.Member.memberOrderConfirmation')->with([
+            'memberData' => $member_data,
+            'partnerData' => $partner_data,
+            'menuData' => $menu_data,
+            'userData' => $user_data,
+        ]);
+    }
+
+    public function updateMemberOrder($id)
+    {
+
+        //find selected order
+        $order_selected = Order::where('id', $id)->first();
+
+        //save selected order
+        if ($order_selected->order_received_status == null) {
+            $order_selected->order_received_status = "Received Well";
+        }
+
+        $order_selected->save();
+
+        return redirect()->route('order#showOrderDelivery', Auth::id());
+    }
+
+    //GET UPDATE PROFILE
+    public function updateProfile($user_id){
+        $memberData = Member::where('user_id', $user_id)->First();
+        $userData = User::where('id', $user_id)->First();
+
+        return view('Users.Member.updateMember2')->with(['memberData' => $memberData, 'userData' => $userData, ]);
+    }
+
+    //REASSESSMENT
+    public function reassesment($user_id){
+        $memberData = Member::where('user_id', $user_id)->first();
+
+        return view('Users.Member.reassesment')->with([
+            'memberData' => $memberData,
+        ]);
+    }
+
+    public function newReassesment(Request $request, $user_id){
+        $updateReassesment = $this->requestReassesment($request);
+        Member::where('user_id', $user_id)->update($updateReassesment);
+
+        return redirect()->route('member#index');
+    }
+
+    protected function requestReassesment($request){
+        $arr = [
+            'member_meal_duration' => $request->member_meal_duration,
+            'member_extends_reason'=> $request->member_extends_reason,
+            'updated_at' => Carbon::now(),
+        ];
+
+        return $arr;
     }
 }

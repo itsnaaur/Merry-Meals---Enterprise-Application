@@ -75,7 +75,7 @@
     <div class="container">
         <div class="nav-header">
             <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-            <h1 id="fh5co-logo"><a href="index.html">Charity</a></h1>
+            <div id="fh5co-logo"><a href="/" ><img src="{{ url('/images/company_logo.png') }}" alt="company logo"></a></div>
             <!-- START #fh5co-menu-wrap -->
            <!--Start end if -->
        
@@ -88,12 +88,11 @@
                           <a href="#" class="fh5co-sub-ddown">Menu</a>
                           <ul class="fh5co-sub-menu">
                               <li><a href="{{ route('partner#createMenu') }}">Create Menu</a></li>
-                              <li><a href="#">Menu Status (Update)</a></li>
                           </ul>
                       </li>
                         
-                        <li><a href="about.html">About</a></li>
-                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/about">About</a></li>
+                         <li><a href="/contact">Contact</a></li>
                         
                           <button type="button" class="btn btn-blue dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" 
                           style="
@@ -101,8 +100,8 @@
                               {{ Auth()->user()->name }}
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="#">Update </a></li>
-                              <li><a class="dropdown-item" href="#">Orders </a></li>
+                              <li><a class="dropdown-item" href="{{ route('partner#updateProfile', Auth()->user()->id) }}">Update </a></li>
+                              <li><a class="dropdown-item" href="{{ route('order#AllOrderForPartner', Auth()->user()->id) }}">Orders </a></li>
                               <li>
                                   <a class="dropdown-item" href="#">
                                       <form action="{{ route('logout') }}" method="post">

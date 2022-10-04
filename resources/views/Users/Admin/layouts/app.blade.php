@@ -75,7 +75,7 @@
     <div class="container">
         <div class="nav-header">
             <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-            <h1 id="fh5co-logo"><a href="index.html">Charity</a></h1>
+            <div id="fh5co-logo"><a href="/" ><img src="{{ url('/images/company_logo.png') }}" alt="company logo"></a></div>
             <!-- START #fh5co-menu-wrap -->
            <!--Start end if -->
        
@@ -87,23 +87,17 @@
                         <li>
                           <a href="#" class="fh5co-sub-ddown">Manage Users</a>
                           <ul class="fh5co-sub-menu">
-                              <li><a href="#">Member and Care Giver</a></li>
-                              <li><a href="#">Partners</a></li>
-                              <li><a href="#">Volunteers</a></li>
-                              <li><a href="#">Donors</a></li>
+                              <li><a href="{{ route('admin#allMembers') }}">Member and Care Giver</a></li>
+                              <li><a href="{{ route('admin#allPartners') }}">Partners</a></li>
+                              <li><a href="{{ route('admin#allVolunteers') }}">Volunteers</a></li>
+                              <li><a href="{{ route('admin#allDonors') }}">Donors</a></li>
                           </ul>
                       </li>
 
-                      <li>
-                        <a href="#" class="fh5co-sub-ddown">Manage Menus</a>
-                        <ul class="fh5co-sub-menu">
-                            <li><a href="#">Create Menu</a></li>
-                            <li><a href="#">All Menus</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">Manage Deliveries</a></li>
-                        <li><a href="about.html">About</a></li>
-                         <li><a href="contact.html">Contact</a></li>
+                      <li><a href="{{ route('admin#allMenus') }}">Manage Menus</a></li>
+                        <li><a href="about.html">Manage Deliveries</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
                         
                           <button type="button" class="btn btn-blue dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" 
                           style="
@@ -111,7 +105,12 @@
                               {{ Auth()->user()->name }}
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="#">Update </a></li>
+                              <li>
+                                <a class="dropdown-item" href="#">
+                                    <button class="btn pt-0 pb-1 px-0 nav-link text-dark" style="button:focus { outline: none; }" >
+                                        Update 
+                                    </button>
+                                </a></li>
                               <li>
                                   <a class="dropdown-item" href="#">
                                       <form action="{{ route('logout') }}" method="post">

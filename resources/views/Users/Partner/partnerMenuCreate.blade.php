@@ -34,7 +34,7 @@
 							<form action="{{ route('partner#saveMenu') }}" method="POST" enctype="multipart/form-data">
 								@csrf
 								<div class="col-lg-6 animate-box" style="background-color: #ff5722;">									
-									<h1 class="animate-box" style="color: white; padding:100px 0px 360px 50px"><strong>Start<br>Creating <br>Your <br>Own <br>Menu!</strong></h1>
+									<h1 class="animate-box" style="color: white; padding:100px 0px 275px 50px"><strong>Start<br>Creating <br>Your <br>Own <br>Menu!</strong></h1>
 								</div>
 								<div class="col-lg-6" style="padding-left: 60px">
 									<div class="row">
@@ -63,15 +63,7 @@
 											</div>
 										</div>
 										<div>
-											<div class="form-group animate-box">
-												<label for="basic-url">Partner Organization</label>
-												<select name="partner" class="form-control" required>
-													<option value="" disabled selected hidden>Please Select One Below</option>
-													@foreach ($partnerData as $partner)
-                        								<option value="{{ $partner->id }}">{{ $partner->partnership_restaurant }}</option>
-                    								@endforeach
-												</select>
-											</div>
+												<input type="hidden" class="form-control" placeholder="Put your partner name here" name="partner" value="{{ $partnerData->id }}" required>
 										</div>
 										<div>
 											<div class="form-group animate-box">

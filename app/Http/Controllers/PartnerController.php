@@ -8,6 +8,7 @@ use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class PartnerController extends Controller
@@ -19,8 +20,9 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        $menuData = Menu::all();
-        return view('Users.Partner.partnerIndex')->with(['menuData' => $menuData]);
+        $partnerData = Partner::where('user_id', Auth::id())->first();
+        $menuData = Menu::all()->where('partner_id',$partnerData->id);
+        return view('Users.Partner.partnerIndex')->with(['menuData' => $menuData, 'partnerData' => $partnerData]);
     }
 
     /**
@@ -88,14 +90,15 @@ class PartnerController extends Controller
     {
         //
     }
-    public function createMenu(){
-        $partner_data = Partner::get();
+    public function createMenu()
+    {
+        $partner_data = Partner::where('user_id', Auth::id())->first();
         $user_data = User::get();
         return view('Users.Partner.partnerMenuCreate')->with(['partnerData' => $partner_data, 'userData' => $user_data]);
     }
     public function saveMenu(Request $request)
     {
-       $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'menu_title' => 'required',
             'menu_description' => 'required',
             'menu_type' => 'required',
@@ -111,11 +114,11 @@ class PartnerController extends Controller
 
         $menu = new Menu();
 
-        if($request->hasfile('menu_image')){
+        if ($request->hasfile('menu_image')) {
 
             $imageFile = $request->file('menu_image');
-            $imageName = uniqid().'_'.$imageFile->getClientOriginalName();
-            $imageFile->move(public_path().'./uploads/meal', $imageName);
+            $imageName = uniqid() . '_' . $imageFile->getClientOriginalName();
+            $imageFile->move(public_path() . './uploads/meal', $imageName);
 
             $menu->menu_image = $imageName;
         }
@@ -132,68 +135,83 @@ class PartnerController extends Controller
     {
         $partner_data =  Partner::get();
         $user_data = User::get();
-        $viewMenu = Menu::where ('id', $id)
-                    ->first();
-        return view('Users.Partner.partnerMenuDetails')->with(['viewMenu' => $viewMenu,
-        'userData' => $user_data, 
-        'partnerData' => $partner_data,
-    ]);
+        $viewMenu = Menu::where('id', $id)
+            ->first();
+        return view('Users.Partner.partnerMenuDetails')->with([
+            'viewMenu' => $viewMenu,
+            'userData' => $user_data,
+            'partnerData' => $partner_data,
+        ]);
     }
-    public function deleteMenu($id){
+    public function foodSafety()
+    {
+        return view('Users.Partner.foodSafetyDeclaration');
+    }
+    public function deleteMenu($id)
+    {
         $deleteData = Menu::select('menu_image')->where('id', $id)->first();
         $deleteImage = $deleteData['menu_image'];
 
         Menu::where('id', $id)->delete();
 
-        if(File::exists(public_path().'/uploads/meal/'.$deleteImage)){
-            File::delete(public_path().'/uploads/meal/'.$deleteImage);
+        if (File::exists(public_path() . '/uploads/meal/' . $deleteImage)) {
+            File::delete(public_path() . '/uploads/meal/' . $deleteImage);
         }
 
         return redirect()->route('partner#index')->with(['menuDeleted' => 'Menu Has Been Deleted Successfully!']);
     }
     public function updateMenu($id)
     {
-        $partner_data =  Partner::get();
+        $partner_data = Partner::where('user_id', Auth::id())->first();
         $user_data = User::get();
-        $updateMenu = Menu::where ('id', $id)
-                    ->first();
+        $updateMenu = Menu::where('id', $id)
+            ->first();
         return view('Users.Partner.partnerUpdateMenu')->with(['updateMenu' => $updateMenu, 'userData' => $user_data, 'partnerData' => $partner_data]);
     }
     public function saveUpdate(Request $request, $id)
     {
         $updateData = $this->requestUpdateMenuData($request);
 
-       $updateImgData = Menu::select('menu_image')->where('id', $id)->first();
-       $updateImage = $updateImgData['menu_image'];
+        $updateImgData = Menu::select('menu_image')->where('id', $id)->first();
+        $updateImage = $updateImgData['menu_image'];
 
-       if(File::exists(public_path().'/uploads/meal/'.$updateImage)){
-           File::delete(public_path().'/uploads/meal/'.$updateImage);
-       }
+        if (File::exists(public_path() . '/uploads/meal/' . $updateImage)) {
+            File::delete(public_path() . '/uploads/meal/' . $updateImage);
+        }
 
-       $newImageFile = $request->file('menu_image');
-       $newImageName = uniqid().'_'.$newImageFile->getClientOriginalName();
-       $newImageFile->move(public_path().'./uploads/meal/', $newImageName);
+        $newImageFile = $request->file('menu_image');
+        $newImageName = uniqid() . '_' . $newImageFile->getClientOriginalName();
+        $newImageFile->move(public_path() . './uploads/meal/', $newImageName);
 
-       $updateData['menu_image'] = $newImageName;
+        $updateData['menu_image'] = $newImageName;
 
-       Menu::where('id',$id)->update($updateData);
-       return redirect()->route('partner#index')->with(['updateData' => 'Menu Has Been Updated Sucessfully!']);
+        Menu::where('id', $id)->update($updateData);
+        return redirect()->route('partner#index')->with(['updateData' => 'Menu Has Been Updated Sucessfully!']);
     }
-    private function requestUpdateMenuData($request){
+    private function requestUpdateMenuData($request)
+    {
         $menuArray = [
             'menu_title' => $request->menu_title,
             'menu_description' => $request->menu_description,
             'menu_time_availability' => $request->menu_time_availability,
-            'menu_type'=> $request->menu_type,
-            'partner_id'=> $request->partner,
+            'menu_type' => $request->menu_type,
+            'partner_id' => $request->partner,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
 
-        if(isset($request->menu_image)){
+        if (isset($request->menu_image)) {
             $menuArray['menu_image'] = $request->menu_image;
         }
 
         return $menuArray;
+    }
+
+    //GET UPDATE PROFILE
+    public function updateProfile($user_id){
+        $partnerData = Partner::where('user_id', $user_id)->First();
+        $userData = User::where('id', $user_id)->First();
+
+        return view('Users.Partner.updatePartner2')->with(['partnerData' => $partnerData, 'userData' => $userData, ]);
     }
 }
