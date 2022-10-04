@@ -39,11 +39,11 @@ Route::get('/terms', function () {
 
 Route::get('/donationFee', [DonationController::class, 'index']);
 Route::post('/saveDonationFee', [DonationController::class, 'saveDonationFee'])->name('saveDonationFee');
-// Route::post('/getBilling', [DonationController::class, 'getBilling']);
-// // Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('donation#saveBilling');
+Route::get('/donor', [DonationController::class, 'donor']);
+Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('saveBilling');
 
-// Route::post('/getPayment', [DonationController::class, 'getPayment'])->name('donation#getPayment');
-// Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('donation#getCompletion');
+Route::get('/getPayment', [DonationController::class, 'getPayment'])->name('getPayment');
+Route::get('/getCompletion', [DonationController::class, 'getCompletion']);
 
 
 
@@ -99,7 +99,7 @@ Route::group(['prefix' => 'partner'], function () {
     Route::post('/saveUpdate{id}', [PartnerController::class, 'saveUpdate'])->name('partner#saveUpdate'); //saving the updated data
     Route::get('/AllOrderForPartner/{id}', [OrderController::class, 'AllOrderForPartner'])->name('order#AllOrderForPartner');
     Route::get('/updateOrder/{id}', [OrderController::class, 'updateOrder'])->name('order#updateOrder');
-    Route::get('/updateProfile/{id}', [MemberController::class, 'updateProfile'])->name('partner#updateProfile');
+    Route::get('/updateProfile/{id}', [PartnerController::class, 'updateProfile'])->name('partner#updateProfile');
 });
 
 //Volunteer
@@ -109,7 +109,7 @@ Route::group(['prefix' => 'volunteer'], function () {
     Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('delivery#updateDelivery');
     Route::get('/AllDeliveryForVolunteer', [DeliverController::class, 'AllDeliveryForVolunteer'])->name('deliver#AllDeliveryForVolunteer');
     Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('deliver#updateDelivery');
-    Route::get('/updateProfile/{id}', [MemberController::class, 'updateProfile'])->name('volunteer#updateProfile');
+    Route::get('/updateProfile/{id}', [VolunteerController::class, 'updateProfile'])->name('volunteer#updateProfile');
 });
 
 //Administrator

@@ -3,23 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Donation;
+use App\Models\Donor;
 use App\Models\DonorFee;
 
 class DonationController extends Controller
 {
 
-    // // get donationfee
-    // public function getDonor()
-    // {
-    //     return view('donation.donor');
-    // }
-
-    // save donationfee
     public function saveDonationFee(Request $req)
     {
         $donationFee = new DonorFee();
-        // $donationFee->id = $req->input('id');
         $donationFee->donor_fee = $req->input('donor_fee');
         $donationFee->donor_tribute = $req->input('donor_tribute');
         $donationFee->donor_honoree_name = $req->input('donor_honoree_name');
@@ -27,33 +19,30 @@ class DonationController extends Controller
         return view('donation.billing');
     }
 
-    // get billing
-    public function getBilling()
-    {
+    public function donor(){
         return view('donation.billing');
     }
 
     // save billing 
-    // public function saveBilling(Request $req)
-    // {
-    //     $billing = new Donation();
-    //     $billing->id = $req->input('id');
-    //     $billing->donor_first_name = $req->input('donor_first_name');
-    //     $billing->donor_last_name = $req->input('donor_last_name');
-    //     $billing->donor_email = $req->input('donor_email');
-    //     $billing->donor_phone = $req->input('donor_phone');
-    //     $billing->donor_address = $req->input('donor_address');
-    //     $billing->donor_city = $req->input('donor_city');
-    //     $billing->donor_state = $req->input('donor_state');
-    //     $billing->donor_country = $req->input('donor_country');
-    //     $billing->save();
-    //     return redirect()->route('billing#saveBilling');
-    // }
+    public function saveBilling(Request $req)
+    {
+        $billing = new Donor();
+        $billing->donor_first_name = $req->input('donor_first_name');
+        $billing->donor_last_name = $req->input('donor_last_name');
+        $billing->donor_email = $req->input('donor_email');
+        $billing->donor_phone = $req->input('donor_phone');
+        $billing->donor_address = $req->input('donor_address');
+        $billing->donor_city = $req->input('donor_city');
+        $billing->donor_state = $req->input('donor_state');
+        $billing->donor_country = $req->input('donor_country');
+        $billing->save();
+        return view('donation.payment');
+    }
 
     // get payment
     public function getPayment()
     {
-        return view('donation.payment');
+        return redirect()->route('getCompletion');
     }
 
     // get completion 
@@ -62,15 +51,11 @@ class DonationController extends Controller
         return view('donation.completion');
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('donation.donor');
     }
+
 
     /**
      * Show the form for creating a new resource.
