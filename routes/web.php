@@ -38,11 +38,11 @@ Route::get('/terms', function () {
 
 Route::get('/donationFee', [DonationController::class, 'index']);
 Route::post('/saveDonationFee', [DonationController::class, 'saveDonationFee'])->name('saveDonationFee');
-// Route::post('/getBilling', [DonationController::class, 'getBilling']);
-// // Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('donation#saveBilling');
+Route::get('/donor', [DonationController::class, 'donor']);
+Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('saveBilling');
 
-// Route::post('/getPayment', [DonationController::class, 'getPayment'])->name('donation#getPayment');
-// Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('donation#getCompletion');
+Route::get('/getPayment', [DonationController::class, 'getPayment'])->name('getPayment');
+Route::get('/getCompletion', [DonationController::class, 'getCompletion']);
 
 
 
@@ -113,11 +113,6 @@ Route::group(['prefix' => 'volunteer'], function () {
 
 //Administrator
 Route::group(['prefix' => 'admin'], function () {
-<<<<<<< HEAD
-    Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //partner dashboard 
-    Route::get('/', [AdminController::class, ''])->name('admin#allPartners');
-});
-=======
     Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //admin dashboard 
     Route::get('/allMembers', [AdminController::class, 'allMembers'])->name('admin#allMembers');
     Route::get('/allPartner', [AdminController::class, 'allPartners'])->name('admin#allPartners');
@@ -144,4 +139,3 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/volunteerUpdated/{id}', [AdminController::class, 'saveUpdateV'])->name('admin#volunteerUpdated');
 
 });
->>>>>>> a69cdf6e433c281a2cf1f331206d60a93b5790ce

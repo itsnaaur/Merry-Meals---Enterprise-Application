@@ -66,56 +66,51 @@
                           <p style="font-size: 10px;">4 <br> COMPLETION</p>
                         </div>	
                       </form>
-                      <form action="completion#getCompletion">
+                      <form>
                       <h4 class="fw-bold mb-4 pb-3" style="padding: 40px 0 20px 15px; font-size: 12px ;">PAYMENT INFORMATION</h4>
                       <div class="mb-4 pb-2" style="margin:0 0 0 15px; width: 350px;" >
                         <div class="form-outline form-white">
                           <label class="form-label fw-normal" for="form3Examplea2">Card Holder's Full Name</label>
-                          <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
+                          <input type="text" id="form3Examplea2" class="form-control form-control-lg" required  />
                         </div>
                       </div>
                       <div class="mb-4 pb-2" style="margin:0 0 0 15px; width: 350px;" >
                         <div class="form-outline form-white">
-                          <label class="form-label fw-normal" for="form3Examplea2">Card Holder's Full Name</label>
-                          <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
+                          <label class="form-label fw-normal" for="form3Examplea2">Credit Card Number</label>
+                          <input type="text" id="form3Examplea2" class="form-control form-control-lg" required  />
                         </div>
                       </div>
                       <div class="mb-4 pb-2" style="margin:0 0 0 15px; width: 350px;" >
                         <div class="form-outline form-white">
-                          <label class="form-label fw-normal" for="form3Examplea2">Card Holder's Full Name</label>
-                          <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
+                          <label class="form-label fw-normal" for="form3Examplea2">Card Type</label>
+                          <input type="text" id="form3Examplea2" class="form-control form-control-lg" required  />
                         </div>
                       </div>
                       <div class="row" style="margin: 0 0 0 1px;">
                         <div class="col-md-5 mb-4 pb-2">
                           <div class="form-outline form-white">
                             <label class="form-label fw-normal" for="form3Examplea7">Credit Card Experition</label>
-                            <input type="text" id="form3Examplea7" class="form-control form-control-lg" />
+                            <input type="text" id="form3Examplea7" class="form-control form-control-lg" required  />
                             
                           </div>
                         </div>
                         <div class="col-md-7 mb-4 pb-2">
                           <div class="form-outline form-white">
                             <label class="form-label fw-normal" for="form3Examplea8">CVV</label>
-                            <input type="text" id="form3Examplea8" class="form-control form-control-lg" style="width: 175px;" />
+                            <input type="text" id="form3Examplea8" class="form-control form-control-lg" style="width: 175px;"required />
                           </div>
                         </div>
                       </div>
                       <p class="fw-normal" style="font-size:12px ; margin: 20px 0 60px 15px; color:black">You’ll receive an email updates related to Meals on Wheels</p>
-                      <div class=" mb-4">
-                        <div class="form-outline form-white  m-4" >
-                          <label class="form-label " for="form3Examplea7" style="margin: 0 0 0 120px  ">TODAY'S DONATION </label>
-                          <input type="text" id="form3Examplea7" class="form-control form-control-lg" style="width: 350px ; border:none" />
-                        </div>
-                      </div>
+                     
                       <button type="button" class="btn btn-light fw-bold " style="margin: 50px 0 0 150px; background-color: #3CB815; font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" 
-                    data-mdb-ripple-color="dark"><a href="/completion" style="font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" >NEXT</a></button>
+                    data-mdb-ripple-color="dark"><a href="/getCompletion" style="font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" >NEXT</a></button>
                       </form>
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 bg-indigo text-white">
-              <img style="height:750px; width: auto; border-radius: 7px; " src="{{url('/images/donation.jpg')}} alt="">
+              <img style="height:750px; width: auto; border-radius: 7px; " src="{{url('/images/donation.jpg')}}" alt="">
               </div>
             </div>
           </div>
