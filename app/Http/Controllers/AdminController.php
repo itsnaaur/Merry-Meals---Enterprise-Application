@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
 use App\Models\Menu;
 use App\Models\User;
+use App\Models\Order;
 use App\Models\Member;
 use App\Models\Partner;
 use App\Models\Volunteer;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -54,7 +55,12 @@ class AdminController extends Controller
 
     //All Deliveries
     public function allDeliveries(){
-        return view('Users.Admin.allDeliveries');
+        //show all order partner need to start cooking for
+        $order_data = Order::get();
+
+        return view('Users.Admin.allDeliveries')->with([
+            'orderData' => $order_data,
+        ]);
     }
 
     //Delete Menu
@@ -248,4 +254,5 @@ class AdminController extends Controller
 
         return $arr;
     }
+
 }

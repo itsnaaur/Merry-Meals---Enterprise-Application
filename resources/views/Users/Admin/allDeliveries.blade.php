@@ -1,70 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delivery Status - Partner | Merry Meals - Meals on Wheels</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
-    <!-- main  -->
+@section('title')
+    Order Status - Partner
+@endsection
+
+@extends('Users.Admin.layouts.app')
+
+@section('content')
+<div class="fh5co-services-section">
     <div class="container-fluid pt-4">
-      <div class="container mt-4">
         <div class="row">
-          <div class="order-member">
-            <div class="col-md-12 offset-md-0">
-              <div class="mt-5 p-4">
-                <h1 class="text-secondary text-center mb-5 display-5">
-                  Deliveries Status
-                </h1>
-                <div class="row">
-                  <table class="table table-responsive table-hover">
-                    <thead>
-                      <tr>
-                        <th>No.</th>
-                        <th>Member Name</th>
-                        <th>Meal Name</th>
-                        <th>Order Date</th>
-                        <th>Order Time</th>
-                        <th>Cook Status</th>
-                        <th>Delivery Status</th>
-                        <th>Arrival status</th>
-                        <th>Confirm Receive</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1.</td>
-                        <td>Made Rawan</td>
-                        <td>Ayam Betutu</td>
-                        <td>18 Sep 2022</td>
-                        <td>09.20 am</td>
-                        <td>
-                          <a href="#cooked" class="btn btn-primary">Cooked</a>
-                        </td>
-                        <td>
-                          <a href="#delivered" class="btn btn-primary"
-                            >Delivered</a
-                          >
-                        </td>
-                        <td>
-                          <a href="#arrived" class="btn btn-primary">Arrive</a>
-                        </td>
-                        <td>Received</td>
-                      </tr>
-                    </tbody>
-                  </table>
+            <div class="delivery-status">
+                <div class="col-md-12 offset-md-0">
+                    <div class="mt-5 p-4">
+                        <h1 class="text-secondary text-center mb-5 display-5">
+                            Order Status - Partner
+                        </h1>
+                        <div class="row">
+                            <table class="table table-hover table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Member Name</th>
+                                        <th>Meal Name</th>
+                                        <th>Order Date</th>
+                                        <th>Order Time</th>
+                                        <th>Start Cooking Time</th>
+                                        <th>Menu Status</th>
+                                        <th>Order Received Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($orderData as $order)
+                                    <tr>
+                                        <td>{{ $order ->id }}</td>
+                                        <td>{{ $order ->member_name }}</td>
+                                        <td>{{ $order ->order_menu_name }}</td>
+                                        <?php 
+                                        $str = $order ->created_at;
+                                        $newstr = explode(" ", $str);
+                                        $date = $newstr[0];
+                                        $time = $newstr[1];
+                                        ?>
+                                        <td><?php echo $date;  ?></td>
+                                        <td><?php echo $time;  ?></td>
+                                        <td>
+                                            <form action="{{ route('order#updateOrder', $order ->id) }}" method="GET">
+                                            <input type="text" name="start_cooking_time" value="{{ $order -> start_cooking_time }}" readonly/>
+                                            <button  type="submit" class="btn btn-primary">Start</button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('order#updateOrder', $order ->id) }}" method="GET">
+                                            <input type="text" name="order_cooking_status" value="{{ $order -> order_cooking_status }}" />
+                                            <button  type="submit" class="btn btn-primary">Send Status</button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            {{ $order ->order_received_status}}
+                                        </td>
+                                        
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+</div>
+@endsection

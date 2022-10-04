@@ -113,6 +113,35 @@ Route::group(['prefix' => 'volunteer'], function () {
 
 //Administrator
 Route::group(['prefix' => 'admin'], function () {
+<<<<<<< HEAD
     Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //partner dashboard 
     Route::get('/', [AdminController::class, ''])->name('admin#allPartners');
 });
+=======
+    Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //admin dashboard 
+    Route::get('/allMembers', [AdminController::class, 'allMembers'])->name('admin#allMembers');
+    Route::get('/allPartner', [AdminController::class, 'allPartners'])->name('admin#allPartners');
+    Route::get('/allVolunteers', [AdminController::class, 'allVolunteers'])->name('admin#allVolunteers');
+    Route::get('/allDonors', [AdminController::class, 'allDonors'])->name('admin#allDonors');
+    Route::get('/allMenus', [AdminController::class, 'allMenus'])->name('admin#allMenus');
+    Route::get('/allDeliveries', [AdminController::class, 'allDeliveries'])->name('admin#allDeliveries');
+
+    Route::get('/deleteMenu/{id}', [AdminController::class, 'deleteMenu'])->name('admin#deleteMenu'); //delete a menu
+    Route::get('/updateMenu/{id}', [AdminController::class, 'updateMenu'])->name('admin#updateMenu'); //get the updation menu page
+    Route::post('/saveUpdateMenu{id}', [AdminController::class, 'saveUpdateMenu'])->name('admin#saveUpdateMenu'); //save the updated menu
+
+    Route::get('/deleteMember/{id}', [AdminController::class, 'deleteMember'])->name('admin#deleteMember'); //delete a member
+    Route::get('/deletePartner/{id}', [AdminController::class, 'deletePartner'])->name('admin#deletePartner'); //delete a partner
+    Route::get('/deleteVolunteer/{id}', [AdminController::class, 'deleteVolunteer'])->name('admin#deleteVolunteer'); //delete a volunteer
+
+    Route::get('/updateMembers/{id}', [AdminController::class, 'updateMembers'])->name('admin#updateMembers');
+    Route::get('/updatePartner/{id}', [AdminController::class, 'updatePartner'])->name('admin#updatePartner');
+    Route::get('/updateVolunteer/{id}', [AdminController::class, 'updateVolunteer'])->name('admin#updateVolunteer');
+
+    Route::post('/userUpdated/{id}', [AdminController::class, 'saveUpdateUser'])->name('admin#userUpdated');
+    Route::post('/memberUpdated/{id}', [AdminController::class, 'saveUpdateM'])->name('admin#memberUpdated');
+    Route::post('/partnerUpdated/{id}', [AdminController::class, 'saveUpdateP'])->name('admin#partnerUpdated');
+    Route::post('/volunteerUpdated/{id}', [AdminController::class, 'saveUpdateV'])->name('admin#volunteerUpdated');
+
+});
+>>>>>>> a69cdf6e433c281a2cf1f331206d60a93b5790ce

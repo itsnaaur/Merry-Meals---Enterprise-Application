@@ -32,6 +32,9 @@
 								<p>{{ DB::table('users')->where('id',$member->user_id)->value('address')}}</p>
 								<p>{{ DB::table('users')->where('id',$member->user_id)->value('email')}}</p>
 								<p>Duration: {{ $member->member_meal_duration }}</p>
+								<p>
+									Extends Reason: {{ $member->member_extends_reason }}
+								</p>
 
 								<span>
 									<a href="{{ route('admin#updateMembers', $member->user_id) }}">

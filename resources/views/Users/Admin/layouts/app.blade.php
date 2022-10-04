@@ -95,7 +95,7 @@
                       </li>
 
                       <li><a href="{{ route('admin#allMenus') }}">Manage Menus</a></li>
-                        <li><a href="about.html">Manage Deliveries</a></li>
+                        <li><a href="{{ route('admin#allDeliveries') }}">Manage Deliveries</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
                         
