@@ -191,7 +191,6 @@ class MemberController extends Controller
 
     protected function requestReassesment($request){
         $arr = [
-            'member_meal_duration' => $request->member_meal_duration,
             'member_extends_reason'=> $request->member_extends_reason,
             'updated_at' => Carbon::now(),
         ];

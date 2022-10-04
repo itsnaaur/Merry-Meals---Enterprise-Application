@@ -106,7 +106,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/allPartner', [AdminController::class, 'allPartners'])->name('admin#allPartners');
     Route::get('/allVolunteers', [AdminController::class, 'allVolunteers'])->name('admin#allVolunteers');
     Route::get('/allDonors', [AdminController::class, 'allDonors'])->name('admin#allDonors');
-    Route::get('/allMenus', [AdminController::class, 'allMenus'])->name('admin#allMenus');    
+    Route::get('/allMenus', [AdminController::class, 'allMenus'])->name('admin#allMenus');
+    Route::get('/allDeliveries', [AdminController::class, 'allDeliveries'])->name('admin#allDeliveries');
 
     Route::get('/deleteMenu/{id}', [AdminController::class, 'deleteMenu'])->name('admin#deleteMenu'); //delete a menu
     Route::get('/updateMenu/{id}', [AdminController::class, 'updateMenu'])->name('admin#updateMenu'); //get the updation menu page

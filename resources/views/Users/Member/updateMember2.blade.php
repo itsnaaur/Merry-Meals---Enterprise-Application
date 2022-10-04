@@ -70,10 +70,10 @@
                                     <input name="member_medical_number" class="input-md col-md-12" type="text" value="{{ old('member_medical_number', $memberData->member_medical_number) }}"/>
 
 									{{-- <label class="userManagement">Member Meal Type</label><br> --}}
-                                    <input name="member_meal_type" class="input-md col-md-12" type="hidden" value="{{ old('member_meal_type', $memberData->member_meal_type) }}"/>
+                                    <input name="member_meal_type" class="input-md col-md-12" type="hidden" value="{{ old('member_meal_type', $memberData->member_meal_type) }}"/><br><br>
 
-                                    {{-- <label class="userManagement">Duration</label><br> --}}
-                                    <input name="member_meal_duration" class="input-md col-md-12" type="hidden" value="{{ old('member_meal_duration', $memberData->member_meal_duration) }}"/>
+                                    <label class="userManagement">Duration (Read Only)</label><br>
+                                    <input name="member_meal_duration" class="input-md col-md-12" type="number" readonly="readonly" value="{{ old('member_meal_duration', $memberData->member_meal_duration) }}"/> <br><br>
 
                                     <div class="text-center"> 
                                         <button class="btn-primary">Update</button> &nbsp;

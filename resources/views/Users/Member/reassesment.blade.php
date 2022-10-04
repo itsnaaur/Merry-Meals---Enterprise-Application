@@ -28,13 +28,10 @@
                                 <form action="{{ route('member#newReassesment', Auth()->user()->id) }}" method="POST">
                                     @csrf
                                     
-                                    {{-- REASSESMNET DATA --}}
+                                    {{-- REASON FOR REASSESMNET --}}
                                         <label class="userManagement">Why you want to extend the time of receiving this charity?</label><br>
-                                        <textarea name="member_extends_reason" class="input-md col-md-12" type="text">{{ old('member_extends_reason', $memberData->member_extends_reason) }}</textarea><br><br><br>
-
-                                        <label class="userManagement">Duration (in days)</label><br>
-                                        <input name="member_meal_duration" class="input-md col-md-12" type="number" value="{{ old('member_meal_duration', $memberData->member_meal_duration) }}"/><br><br>
-                                    {{-- END OF REASSESMENT DATA --}}
+                                        <textarea rows="5" name="member_extends_reason" class="input-md col-md-12" type="text">{{ old('member_extends_reason', $memberData->member_extends_reason) }}</textarea><br><br><br>
+                                    {{-- END OF REASSESMENT REASON --}}
 
                                     <div class="text-center"> 
                                         <button class="btn-primary">Update</button> &nbsp;
