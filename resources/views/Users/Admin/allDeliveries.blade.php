@@ -12,7 +12,7 @@
                 <div class="col-md-12 offset-md-0">
                     <div class="mt-5 p-4">
                         <h1 class="text-secondary text-center mb-5 display-5">
-                            Orders Status
+                            Deliveries Status
                         </h1>
                         <div class="row">
                             <table class="table table-hover table-responsive">
@@ -43,21 +43,14 @@
                                         <td><?php echo $date;  ?></td>
                                         <td><?php echo $time;  ?></td>
                                         <td>
-                                            <form action="{{ route('order#updateOrder', $order ->id) }}" method="GET">
-                                            <input type="text" name="start_cooking_time" value="{{ $order -> start_cooking_time }}" readonly/>
-                                            <button  type="submit" class="btn btn-primary">Start</button>
-                                            </form>
+                                            {{ $order ->start_cooking_time }}
                                         </td>
                                         <td>
-                                            <form action="{{ route('order#updateOrder', $order ->id) }}" method="GET">
-                                            <input type="text" name="order_cooking_status" value="{{ $order -> order_cooking_status }}" />
-                                            <button  type="submit" class="btn btn-primary">Send Status</button>
-                                            </form>
+                                            {{ $order ->order_cooking_status }}
                                         </td>
                                         <td>
                                             {{ $order ->order_received_status}}
                                         </td>
-                                        
                                     </tr>
                                     @endforeach
                                 </tbody>
