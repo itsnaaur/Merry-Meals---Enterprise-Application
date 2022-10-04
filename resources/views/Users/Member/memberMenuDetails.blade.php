@@ -5,52 +5,7 @@
 @extends('Users.Member.layouts.app')
 
 @section('content')
-		<div id="fh5co-blog-section" class="fh5co-section-gray">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-					<h3><h1>{{ $viewMenu->menu_title }}</h1></h3>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row row-bottom-padded-md">
-                    <div class="container">
-                        <div class="row">
-                            <div class="jumbotron animate-box">
-								<div class="form-floating mb-3" style="padding-bottom: 50px">
-									@if ($viewMenu->menu_image)
-										<img src="{{ asset('uploads/meal/'. $viewMenu->menu_image) }}" class="img-thumbnail" alt="category image ">
-										<br>
-									@endif
-								</div>
-								<div class="feature-text animate-box">
-                                	<h1>{{ $viewMenu->menu_title }}</h1>
-                                	<p>{{ $viewMenu->menu_description }}</p>
-								</div>
-								<div class="feature-text animate-box">
-                                	<h3>Time Availability</h3>
-                                	<p>{{ $viewMenu->menu_time_availability }}</p>
-								</div>
-								<div class="feature-text animate-box">
-                                	<h3>Meal Type</h3>
-                                	<p>{{ $viewMenu->menu_type }}</p>
-								</div>
-								<!--Test Order-->
-								{{-- Partner ID<input type="text" value="{{ $viewMenu -> partner_id }}"  /></br>
-								Menu ID<input type="text" value="{{ $viewMenu-> id }}" /></br>
-								logged In User ID<input type="text" value="{{ Auth()->user()->id }}" ></br> --}}
-								<!-- User ID equals to Member ID because saved in both table during registration-->
-								{{-- logged In User name<input type="text" value="{{ Auth()->user()->name }}" ></br> --}}
-								<!--Test Order-->
-								<div class="col">
-									<div class="form-group animate-box">
-										<a href="{{ route('member#foodSafety') }}"> <input type="submit" value="Food Safety" class="btn btn-primary"></a>
-									</div>
-								</div>
-                              </div>
-                        </div>
-						
-                    </div>
-										<?php $partner_id = DB::table('menus')->where('id',$viewMenu->id)->value('partner_id');
+<?php $partner_id = DB::table('menus')->where('id',$viewMenu->id)->value('partner_id');
 										//echo $partner_id;
 										$partner_user_id = DB::table('partners')->where('id',$partner_id)->value('user_id');
 										//echo $partner_user_id;
@@ -111,10 +66,91 @@
 									//echo $DistanceKM;
 									// echo $DistanceMeter;
 
+									// $weekMap = [
+										// 		0 => 'SU',
+										// 		1 => 'MO',
+										// 		2 => 'TU',
+										// 		3 => 'WE',
+										// 		4 => 'TH',
+										// 		5 => 'FR',
+										// 		6 => 'SA',
+										// ];
+										$weekday=date("w");
+										//  echo $weekday."<br>";
+										if ($weekday == 0 ||$weekday == 6 ) {
+											if ($DistanceKM > 10) {
+												$meal_type = "Frozen";
+												$message = "This Meal is available today";
+											}else{
+												// sat or sun and distance less than 10 km
+												$meal_type = "Hot";
+												$message = "This Meal available only from Monday through Friday";
+											}
+										}else{
+											if ($DistanceKM > 10) {
+												$meal_type = "Frozen";
+												$message = "Support over weekend only";
+											}else{
+												$meal_type = "Hot";
+												$message = "This Meal is available today";
+											}
+										}
+
 									
 						 ?>
+		<div id="fh5co-blog-section" class="fh5co-section-gray">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					<h3><h1>{{ $viewMenu->menu_title }}</h1></h3>
+					<div class="alert alert-warning animate-box" role="alert">
+						<?php echo$message." and ".$meal_type." meal will be provided based on your distance"; ?> 
+					</div>
+				</div>
+			</div>
+			
+				
+			<div class="container">
+				<div class="row row-bottom-padded-md">
+                    <div class="container">
+                        <div class="row">
+                            <div class="jumbotron animate-box">
+								<div class="form-floating mb-3" style="padding-bottom: 50px">
+									@if ($viewMenu->menu_image)
+										<img src="{{ asset('uploads/meal/'. $viewMenu->menu_image) }}" class="img-thumbnail" alt="category image ">
+										<br>
+									@endif
+								</div>
+								<div class="feature-text animate-box">
+                                	<h1>{{ $viewMenu->menu_title }}</h1>
+                                	<p>{{ $viewMenu->menu_description }}</p>
+								</div>
+								<div class="feature-text animate-box">
+                                	<h3>Time Availability</h3>
+                                	<p><?php echo $message; ?></p>
+								</div>
+								<div class="feature-text animate-box">
+                                	<h3>Meal Type</h3>
+                                	<p><?php echo $meal_type; ?></p>
+								</div>
+								<!--Test Order-->
+								{{-- Partner ID<input type="text" value="{{ $viewMenu -> partner_id }}"  /></br>
+								Menu ID<input type="text" value="{{ $viewMenu-> id }}" /></br>
+								logged In User ID<input type="text" value="{{ Auth()->user()->id }}" ></br> --}}
+								<!-- User ID equals to Member ID because saved in both table during registration-->
+								{{-- logged In User name<input type="text" value="{{ Auth()->user()->name }}" ></br> --}}
+								<!--Test Order-->
+								<div class="col">
+									<div class="form-group animate-box">
+										<a href="{{ route('member#foodSafety') }}"> <input type="submit" value="Food Safety" class="btn btn-primary"></a>
+									</div>
+								</div>
+                              </div>
+                        </div>
+						
+                    </div>
+										
 										@if( $memberData->member_meal_duration != 0 )
-										@if($DistanceKM < 10)
+										@if($message == "This Meal is available today")
 										<div class="row animate-box">
 											<div class="col-sm-1">
 												<div class="form-group animate-box">

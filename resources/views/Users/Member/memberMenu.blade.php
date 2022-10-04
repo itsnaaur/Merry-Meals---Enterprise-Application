@@ -33,7 +33,9 @@
 					</div>
 				</div>
 				<div class="alert alert-warning animate-box" role="alert">
-					<p>Based on your location, the menu has been displayed by the available menu type for your location. (Hot/Cold)</p>
+					<p>Based on your location, menu is available according to the day you are ordering and if your distance is within 
+						10 km from our food service partner provider
+					</p>
 				</div>
 			</div>
 			<div class="container">
@@ -94,11 +96,50 @@
 
                     $DistanceKM = round($DistanceKM, 3);
 
-										if ($DistanceKM > 10 ) {
-											$message ="Out Of Delivery Range";
+										// $weekMap = [
+										// 		0 => 'SU',
+										// 		1 => 'MO',
+										// 		2 => 'TU',
+										// 		3 => 'WE',
+										// 		4 => 'TH',
+										// 		5 => 'FR',
+										// 		6 => 'SA',
+										// ];
+										$weekday=date("w");
+										//  echo $weekday."<br>";
+										if ($weekday == 0 ||$weekday == 6 ) {
+											if ($DistanceKM > 10) {
+												$meal_type = "Cold";
+												$message = "This Meal is available today";
+											}else{
+												// sat or sun and distance less than 10 km
+												$meal_type = "Hot";
+												$message = "This Meal available only from Monday through Friday";
+											}
 										}else{
-											$message ="Within Delivery Range";
+											if ($DistanceKM > 10) {
+												$meal_type = "Cold";
+												$message = "Support over weekend only";
+											}else{
+												$meal_type = "Hot";
+												$message = "This Meal is available today";
+											}
 										}
+
+										// if ($DistanceKM > 10 ) {
+											// if (condition) { //current day sat or sun -> provide cold -> laravel function check current user logged in days
+											// 	# code... //cold
+											// }
+											// $message ="Out Of Delivery Range";
+											//menu_type = cold
+											//available sat sun
+										// }elseif ($DistanceKM > 10 ){
+										// 	//check sat/sun
+										// }else{
+										// 	$message ="Within Delivery Range";
+										// }
+
+										
                     // $DistanceMeter = round($DistanceMeter, 0) . " METER";
 
                     //echo $DistanceKM;
@@ -106,7 +147,7 @@
 
                     
 							 ?>
-							<div class="topright">{{ $menu->menu_type }}</div>
+							<div class="topright">{{ $meal_type }}</div>
 							<div class="topleft"><?php echo $DistanceKM; ?>Km&nbsp;near you</div>
 						</div>
 						<img class="img-thumbnail" src="{{ asset('uploads/meal/' . $menu->menu_image) }}" style="width:300px; height:200px;" alt="menu images">

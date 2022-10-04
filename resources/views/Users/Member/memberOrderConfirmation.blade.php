@@ -5,6 +5,108 @@
 @extends('Users.Member.layouts.app')
 
 @section('content')
+<?php $partner_id = DB::table('menus')->where('id',$partnerData->id)->value('partner_id');
+											//echo $partner_id;
+											$partner_user_id = DB::table('partners')->where('id',$partner_id)->value('user_id');
+											//echo $partner_user_id;
+											$partner_geolocation = DB::table('users')->where('id',$partner_user_id)->value('geolocation');
+											//echo $partner_geolocation;
+											$user_geolocation = DB::table('users')->where('id',Auth()->user()->id)->value('geolocation');
+											//echo $user_geolocation;
+
+                    $user_arr = preg_split ("/\,/", $user_geolocation); 
+										$partner_arr = preg_split ("/\,/", $partner_geolocation);
+                    // print_r($str_arr);
+                    // echo $str_arr[0]. "<br/>";
+                    // echo $str_arr[1]. "<br/>";
+
+                    $Lat1 = $user_arr[0];
+                    $Long1 =  $user_arr[1];
+                    $Lat2 = $partner_arr[0] ;
+                    $Long2 = $partner_arr[1];
+                    $DistanceKM = 0;
+                    $DistanceMeter = 0;
+
+                    if (isset($_POST['Lat1'])) {
+
+                    $Lat1 = $_POST['Lat1'];
+                    $Long1 = $_POST['Long1'];
+                    $Lat2 = $_POST['Lat2'];
+                    $Long2 = $_POST['Long2'];
+                    }
+
+                    $R = 6371;
+
+                    $Lat = $Lat2 - $Lat1;
+                    $Long = $Long2 - $Long1;
+
+                    $dLat1 = deg2rad($Lat);
+                    $dlong1 = deg2rad($Long);
+
+                    $a =
+                    sin($dLat1 / 2) * sin($dLat1 / 2) +
+                    cos(deg2rad($Lat1)) * cos(deg2rad($Lat2)) *
+                    sin($dlong1 / 2) * sin($dlong1 / 2);
+
+                    $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+
+                    $DistanceKM = $R * $c;
+
+                    $DistanceMeter = $DistanceKM * 1000;
+
+                    $DistanceKM = round($DistanceKM, 3);
+
+										// $weekMap = [
+										// 		0 => 'SU',
+										// 		1 => 'MO',
+										// 		2 => 'TU',
+										// 		3 => 'WE',
+										// 		4 => 'TH',
+										// 		5 => 'FR',
+										// 		6 => 'SA',
+										// ];
+										$weekday=date("w");
+										//  echo $weekday."<br>";
+										if ($weekday == 0 ||$weekday == 6 ) {
+											if ($DistanceKM > 10) {
+												$meal_type = "Cold";
+												$message = "This Meal is available today";
+											}else{
+												// sat or sun and distance less than 10 km
+												$meal_type = "Hot";
+												$message = "This Meal available only from Monday through Friday";
+											}
+										}else{
+											if ($DistanceKM > 10) {
+												$meal_type = "Cold";
+												$message = "Support over weekend only";
+											}else{
+												$meal_type = "Hot";
+												$message = "This Meal is available today";
+											}
+										}
+
+										// if ($DistanceKM > 10 ) {
+											// if (condition) { //current day sat or sun -> provide cold -> laravel function check current user logged in days
+											// 	# code... //cold
+											// }
+											// $message ="Out Of Delivery Range";
+											//menu_type = cold
+											//available sat sun
+										// }elseif ($DistanceKM > 10 ){
+										// 	//check sat/sun
+										// }else{
+										// 	$message ="Within Delivery Range";
+										// }
+
+										
+                    // $DistanceMeter = round($DistanceMeter, 0) . " METER";
+
+                    //echo $DistanceKM;
+                    // echo $DistanceMeter;
+
+                    
+							 ?>
 
 <div style="margin: 60px;">
 	<a href="javascript:history.go(-1)" style="text-decoration: underline; color:blue;" >Click here to cancel order and go back to menu</a>
@@ -65,7 +167,7 @@
             <input class="checkout-input" type="text" id="cname" name="order_menu_name" value="{{ $menuData-> menu_title }}" readonly>
 
             <label class="checkout-label" for="ccnum">Menu Type</label>
-            <input class="checkout-input" type="text" id="ccnum" name="order_menu_type" value="{{ $menuData-> menu_type }}" readonly>
+            <input class="checkout-input" type="text" id="ccnum" name="order_menu_type" value="<?php echo $meal_type ?>" readonly>
 
             <label class="checkout-label" for="expmonth">Menu Prepared By</label>
             <input class="checkout-input" type="text" id="expmonth" name="order_menu_restaurant" value="{{ $partnerData-> partnership_restaurant }}" readonly>

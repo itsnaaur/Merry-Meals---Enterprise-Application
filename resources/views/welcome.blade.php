@@ -33,7 +33,7 @@
                         <div class="desc animate-box">
                             <h2><strong>Donate</strong> to give meals to <strong> Those In Need</strong></h2>
                             {{-- <span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span> --}}
-                            <span><a class="btn btn-primary btn-lg" href="#">Donate Now</a></span>
+                            <span><a class="btn btn-primary btn-lg" href="/donationFee">Donate Now</a></span>
                         </div>
                     </div>
         
