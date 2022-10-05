@@ -59,9 +59,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 text-left fh5co-link">
-                <a href="#">FAQ</a>
-                <a href="#">Contact</a>
-                <a href="#">Terms and Conditions</a>
+                <a href="/contact">Contact</a>
+                <a href="/terms">Terms and Conditions</a>
             </div>
             <div class="col-md-6 col-sm-6 text-right fh5co-social">
                 <a href="#" class="grow"><i class="icon-facebook2"></i></a>
@@ -156,7 +155,7 @@
                         <a href="#"><i class="icon-dribbble2"></i></a>
                         <a href="#"><i class="icon-youtube"></i></a>
                     </p>
-                    <p>Copyright 2016 Free Html5 <a href="#">Charity</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+                    <p>Copyright 2022 MerryMeal ~ Meals on Wheels <a href="#">Charity</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Group 1 DEA Team</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
                 </div>
             </div>
         </div>
