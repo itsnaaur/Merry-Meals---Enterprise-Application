@@ -38,6 +38,37 @@
         border-bottom-right-radius: 15px;
     }
 }
+.input-control {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-control input {
+      border: 2px solid #f0f0f0;
+      border-radius: 4px;
+      display: block;
+      font-size: 12px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .input-control input:focus {
+      outline: 0;
+    }
+
+    .input-control.success input {
+      border-color: #3CB815;
+    }
+
+    .input-control.error input {
+      border-color: #F65005;
+    }
+
+    .input-control .error {
+      color: #F65005;
+      height: 13px;
+    }
+
 
     </style>
   </head>
@@ -71,61 +102,69 @@
                       </form>
                       
                       {{-- form billing--}}
-                      <form action="{{ route('saveBilling')}}" method="POST">
+                      <form id="form" action="{{ route('saveBilling')}}" method="POST">
                         @csrf
                       <div class="row" style="margin: 0 0 0 2px ;">
                         <div class="col-md-6 mb-5 pb-2">
-                          <div class="form-outline form-white">
-                            <label class="form-label fw-normal" for="form3Examplea7">First Name</label>
-                            <input name="donor_first_name" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" required />
+                          <div class="input-control form-outline form-white">
+                            <label class="form-label fw-normal" for="donor_first_name">First Name</label>
+                            <input name="donor_first_name" type="text" id="donor_first_name" class="form-control form-control-lg"style="background-color: #F5F5F5;  border-radius:8px;" />
+                            <div class="error"></div>
                           </div>
                         </div>
                         <div class="col-md-6 mb-5 pb-2">
-                          <div class="form-outline form-white">
-                            <label class="form-label fw-normal" for="form3Examplea7">Last Name</label>
-                            <input name="donor_last_name" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" required  />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row" style="margin: 0 0 0 2px ;">
-                        <div class="col-md-6 mb-5 pb-2">
-                          <div class="form-outline form-white">
-                            <label class="form-label fw-normal" for="form3Examplea7">Address</label>
-                            <input name="donor_address" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" required />
-                          </div>
-                        </div>
-                        <div class="col-md-6 mb-5 pb-2">
-                          <div class="form-outline form-white">
-                            <label class="form-label fw-normal" for="form3Examplea7">City</label>
-                            <input name="donor_city" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" required />
+                          <div class="input-control form-outline form-white">
+                            <label class="form-label fw-normal" for="donor_last_name">Last Name</label>
+                            <input name="donor_last_name" type="text" id="donor_last_name" class="form-control form-control-lg"style="background-color: #F5F5F5;  border-radius:8px;" />
+                            <div class="error"></div>
                           </div>
                         </div>
                       </div>
                       <div class="row" style="margin: 0 0 0 2px ;">
                         <div class="col-md-6 mb-5 pb-2">
-                          <div class="form-outline form-white">
-                            <label class="form-label fw-normal" for="form3Examplea7">State</label>
-                            <input name="donor_state" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;"required  />
+                          <div class="input-control form-outline form-white">
+                            <label class="form-label fw-normal" for="donor_address">Address</label>
+                            <input name="donor_address" type="text" id="donor_address" class="form-control form-control-lg"style="background-color: #F5F5F5;  border-radius:8px;" />
+                            <div class="error"></div>
                           </div>
                         </div>
                         <div class="col-md-6 mb-5 pb-2">
-                          <div class="form-outline form-white">
-                            <label class="form-label fw-normal" for="form3Examplea7">Country</label>
-                            <input name="donor_country" type="text" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;"required  />
+                          <div class="input-control form-outline form-white">
+                            <label class="form-label fw-normal" for="donor_city">City</label>
+                            <input name="donor_city" type="text" id="donor_city" class="form-control form-control-lg"style="background-color: #F5F5F5;  border-radius:8px;"  />
+                            <div class="error"></div>
                           </div>
                         </div>
                       </div>
                       <div class="row" style="margin: 0 0 0 2px ;">
                         <div class="col-md-6 mb-5 pb-2">
-                          <div class="form-outline form-white">
-                            <label class="form-label fw-normal" for="form3Examplea7">Email</label>
-                            <input name="donor_email" type="email" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;" required />
+                          <div class="input-control form-outline form-white">
+                            <label class="form-label fw-normal" for="donor_state">State</label>
+                            <input name="donor_state" type="text" id="donor_state" class="form-control form-control-lg"style="background-color: #F5F5F5;  border-radius:8px;"  />
+                            <div class="error"></div>
                           </div>
                         </div>
                         <div class="col-md-6 mb-5 pb-2">
-                          <div class="form-outline form-white">
-                            <label class="form-label fw-normal" for="form3Examplea7">Phone</label>
-                            <input name="donor_phone" type="number" id="form3Examplea7" class="form-control form-control-lg"style="background-color: #F5F5F5; border:none; border-radius:8px;"required  />
+                          <div class="input-control form-outline form-white">
+                            <label class="form-label fw-normal" for="donor_country">Country</label>
+                            <input name="donor_country" type="text" id="donor_country" class="form-control form-control-lg"style="background-color: #F5F5F5;  border-radius:8px;"  />
+                            <div class="error"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" style="margin: 0 0 0 2px ;">
+                        <div class="col-md-6 mb-5 pb-2">
+                          <div class="input-control form-outline form-white">
+                            <label class="form-label fw-normal" for="donor_email">Email</label>
+                            <input name="donor_email" type="text" id="donor_email" class="form-control form-control-lg"style="background-color: #F5F5F5;  border-radius:8px;"  />
+                            <div class="error"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-5 pb-2">
+                          <div class="input-control form-outline form-white">
+                            <label class="form-label fw-normal" for="donor_phone">Phone</label>
+                            <input name="donor_phone" type="text" id="donor_phone" class="form-control form-control-lg"style="background-color: #F5F5F5;  border-radius:8px;"  />
+                            <div class="error"></div>
                           </div>
                         </div>
                       </div>
@@ -146,5 +185,123 @@
     </div>
   </div>
 </section>
+<script>
+  const form = document.getElementById('form');
+  const donor_first_name = document.getElementById('donor_first_name');
+  const donor_last_name = document.getElementById('donor_last_name');
+  const donor_address = document.getElementById('donor_address');
+  const donor_city = document.getElementById('donor_city');
+  const donor_state = document.getElementById('donor_state');
+  const donor_country = document.getElementById('donor_country');
+  const donor_email = document.getElementById('donor_email');
+  const donor_phone = document.getElementById('donor_phone');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    validateInputs();
+  });
+
+  const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add('error');
+    inputControl.classList.remove('success');
+  };
+
+  const setSuccess = (element) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+  };
+
+  const isValidPhone = donor_phone => {
+    const phone = /^\+?([0-9]{2})\)?([0-9]{1,})$/;
+    return phone.test(String(donor_phone));
+}
+
+  const isValidEmail = donor_email => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(donor_email).toLowerCase());
+}
+
+  const validateInputs = () => {
+    const donor_first_name_value = donor_first_name.value.trim();
+    const donor_last_name_value = donor_last_name.value.trim();
+    const donor_address_value = donor_address.value.trim();
+    const donor_city_value = donor_city.value.trim();
+    const donor_state_value = donor_state.value.trim();
+    const donor_country_value = donor_country.value.trim();
+    const donor_email_value = donor_email.value.trim();
+    const donor_phone_value = donor_phone.value.trim();
+
+    if (donor_first_name_value === '') {
+      setError(donor_first_name, 'This field is required');
+      return false;
+    } else {
+      setSuccess(donor_first_name);
+    }
+
+    if (donor_last_name_value === '') {
+      setError(donor_last_name, 'This field is required');
+      return false;
+    }  else {
+      setSuccess(donor_last_name);
+    }
+
+    if (donor_address_value === '') {
+      setError(donor_address, 'This field is required');
+      return false;
+    } else {
+      setSuccess(donor_address);
+    }
+
+    if (donor_city_value === '') {
+      setError(donor_city, 'This field is required');
+      return false;
+    } else {
+      setSuccess(donor_city);
+    }
+
+    if (donor_state_value === '') {
+      setError(donor_state, 'This field is required');
+      return false;
+    } else {
+      setSuccess(donor_state);
+    }
+
+    if (donor_country_value === '') {
+      setError(donor_country, 'This field is required');
+      return false;
+    } else {
+      setSuccess(donor_country);
+    }
+
+    if(donor_email_value === '') {
+        setError(donor_email, 'This field is required');
+    } else if (!isValidEmail(donor_email_value)) {
+        setError(donor_email, 'Provide a valid email address');
+        return false;
+    } else {
+        setSuccess(donor_email);
+    }
+
+    if(donor_phone_value === '') {
+        setError(donor_phone, 'This field is required');
+    } else if (!isValidPhone(donor_phone_value)) {
+        setError(donor_phone, 'Provide a valid phone number');
+        return false;
+    } else {
+        setSuccess(donor_phone);
+    }
+      form.submit();
+
+  };
+</script>
   </body>
 @endsection
