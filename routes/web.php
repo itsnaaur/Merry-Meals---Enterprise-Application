@@ -43,7 +43,7 @@ Route::get('/donor', [DonationController::class, 'donor']);
 Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('saveBilling');
 
 Route::get('/getPayment', [DonationController::class, 'getPayment'])->name('getPayment');
-Route::get('/getCompletion', [DonationController::class, 'getCompletion']);
+Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('getCompletion');
 
 
 

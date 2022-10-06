@@ -40,6 +40,37 @@
     }
 }
 
+.input-control {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-control input {
+      border: 2px solid #f0f0f0;
+      border-radius: 4px;
+      display: block;
+      font-size: 12px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .input-control input:focus {
+      outline: 0;
+    }
+
+    .input-control.success input {
+      border-color: #3CB815;
+    }
+
+    .input-control.error input {
+      border-color: #F65005;
+    }
+
+    .input-control .error {
+      color: #F65005;
+      height: 13px;
+    }
+
     </style>
   </head>
   <body>
@@ -69,7 +100,7 @@
                           <p style="font-size: 10px;">4 <br> COMPLETION</p>
                         </div>	
                       </form>
-                      <form action="{{ route('saveDonationFee') }}" method="POST"
+                      <form id="form" action="{{ route('saveDonationFee') }}" method="POST"
                       enctype="multipart/form-data">
                         @csrf
                       <div class="form-inline text-center mb-4 mb-2">
@@ -113,25 +144,26 @@
                           <div class="col-md-3 ps-5">
                             <h6 class="mb-0">$</h6>
                           </div>
-                          <div class="col-md-9 pe-7">
-                            <input name="donor_fee" type="text" class="form-control form-control-lg" required />
+                          <div class="input-control col-md-9 pe-7">
+                            <input id="donor_fee" name="donor_fee" type="text" class="form-control form-control-lg"  />
+                            <div class="error"></div>
                           </div>
                         </div>
                       </div>
                     
                       <div>
                       <div class="mb-2 pb-2">
-                    <div class="form-outline" style="margin: 0 0 0 15px;">
-                    <label class="form-label fw-normal" for="form3Examplev4">Tribute Type</label>
-                      <input name="donor_tribute" type="text" id="form3Examplev4" class="form-control form-control-lg" style="width: 370px ;" required />
-                      
+                    <div class="input-control form-outline" style="margin: 0 0 0 15px;">
+                    <label class="form-label fw-normal" for="donor_tribute">Tribute Type</label>
+                      <input name="donor_tribute" type="text" id="donor_tribute" class="form-control form-control-lg" style="width: 370px ;"  />
+                      <div class="error"></div>
                     </div>
                   </div>
                   <div class="mb-4 pb-2">
-                    <div class="form-outline" style="margin: 0 0 0 15px;">
-                    <label class="form-label fw-normal" for="form3Examplev4">Honoree Name</label>
-                      <input name="donor_honoree_name" type="text" id="form3Examplev4" class="form-control form-control-lg" style="width: 370px ;" required/>
-                      
+                    <div class="input-control form-outline" style="margin: 0 0 0 15px;">
+                    <label class="form-label fw-normal" for="donor_honoree_name">Honoree Name</label>
+                      <input name="donor_honoree_name" type="text" id="donor_honoree_name" class="form-control form-control-lg" style="width: 370px ;" />
+                      <div class="error"></div>
                     </div>
                   </div>
                       </div>
@@ -151,5 +183,63 @@
     </div>
   </div>
 </section>
+<script>
+  const form = document.getElementById('form');
+  const donor_fee = document.getElementById('donor_fee');
+  const donor_tribute = document.getElementById('donor_tribute');
+  const donor_honoree_name = document.getElementById('donor_honoree_name');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    validateInputs();
+  });
+
+  const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add('error');
+    inputControl.classList.remove('success');
+  };
+
+  const setSuccess = (element) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+  };
+
+  const validateInputs = () => {
+    const donor_fee_value = donor_fee.value.trim();
+    const donor_tribute_value = donor_tribute.value.trim();
+    const donor_honoree_name_value = donor_honoree_name.value.trim();
+
+    if (donor_fee_value === '') {
+      setError(donor_fee, 'This field is required');
+      return false;
+    } else {
+      setSuccess(donor_fee);
+    }
+
+    if (donor_tribute_value === '') {
+      setError(donor_tribute, 'This field is required');
+      return false;
+    } else {
+      setSuccess(donor_tribute);
+    }
+
+    if (donor_honoree_name_value === '') {
+      setError(donor_honoree_name, 'This field is required');
+      return false;
+    } else {
+      setSuccess(donor_honoree_name);
+    } form.submit();
+   
+  };
+</script>
   </body>
 @endsection
