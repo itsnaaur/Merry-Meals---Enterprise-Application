@@ -6,7 +6,7 @@
 
         <x-jet-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('password.update') }}" >
+        <form method="POST" action="{{ route('password.update') }}">
             @csrf
 
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
@@ -32,6 +32,5 @@
                 </x-jet-button>
             </div>
         </form>
-        
     </x-jet-authentication-card>
 </x-guest-layout>

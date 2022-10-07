@@ -25,14 +25,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'gender',
-        'age',
-        'phone',
-        'address',
-        'geolocation',
-        'role',
         'email',
-        'password'
+        'password',
     ];
 
     /**
@@ -64,9 +58,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function classs()
-    {
-        return $this->hasOne(Member::class);
-    }
 }
