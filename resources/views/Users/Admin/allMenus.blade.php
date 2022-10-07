@@ -50,7 +50,7 @@
 			<div class="container">
 				@foreach ($menuData as $menu)
 				<a href="{{ route('partner#viewMenu', $menu->id) }}">
-				<div class="col-md-4" style="padding-top:50px">
+				<div class="col-md-4" style="padding-top:50px;">
 					<div class="fh5co-team text-center animate-box">
 						<img class="img-thumbnail" src="{{ asset('uploads/meal/' . $menu->menu_image) }}" style="width:300px; height:200px;" alt="menu images">
 						<div>
@@ -66,6 +66,8 @@
 				</a>
 				@endforeach
 			</div>
+
+			
 		<!-- fh5co-blog-section -->
 	<script src="{{ asset('js/jquery.min.js') }}" defer></script>
 	<!-- jQuery Easing -->
