@@ -50,7 +50,9 @@
 	<![endif]-->
 
   </head>
-<body>
+<body style="min-height: 100vh;
+display: flex;
+flex-direction: column;">
     <!-- Option 1: Bootstrap Bundle with Popper -->
 
 
@@ -133,7 +135,7 @@
 
 <!-- End Content -->
 
-<footer>
+<footer style="margin-top: auto;">
     <div id="footer">
         <div class="container">
             <div class="row">
