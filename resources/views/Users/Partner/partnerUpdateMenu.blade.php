@@ -39,15 +39,9 @@
 								@csrf
 								<div class="col-lg-6 animate-box">									
 									@if ($updateMenu->menu_image)
-										<img src="{{ asset('uploads/meal/'. $updateMenu->menu_image) }}" class="img-thumbnail" alt="category image ">
+										<img src="{{ asset('uploads/meal/'. $updateMenu->menu_image) }}" class="img-thumbnail" alt="menu image ">
 										<br>
 									@endif
-									<div>
-										<div class="form-group animate-box" style="padding-top: 10px">
-											<label for="basic-url">Menu Picture</label>
-											<input type="file" class="form-control" name="menu_image" value="{{ $updateMenu->menu_image }}" required>
-										</div>
-									</div>
 								</div>
 								<div class="col-lg-6" style="padding-left: 60px">
 									<div class="row">
@@ -65,22 +59,12 @@
 										</div>
 										<div>
 											<div class="form-group animate-box">
-												<label for="basic-url">Time Availability</label>
-												<input type="text" class="form-control" placeholder="Put your menu time availability here" name="menu_time_availability" value="{{ old('menu_time_availability', $updateMenu->menu_time_availability) }}" required>
+												<label for="basic-url">Menu Picture</label>
+												<input type="file" class="form-control" name="menu_image" value="{{ $updateMenu->menu_image }}" required>
 											</div>
 										</div>
 										<div>
 											<input type="hidden" class="form-control" placeholder="Put your partner name here" name="partner" value="{{ $partnerData->id }}" required>
-										</div>
-										<div>
-											<div class="form-group animate-box">
-												<label for="basic-url">Menu Type</label>
-												<select name="menu_type" class="form-control" required>
-													<option value="" disabled selected hidden>Please Select One Below</option>
-													<option>Hot</option>
-													<option>Cold</option>
-												</select>
-											</div>
 										</div>
 										<div>
 											<div class="form-group animate-box">

@@ -101,8 +101,6 @@ class PartnerController extends Controller
         $validator = Validator::make($request->all(), [
             'menu_title' => 'required',
             'menu_description' => 'required',
-            'menu_type' => 'required',
-            'menu_time_availability' => 'required',
             'menu_image' => 'required',
         ]);
 
@@ -125,8 +123,6 @@ class PartnerController extends Controller
 
         $menu->menu_title = $request->input('menu_title');
         $menu->menu_description = $request->input('menu_description');
-        $menu->menu_type = $request->input('menu_type');
-        $menu->menu_time_availability = $request->input('menu_time_availability');
         $menu->partner_id = $request->input('partner');
         $menu->save();
         return redirect()->route('partner#index')->with(['menuCreated' => 'Menu Has Been Created Sucessfully!']);
@@ -193,8 +189,6 @@ class PartnerController extends Controller
         $menuArray = [
             'menu_title' => $request->menu_title,
             'menu_description' => $request->menu_description,
-            'menu_time_availability' => $request->menu_time_availability,
-            'menu_type' => $request->menu_type,
             'partner_id' => $request->partner,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

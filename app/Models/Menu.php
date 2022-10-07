@@ -14,8 +14,6 @@ class Menu extends Model
         'menu_title',
         'menu_description',
         'menu_image',
-        'menu_time_availability',
-        'menu_type',
     ];
 
     public function partners(){

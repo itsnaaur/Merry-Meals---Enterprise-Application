@@ -26,14 +26,6 @@
                                 	<h1>{{ $viewMenu->menu_title }}</h1>
                                 	<p>{{ $viewMenu->menu_description }}</p>
 								</div>
-								<div class="feature-text animate-box">
-                                	<h3>Time Availability</h3>
-                                	<p>{{ $viewMenu->menu_time_availability }}</p>
-								</div>
-								<div class="feature-text animate-box">
-                                	<h3>Meal Type</h3>
-                                	<p>{{ $viewMenu->menu_type }}</p>
-								</div>
 								<div class="col">
 									<div class="form-group animate-box">
 										<a href="{{ route('partner#foodSafety') }}"> <input type="submit" value="Food Safety" class="btn btn-primary"></a>

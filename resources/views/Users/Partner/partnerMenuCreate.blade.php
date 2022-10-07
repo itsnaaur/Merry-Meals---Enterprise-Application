@@ -34,7 +34,7 @@
 							<form action="{{ route('partner#saveMenu') }}" method="POST" enctype="multipart/form-data">
 								@csrf
 								<div class="col-lg-6 animate-box" style="background-color: #ff5722;">									
-									<h1 class="animate-box" style="color: white; padding:100px 0px 275px 50px"><strong>Start<br>Creating <br>Your <br>Own <br>Menu!</strong></h1>
+									<h1 class="animate-box" style="color: white; padding:100px 0px 100px 50px"><strong>Start<br>Creating <br>Your <br>Own <br>Menu!</strong></h1>
 								</div>
 								<div class="col-lg-6" style="padding-left: 60px">
 									<div class="row">
@@ -57,23 +57,7 @@
 											</div>
 										</div>
 										<div>
-											<div class="form-group animate-box">
-												<label for="basic-url">Time Availability</label>
-												<input type="text" class="form-control" placeholder="Put your menu time availability here" name="menu_time_availability" required>
-											</div>
-										</div>
-										<div>
-												<input type="hidden" class="form-control" placeholder="Put your partner name here" name="partner" value="{{ $partnerData->id }}" required>
-										</div>
-										<div>
-											<div class="form-group animate-box">
-												<label for="basic-url">Menu Type</label>
-												<select name="menu_type" class="form-control" required>
-													<option value="" disabled selected hidden>Please Select One Below</option>
-													<option>Hot</option>
-													<option>Cold</option>
-												</select>
-											</div>
+											<input type="hidden" class="form-control" placeholder="Put your partner name here" name="partner" value="{{ $partnerData->id }}" required>
 										</div>
 										<div>
 											<div class="form-group animate-box">

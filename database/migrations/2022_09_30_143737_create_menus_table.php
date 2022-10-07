@@ -20,8 +20,6 @@ return new class extends Migration
                 $table->string('menu_title');
                 $table->string('menu_description');
                 $table->string('menu_image');
-                $table->string('menu_time_availability');
-                $table->string('menu_type');
                 $table->timestamps();
             });
         }
