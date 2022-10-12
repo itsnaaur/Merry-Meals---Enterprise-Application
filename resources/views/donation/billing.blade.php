@@ -163,7 +163,7 @@
                         <div class="col-md-6 mb-5 pb-2">
                           <div class="input-control form-outline form-white">
                             <label class="form-label fw-normal" for="donor_phone">Phone</label>
-                            <input name="donor_phone" type="text" id="donor_phone" class="form-control form-control-lg"style="background-color: #F5F5F5;  border-radius:8px;"  />
+                            <input name="donor_phone" type="number" id="donor_phone" class="form-control form-control-lg"style="background-color: #F5F5F5;  border-radius:8px;"  />
                             <div class="error"></div>
                           </div>
                         </div>
@@ -219,11 +219,6 @@
     inputControl.classList.add('success');
     inputControl.classList.remove('error');
   };
-
-  const isValidPhone = donor_phone => {
-    const phone = /^\+?([0-9]{2})\)?([0-9]{1,})$/;
-    return phone.test(String(donor_phone));
-}
 
   const isValidEmail = donor_email => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -291,13 +286,11 @@
         setSuccess(donor_email);
     }
 
-    if(donor_phone_value === '') {
-        setError(donor_phone, 'This field is required');
-    } else if (!isValidPhone(donor_phone_value)) {
-        setError(donor_phone, 'Provide a valid phone number');
-        return false;
+    if (donor_phone_value === '') {
+      setError(donor_phone, 'This field is required');
+      return false;
     } else {
-        setSuccess(donor_phone);
+      setSuccess(donor_phone);
     }
       form.submit();
 
