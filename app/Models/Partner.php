@@ -13,7 +13,7 @@ class Partner extends Model
         'user_id',
         'partnership_restaurant',
         'partnership_duration',
-        'partner_address',
+        // 'partner_address',
     ];
 
     public function users()
