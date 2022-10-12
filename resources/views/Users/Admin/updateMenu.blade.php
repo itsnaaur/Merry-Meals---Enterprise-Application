@@ -63,19 +63,19 @@
 												<textarea class="form-control" id="" cols="30" rows="7" placeholder="Put your menu description here" name="menu_description" required>{{ old('menu_description', $updateMenu->menu_description) }}</textarea>
 											</div>
 										</div>
-										<div>
+										{{-- <div>
 											<div class="form-group animate-box">
 												<label for="basic-url">Time Availability</label>
 												<input type="text" class="form-control" placeholder="Put your menu time availability here" name="menu_time_availability" value="{{ old('menu_time_availability', $updateMenu->menu_time_availability) }}" required>
 											</div>
-										</div>
+										</div> --}}
 										<div>
 											<div class="form-group animate-box">
 												{{-- <label for="basic-url">Partner Organization</label> --}}
                                                 <input type="hidden" class="form-control" placeholder="Put your partner name here" name="partner" value="{{ $updateMenu->partner_id }}" required>
 											</div>
 										</div>
-										<div>
+										{{-- <div>
 											<div class="form-group animate-box">
 												<label for="basic-url">Menu Type</label>
 												<select name="menu_type" class="form-control" required>
@@ -84,7 +84,7 @@
 													<option>Cold</option>
 												</select>
 											</div>
-										</div>
+										</div> --}}
 										<div>
 											<div class="form-group animate-box">
 												<input type="submit" value="Update" class="btn btn-primary">
