@@ -73,7 +73,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //Member
 Route::group(['prefix' => 'member'], function () {
-    Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard 
+    Route::get('/', [MemberController::class, 'index'])->name('member#index'); //member dashboard
     Route::get('/member/{id}', [MemberController::class, 'saveMemberMealPlan'])->name('member#saveMemberMealPlan');
     Route::get('/viewAllMenu', [MemberController::class, 'viewAllMenu'])->name('member#viewAllMenu');
     Route::get('/viewMenu/{id}', [MemberController::class, 'viewMenu'])->name('member#viewMenu');
@@ -89,7 +89,7 @@ Route::group(['prefix' => 'member'], function () {
 
 //Partner
 Route::group(['prefix' => 'partner'], function () {
-    Route::get('/', [PartnerController::class, 'index'])->name('partner#index'); //partner dashboard 
+    Route::get('/', [PartnerController::class, 'index'])->name('partner#index'); //partner dashboard
     Route::get('/createMenu', [PartnerController::class, 'createMenu'])->name('partner#createMenu'); //calling the menu creation page
     Route::post('/saveMenu', [PartnerController::class, 'saveMenu'])->name('partner#saveMenu'); //saving a new menu into the database
     Route::get('/viewMenu/{id}', [PartnerController::class, 'viewMenu'])->name('partner#viewMenu'); //partner view a specific menu
@@ -104,7 +104,7 @@ Route::group(['prefix' => 'partner'], function () {
 
 //Volunteer
 Route::group(['prefix' => 'volunteer'], function () {
-    Route::get('/', [VolunteerController::class, 'index'])->name('volunteer#index'); //volunteer dashboard 
+    Route::get('/', [VolunteerController::class, 'index'])->name('volunteer#index'); //volunteer dashboard
     Route::get('/viewAllMenu', [VolunteerController::class, 'viewAllMenu'])->name('volunteer#viewAllMenu');
     Route::get('/updateDelivery/{id}', [DeliverController::class, 'updateDelivery'])->name('delivery#updateDelivery');
     Route::get('/AllDeliveryForVolunteer', [DeliverController::class, 'AllDeliveryForVolunteer'])->name('deliver#AllDeliveryForVolunteer');
@@ -114,7 +114,7 @@ Route::group(['prefix' => 'volunteer'], function () {
 
 //Administrator
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //admin dashboard 
+    Route::get('/', [AdminController::class, 'index'])->name('admin#index'); //admin dashboard
     Route::get('/allMembers', [AdminController::class, 'allMembers'])->name('admin#allMembers');
     Route::get('/allPartner', [AdminController::class, 'allPartners'])->name('admin#allPartners');
     Route::get('/allVolunteers', [AdminController::class, 'allVolunteers'])->name('admin#allVolunteers');
@@ -124,7 +124,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/deleteMenu/{id}', [AdminController::class, 'deleteMenu'])->name('admin#deleteMenu'); //delete a menu
     Route::get('/updateMenu/{id}', [AdminController::class, 'updateMenu'])->name('admin#updateMenu'); //get the updation menu page
-    Route::post('/saveUpdateMenu{id}', [AdminController::class, 'saveUpdateMenu'])->name('admin#saveUpdateMenu'); //save the updated menu
+    Route::post('/saveUpdateMenu/{id}', [AdminController::class, 'saveUpdateMenu'])->name('admin#saveUpdateMenu'); //save the updated menu
 
     Route::get('/deleteMember/{id}', [AdminController::class, 'deleteMember'])->name('admin#deleteMember'); //delete a member
     Route::get('/deletePartner/{id}', [AdminController::class, 'deletePartner'])->name('admin#deletePartner'); //delete a partner
