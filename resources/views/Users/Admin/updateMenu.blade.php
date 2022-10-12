@@ -4,7 +4,7 @@
 
 @extends('Users.Admin.layouts.app')
 
-@section('content')	
+@section('content')
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
@@ -37,7 +37,7 @@
                         <div class="row">
 							<form action="{{ route('admin#saveUpdateMenu', $updateMenu->id) }}" method="POST" enctype="multipart/form-data">
 								@csrf
-								<div class="col-lg-6 animate-box">									
+								<div class="col-lg-6 animate-box">
 									@if ($updateMenu->menu_image)
 										<img src="{{ asset('uploads/meal/'. $updateMenu->menu_image) }}" class="img-thumbnail" alt="category image ">
 										<br>
@@ -45,7 +45,7 @@
 									<div>
 										<div class="form-group animate-box" style="padding-top: 10px">
 											<label for="basic-url">Menu Picture</label>
-											<input type="file" class="form-control" name="menu_image" value="{{ $updateMenu->menu_image }}" required>
+											<input type="file" class="form-control" name="menu_image" value="{{old('menu_image', $updateMenu->menu_image) }}" required>
 										</div>
 									</div>
 								</div>
@@ -71,13 +71,8 @@
 										</div>
 										<div>
 											<div class="form-group animate-box">
-												<label for="basic-url">Partner Organization</label>
-												<select name="partner" class="form-control" required>
-													<option value="" disabled selected hidden>Please Select One Below</option>
-													@foreach ($partnerData as $partner)
-                        								<option value="{{ $partner->id }}">{{ $partner->partnership_restaurant }}</option>
-                    								@endforeach
-												</select>
+												{{-- <label for="basic-url">Partner Organization</label> --}}
+                                                <input type="hidden" class="form-control" placeholder="Put your partner name here" name="partner" value="{{ $updateMenu->partner_id }}" required>
 											</div>
 										</div>
 										<div>
@@ -97,7 +92,7 @@
 										</div>
 									</div>
 								</div>
-							</form>   
+							</form>
                         </div>
                     </div>
 				</div>
@@ -122,7 +117,7 @@
 	<!-- Superfish -->
 	<script src="{{ asset('js/hoverIntent.js') }}" defer></script>
 	<script src="{{ asset('js/superfish.js') }}" defer></script>
-	
+
 	<!-- Main JS -->
 	<script src="{{ asset('js/main.js') }}" defer></script>
 
