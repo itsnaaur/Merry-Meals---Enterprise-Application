@@ -21,7 +21,7 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
-    use RefreshDatabase;
+    // use RefreshDatabase;
     public function test_adminRegister()
     {
         $user = User::factory()->create([
