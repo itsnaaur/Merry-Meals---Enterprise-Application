@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->string('partnership_restaurant');
             $table->string('partnership_duration');
-            $table->string('partnership_address');
+            $table->string('partnership_address')->nullable();
             $table->timestamps();
         });
     }

@@ -8425,7 +8425,7 @@ textarea.form-control {
 
 
       
-      <div className="col-xs-12 col-md-6" style=" margin: auto; ">
+      <div className="col-xs-12 col-md-6" style=" margin: auto; width: 100%;">
           <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.746276190826!2d101.71682325041284!3d3.16143039768678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc37c55a400001%3A0xfd68af3e7aaf036f!2sDigital%20Way%20Academy!5e0!3m2!1sen!2smy!4v1661162237718!5m2!1sen!2smy"
               width="100%"

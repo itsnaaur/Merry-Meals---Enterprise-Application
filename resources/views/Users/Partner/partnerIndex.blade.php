@@ -24,7 +24,7 @@
 
 <!-- Modernizr JS -->
 <script src="{{ asset('js/modernizr-2.6.2.min.js') }}" defer></script>	
-		<div id="fh5co-blog-section" class="fh5co-section-gray">
+		<div class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
@@ -47,6 +47,7 @@
                     @endif
 				</div>
 			</div>
+			
 			<div class="container">
 				@foreach ($menuData as $menu)
 				<a href="{{ route('partner#viewMenu', $menu->id) }}">
@@ -66,6 +67,7 @@
 				</a>
 				@endforeach
 			</div>
+			
 		<!-- fh5co-blog-section -->
 	<script src="{{ asset('js/jquery.min.js') }}" defer></script>
 	<!-- jQuery Easing -->

@@ -25,11 +25,13 @@
 }
 
 	</style>
-		<div id="fh5co-blog-section" class="fh5co-section-gray">
+		<div class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Menus</h3>
+						<h3 style="
+						margin-top: 50px;
+				">Menus</h3>
 					</div>
 				</div>
 				<div class="alert alert-warning animate-box" role="alert">
