@@ -47,6 +47,7 @@
                     @endif
 				</div>
 			</div>
+			
 			<div class="container">
 				@foreach ($menuData as $menu)
 				<a href="{{ route('partner#viewMenu', $menu->id) }}">
@@ -66,6 +67,7 @@
 				</a>
 				@endforeach
 			</div>
+			
 		<!-- fh5co-blog-section -->
 	<script src="{{ asset('js/jquery.min.js') }}" defer></script>
 	<!-- jQuery Easing -->

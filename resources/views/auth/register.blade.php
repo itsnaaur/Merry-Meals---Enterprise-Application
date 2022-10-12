@@ -21,7 +21,10 @@
 
        label{
         font-weight: normal;
+        margin-bottom: 20px;
        }
+
+    
 
   </style>
 
@@ -50,18 +53,24 @@
 
   <div class="container-fluid">
     <div class="row" style="display: flex;" >
-   
+      
       <div class="col col-sm-8" id="form">
+        <x-jet-validation-errors class="mb-4 alert alert-danger" role="alert"/>
+        {{-- @error('email')
+      <div class="alert alert-danger " role="alert">
+          {{ $message }}
+      </div>
+      @enderror --}}
          <h2> Register With Us!
          </h2>
-        
+
          <form method="POST" action="{{ route('register') }}">
           @csrf
 
             <div class="row mb-4">
               <label for="name" class="col-md-4 col-form-label">Name</label>
               <div class="col-md-8">
-                <input type="text" name="name" id="name" class="form-control" required="true">
+                <input type="text" name="name" id="name" class="form-control" required>
               </div>
             </div>
 
@@ -92,6 +101,7 @@
               <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
               <div class="col-sm-8">
                 <input type="email" class="form-control" name="email" id="email" required="true">
+
               </div>
             </div>
 
