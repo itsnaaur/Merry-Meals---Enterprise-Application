@@ -33,7 +33,7 @@ class UpdateMealsTest extends TestCase
         ]);
     }
 
-    use RefreshDatabase;
+    // use RefreshDatabase;
     public function test_createMenu(){
         $menu = Menu::create([
             'id' => 1,

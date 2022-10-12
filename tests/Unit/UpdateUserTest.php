@@ -28,7 +28,7 @@ class UpdateUserTest extends TestCase
             'password' => '12345678',
         ]);
     }
-    use RefreshDatabase;
+    // use RefreshDatabase;
     public function test_create_user(){
 
         $user = User::create([
