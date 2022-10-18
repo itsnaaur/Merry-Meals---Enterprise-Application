@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Donor;
 use App\Models\DonorFee;
+use Stripe;
+use Session;
 
 class DonationController extends Controller
 {
@@ -39,11 +41,25 @@ class DonationController extends Controller
         return view('donation.payment');
     }
 
-    // get payment
-    public function getPayment()
+    // stripe
+    public function stripe()
     {
-        return redirect()->route('getCompletion');
+        return view('donation.payment');
     }
+
+    // post stripe
+    public function stripePost(Request $request)
+    {
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe\Charge::create ([
+                "amount" => 100 * 100,
+                "currency" => "usd",
+                "source" => $request->stripeToken,
+                "description" => "This payment is tested purpose"
+            ]); 
+            Session::flash('success','Payment Successful!');
+            return view('donation.completion');
+        }
 
     // get completion 
     public function getCompletion()
