@@ -164,6 +164,7 @@
 				</a>
 				@endforeach
 			</div>
+		</div>
 		<!-- fh5co-blog-section -->
 	<script src="{{ asset('js/jquery.min.js') }}" defer></script>
 	<!-- jQuery Easing -->
