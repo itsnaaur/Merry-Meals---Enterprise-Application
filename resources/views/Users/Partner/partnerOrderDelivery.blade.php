@@ -50,7 +50,12 @@
                                         </td>
                                         <td>
                                             <form action="{{ route('order#updateOrder', $order ->id) }}" method="GET">
-                                            <input type="text" name="order_cooking_status" value="{{ $order -> order_cooking_status }}" />
+                                            {{-- <input type="text" name="order_cooking_status" value="{{ $order -> order_cooking_status }}" /> --}}
+                                            <select name="order_cooking_status" value="{{ $order -> order_cooking_status }}">
+                                                <option value=""></option>
+                                                <option value="Being prepared">Being prepared</option>
+                                                <option value="Ready to deliver">Ready to delivery</option>
+                                            </select>
                                             <button  type="submit" class="btn btn-primary">Send Status</button>
                                             </form>
                                         </td>
