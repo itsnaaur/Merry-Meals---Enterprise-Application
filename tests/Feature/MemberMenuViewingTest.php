@@ -60,9 +60,9 @@ class MemberMenuViewingTest extends TestCase
     //     ]);
     // }
 
-    public function test_memberViewAllMenuPage()
-        {
-            $this->memberLogin();
+    // public function test_memberViewAllMenuPage()
+    //     {
+    //         $this->memberLogin();
 
     //         $response = $this->get('/member/viewAllMenu');
 

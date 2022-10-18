@@ -19,7 +19,7 @@ class PartnerMenuViewingTest extends TestCase
      *
      * @return void
      */
-    
+
     public function partnerLogin()
     {
         $this->get('/login');
@@ -37,7 +37,7 @@ class PartnerMenuViewingTest extends TestCase
         $response = $this->get('/partner');
 
         $response->assertViewHas('partnerData', function (Partner $partner) {
-            return $partner->id == '1';
+            return $partner->id == '2';
         });
     }
 }

@@ -39,7 +39,7 @@ class MemberOrderTest extends TestCase
         ]);
 
         $member = Member::create([
-            'user_id' => '1',
+            'user_id' => '5',
             'member_caregiver_name' => 'CareGiver1',
             'member_caregiver_relation' => 'Son',
             'member_medical_condition' => 'NA',
@@ -65,7 +65,7 @@ class MemberOrderTest extends TestCase
         ]);
 
         $partner = Partner::create([
-            'user_id' => '2',
+            'user_id' => '6',
             'partnership_restaurant' => 'McDonald',
             'partnership_duration' => '2 Years',
             'partnership_address' => 'McDonaldAddress',
@@ -87,7 +87,7 @@ class MemberOrderTest extends TestCase
         ]);
 
         $partner = Volunteer::create([
-            'user_id' => '3',
+            'user_id' => '7',
             'volunteer_vaccination' => '1',
             'volunteer_duration' => '1 year',
             'volunteer_available' => 'Sunday, Monday',
@@ -127,6 +127,7 @@ class MemberOrderTest extends TestCase
             'order_menu_name' => 'Spaghetti',
             'order_menu_restaurant' => 'McDonald',
             'partner_id' => 1,
+            'partner_address' => 'test hehe',
             'member_id' => 1,
             'menu_id' => 1,
             'user_id' => 1,

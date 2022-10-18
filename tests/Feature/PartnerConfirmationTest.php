@@ -54,7 +54,7 @@ class PartnerConfirmationTest extends TestCase
         //     return $order->start_cooking_time == "2022-10-17 22:08:43";
         // });
 
-        $response -> assertRedirect('/partner/AllOrderForPartner/2');
+        $response -> assertRedirect('/partner/AllOrderForPartner/6');
 
     }
 }

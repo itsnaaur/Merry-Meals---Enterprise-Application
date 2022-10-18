@@ -17,7 +17,7 @@ class MemberReceivedConfirmationTest extends TestCase
     {
         $this -> get('/login');
 
-        $this -> post ('/post',
+        $this -> post ('/login',
         [
             'email' => 'memberone@gmail.com',
             'password' => '123456',
@@ -28,7 +28,7 @@ class MemberReceivedConfirmationTest extends TestCase
     {
         $this -> testMemberLogin();
 
-        $response = $this->get('/member/updateMemberOrder/1');
+        $response = $this->get('/member/showOrderDelivery/1');
 
         $response->assertStatus(200);
     }
