@@ -50,7 +50,7 @@ class AdminController extends Controller
         $menuData = Menu::all();
         return view('Users.Admin.allMenus')->with(['menuData' => $menuData]);
     }
-    
+
     //All Donors
     public function allDonors(){
         $donorData = Donor::get();
@@ -122,8 +122,6 @@ class AdminController extends Controller
         $menuArray = [
             'menu_title' => $request->menu_title,
             'menu_description' => $request->menu_description,
-            'menu_time_availability' => $request->menu_time_availability,
-            'menu_type' => $request->menu_type,
             'partner_id' => $request->partner,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -156,7 +154,7 @@ class AdminController extends Controller
         User::where('id', $id)->delete();
         return back()->with(['dataInform' => 'Volunteer Has Been Deleted Successfully!']);
     }
-    
+
     //Get Update Member
     public function updateMembers($user_id){
         $memberData = Member::where('user_id', $user_id)->First();
@@ -258,7 +256,7 @@ class AdminController extends Controller
         Volunteer::where('id', $user_id)->update($updateVolunteer);
 
         return back()->with(['dataInform' => 'Profile Has Been Updated Sucessfully!']);
-    }    
+    }
 
     private function requestUpdateVolunteer($request){
         $arr = [
