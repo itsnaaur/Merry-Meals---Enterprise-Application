@@ -30,7 +30,7 @@ class MemberOrderPageTest extends TestCase
     {
         $this->testMemberLogin();
 
-        $response = $this->get('/member/showOrderDelivery/1');
+        $response = $this->get('/member/showOrderDelivery/5');
 
         $response->assertStatus(200);
     }
@@ -41,6 +41,6 @@ class MemberOrderPageTest extends TestCase
 
         $response = $this->get('/member/updateMemberOrder/1');
 
-        $response->assertRedirect('/member/showOrderDelivery/1');
+        $response->assertRedirect('/member/showOrderDelivery/5');
     }
 }

@@ -130,6 +130,7 @@ class MemberOrderTest extends TestCase
             'order_menu_restaurant' => 'McDonald',
             'partner_address' => 'Adress Example',
             'partner_id' => 1,
+            'partner_address' => 'test hehe',
             'member_id' => 1,
             'menu_id' => 1,
             'user_id' => 1,
