@@ -34,9 +34,9 @@ class MenuCreatingTest extends TestCase
             'password' => bcrypt('12345678'),
             'role' => 'partner',
         ]);
-        
+
         $partner = Partner::create([
-            'user_id' => '2',
+            'user_id' => '5',
             'partnership_restaurant' => 'McDonald',
             'partnership_duration' => '2 Years',
             //'partnership_address' => 'McDonaldAddress',
@@ -69,8 +69,8 @@ class MenuCreatingTest extends TestCase
             'menu_description' => 'Homemade Chicken Meatball',
             'menu_image' => $file,
         ]);
-        
+
         $response->assertSessionHas('menuCreated', 'Menu Has Been Created Sucessfully!');
-    } 
-    
+    }
+
 }

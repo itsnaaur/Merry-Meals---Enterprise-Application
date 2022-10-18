@@ -89,8 +89,8 @@
                       <div class="form-group" style="padding: 0 45px 0 25px ; color: grey; ">
                           <p style="font-size: 10px;">1 <br> DONATION</p>
                         </div>
-                        <div class="form-group" style="padding-right:45px ;color: grey;">
-                          <p style="font-size: 10px;">2 <br> BILLING</p>
+                        <div class="form-group" style="padding-right:45px ;">
+                          <p style="font-size: 10px;color: black;">2 <br> BILLING</p>
                         </div>
                         <div class="form-group" style="padding-right:45px ;color: grey;">
                           <p style="font-size: 10px;">3 <br> PAYMENT</p>
