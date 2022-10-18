@@ -20,9 +20,11 @@ class OrderController extends Controller
         $order = new Order();
         $order->member_name = $request->input('member_name');
         $order->member_address = $request->input('member_address');
+        $order->partner_address = $request->input('partner_address');
         $order->member_phone = $request->input('member_phone');
         $order->order_menu_image = $request->input('order_menu_image');
         $order->order_menu_name = $request->input('order_menu_name');
+        $order->order_menu_type = $request->input('order_menu_type');
         $order->order_menu_restaurant = $request->input('order_menu_restaurant');
         $order->partner_id = $request->input('partner_id');
         $order->member_id = $request->input('member_id');
@@ -38,7 +40,7 @@ class OrderController extends Controller
         $deliver = new Deliver();
         $deliver->member_name = $request->input('member_name');
         $deliver->member_address = $request->input('member_address');
-        // $deliver->partner_address = $request->input('partner_address');
+        $deliver->partner_address = $request->input('partner_address');
         $deliver->deliver_menu_name = $request->input('order_menu_name');
         $deliver->deliver_menu_type = $request->input('order_menu_type');
         $deliver->partner_restaurant_name = $request->input('order_menu_restaurant');
