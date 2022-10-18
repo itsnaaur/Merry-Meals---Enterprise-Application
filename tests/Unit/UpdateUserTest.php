@@ -32,7 +32,7 @@ class UpdateUserTest extends TestCase
     public function test_create_user(){
 
         $user = User::create([
-            'id' => 2,
+            'id' => 1,
             'name' => 'user1',
             'email'    => 'user1@example.net',
             'gender' => '1',
@@ -45,7 +45,7 @@ class UpdateUserTest extends TestCase
         ]);
 
         $member = Member::create([
-            'user_id' => 2,
+            'user_id' => 1,
             'member_caregiver_name' => 'El Brose',
             'member_caregiver_relation' => 'Son',
             'member_medical_condition' => 'Nope',

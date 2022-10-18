@@ -35,16 +35,17 @@ Route::get('/terms', function () {
 });
 
 // donation can be done without registration
-//Route::get('/user/{id}', [UserController::class, 'show']);
-
 Route::get('/donationFee', [DonationController::class, 'index']);
 Route::post('/saveDonationFee', [DonationController::class, 'saveDonationFee'])->name('saveDonationFee');
 Route::get('/donor', [DonationController::class, 'donor']);
 Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('saveBilling');
 
-Route::get('/getPayment', [DonationController::class, 'getPayment'])->name('getPayment');
-Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('getCompletion');
+// stripe 
+route::get('/stripe',[DonationController::class,'stripe']);
+route::post('/stripe',[DonationController::class,'stripePost'])->name('stripe.post');
 
+// completion
+Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('getCompletion');
 
 
 // Route::middleware(['auth:sanctum',
