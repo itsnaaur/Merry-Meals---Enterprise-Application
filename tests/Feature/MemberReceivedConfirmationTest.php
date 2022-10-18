@@ -15,21 +15,24 @@ class MemberReceivedConfirmationTest extends TestCase
      */
     public function testMemberLogin()
     {
-        $this -> get('/login');
+        $this->get('/login');
 
-        $this -> post ('/post',
-        [
-            'email' => 'memberone@gmail.com',
-            'password' => '123456',
-        ]);
+        $this->post(
+            '/login',
+            [
+                'email' => 'memberone@gmail.com',
+                'password' => '123456',
+            ]
+        );
     }
 
     public function test_example()
     {
-        $this -> testMemberLogin();
+        $this->testMemberLogin();
 
         $response = $this->get('/member/updateMemberOrder/1');
 
-        $response->assertStatus(200);
+        // $response->assertStatus(200);
+        $response->assertRedirect('/member/showOrderDelivery/5');
     }
 }

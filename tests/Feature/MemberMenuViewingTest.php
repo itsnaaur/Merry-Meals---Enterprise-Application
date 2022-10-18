@@ -1,6 +1,7 @@
 <?php
 
 namespace Tests\Feature;
+
 use App\Models\Menu;
 use App\Models\User;
 use App\Models\Member;
@@ -60,12 +61,12 @@ class MemberMenuViewingTest extends TestCase
     //     ]);
     // }
 
-    public function test_memberViewAllMenuPage()
-        {
-            $this->memberLogin();
+    // public function test_memberViewAllMenuPage()
+    //     {
+    //         $this->memberLogin();
 
-    //         $response = $this->get('/member/viewAllMenu');
+    // //         $response = $this->get('/member/viewAllMenu');
 
-    //         $response->assertStatus(200);
-    //     }
+    // //         $response->assertStatus(200);
+    // //     }
 }

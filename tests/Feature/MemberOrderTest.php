@@ -39,8 +39,8 @@ class MemberOrderTest extends TestCase
         ]);
 
         $member = Member::create([
-            'user_id' => '1',
-            'member_caregiver_name' => 'CareGiver1',
+            'user_id' => '5',
+            'member_caregiver_name' => 'CareGiver2',
             'member_caregiver_relation' => 'Son',
             'member_medical_condition' => 'NA',
             'member_medical_number' => '112233',
@@ -65,7 +65,7 @@ class MemberOrderTest extends TestCase
         ]);
 
         $partner = Partner::create([
-            'user_id' => '2',
+            'user_id' => '6',
             'partnership_restaurant' => 'McDonald',
             'partnership_duration' => '2 Years',
             'partnership_address' => 'McDonaldAddress',
@@ -87,7 +87,7 @@ class MemberOrderTest extends TestCase
         ]);
 
         $partner = Volunteer::create([
-            'user_id' => '3',
+            'user_id' => '7',
             'volunteer_vaccination' => '1',
             'volunteer_duration' => '1 year',
             'volunteer_available' => 'Sunday, Monday',
@@ -108,11 +108,13 @@ class MemberOrderTest extends TestCase
     {
         $this->get('/login');
 
-        $this->post('/login',
-        [
-            'email' => 'memberone@gmail.com',
-            'password' => '123456',
-        ]);
+        $this->post(
+            '/login',
+            [
+                'email' => 'memberone@gmail.com',
+                'password' => '123456',
+            ]
+        );
     }
 
     public function test_()
@@ -120,12 +122,13 @@ class MemberOrderTest extends TestCase
         $this->memberLogin();
 
         $response = $this->post('/member/saveOrder', [
-            'member_name'=> 'Member One',
+            'member_name' => 'Member One',
             'member_address' => 'Adress Example',
             'member_phone' => '0812345678',
             'order_menu_image' => 'Spaghetti_Image',
             'order_menu_name' => 'Spaghetti',
             'order_menu_restaurant' => 'McDonald',
+            'partner_address' => 'Adress Example',
             'partner_id' => 1,
             'member_id' => 1,
             'menu_id' => 1,

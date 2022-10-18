@@ -15,18 +15,20 @@ class MemberOrderPageTest extends TestCase
      */
     public function testMemberLogin()
     {
-        $this -> get('/login');
+        $this->get('/login');
 
-        $this -> post('/login',
-        [
-            'email' => 'memberone@gmail.com',
-            'password' => '123456',
-        ]);
+        $this->post(
+            '/login',
+            [
+                'email' => 'memberone@gmail.com',
+                'password' => '123456',
+            ]
+        );
     }
 
     public function testOpenOrderPage()
     {
-        $this -> testMemberLogin();
+        $this->testMemberLogin();
 
         $response = $this->get('/member/showOrderDelivery/1');
 
@@ -35,7 +37,7 @@ class MemberOrderPageTest extends TestCase
 
     public function test_saveReceivedConfirmation()
     {
-        $this -> testMemberLogin();
+        $this->testMemberLogin();
 
         $response = $this->get('/member/updateMemberOrder/1');
 

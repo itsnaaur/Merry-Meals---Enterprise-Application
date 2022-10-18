@@ -1,6 +1,7 @@
 <?php
 
 namespace Tests\Feature;
+
 use App\Models\Menu;
 use App\Models\User;
 use App\Models\Member;
@@ -36,7 +37,7 @@ class MenuCreatingTest extends TestCase
         ]);
 
         $partner = Partner::create([
-            'user_id' => '5',
+            'user_id' => '8',
             'partnership_restaurant' => 'McDonald',
             'partnership_duration' => '2 Years',
             //'partnership_address' => 'McDonaldAddress',
@@ -72,5 +73,4 @@ class MenuCreatingTest extends TestCase
 
         $response->assertSessionHas('menuCreated', 'Menu Has Been Created Sucessfully!');
     }
-
 }

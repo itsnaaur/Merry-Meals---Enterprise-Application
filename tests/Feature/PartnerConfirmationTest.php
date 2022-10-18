@@ -24,27 +24,31 @@ class PartnerConfirmationTest extends TestCase
 
     //  use RefreshDatabase;
 
-     public function testPartnerLogin()
-     {
+    public function testPartnerLogin()
+    {
         $this->get('/login');
 
-        $this->post('/login',
-        [
-            'email'    => 'partnerone@gmail.com',
-            'password' => '123456',
-        ]);
-     }
+        $this->post(
+            '/login',
+            [
+                'email'    => 'partnerone@gmail.com',
+                'password' => '123456',
+            ]
+        );
+    }
 
     public function test_example()
     {
 
         $this->testPartnerLogin();
 
-        $response = $this->get('/partner/updateOrder/1',
-        [
-            'id' => 1,
-            'start_cooking_time' => Carbon::now()->timestamp,
-        ]);
+        $response = $this->get(
+            '/partner/updateOrder/1',
+            [
+                'id' => 1,
+                'start_cooking_time' => Carbon::now()->timestamp,
+            ]
+        );
 
         // $this->assertTrue($response->id == '1');
         // $response->assertStatus(200);
@@ -54,7 +58,6 @@ class PartnerConfirmationTest extends TestCase
         //     return $order->start_cooking_time == "2022-10-17 22:08:43";
         // });
 
-        $response -> assertRedirect('/partner/AllOrderForPartner/2');
-
+        $response->assertRedirect('/partner/AllOrderForPartner/6');
     }
 }
