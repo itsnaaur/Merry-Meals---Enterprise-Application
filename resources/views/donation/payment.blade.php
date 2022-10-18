@@ -83,7 +83,7 @@
                 <div class="col-lg-6" >
                   <div class="p-5">
                     <div class="p-5">
-                      <form class="form-inline text-center mb-4 mb-2">
+                      <form class="form-inline text-center mb-2">
                         <div class="form-group" style="padding: 0 45px 0 25px ; color: grey; ">
                             <p style="font-size: 10px;">1 <br> DONATION</p>
                           </div>
