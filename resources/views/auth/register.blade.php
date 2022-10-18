@@ -235,7 +235,7 @@
             <div class="row mb-4">
               <label for="cgphone" class="col-sm-4 col-form-label">Meal Plan Duration (days)</label>
                 <div class="col-sm-8">
-                  <input type="number" class="form-control" maxlength="11" name="member_meal_duration" value="30" >
+                  <input type="number" class="form-control" maxlength="11" name="member_meal_duration" value="30"  readonly>
                 </div>
             </div>
 
