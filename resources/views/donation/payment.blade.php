@@ -95,7 +95,7 @@
                           </div>
                           <div class="form-group" style="padding-right:45px ;color: grey;">
                             <p style="font-size: 10px;">4 <br> COMPLETION</p>
-                          </div>	
+                          </div>
                         </form>
                         <div class="panel-body">
                           @if (Session::has('success'))
@@ -110,7 +110,7 @@
                             <div class="mb-4 pb-2" style="margin:0 0 0 15px; width: 350px;" >
                               <div class='form-row row'>
                                 <div class='col-xs-12 form-group required'>
-                                  <label class='control-label'>Card Holder's Full Name</label> 
+                                  <label class='control-label'>Card Holder's Full Name</label>
                                   <input class='form-control' size='4' type='text'>
                                 </div>
                               </div>
@@ -118,24 +118,24 @@
                             <div class="mb-4 pb-2" style="margin:0 0 0 15px; width: 350px;" >
                               <div class='form-row row' >
                                 <div class='col-xs-12 form-group card required' style="border: none">
-                                  <label class='control-label'>Credit Card Number</label> 
-                                  <input autocomplete='off' class='form-control card-number' size='20' type='number'>
+                                  <label class='control-label'>Credit Card Number</label>
+                                  <input autocomplete='off' class='form-control card-number' size='20' type='text'>
                                 </div>
                               </div>
                             </div>
                             <div class="mb-4 pb-2" style="margin:0 0 0 15px; width: 350px;" >
                               <div class='form-row row'>
                                 <div class='col-xs-12 form-group required'>
-                                  <label class='control-label'>Card Type</label> 
+                                  <label class='control-label'>Card Type</label>
                                   <input class='form-control' size='4' type='text'>
                                 </div>
                               </div>
                             </div>
                             <div class="mb-4 pb-2" style="margin:0 0 0 15px; width: 350px;" >
                               <div class=' form-group cvc required'>
-                                <label class='control-label'>CVC</label> 
+                                <label class='control-label'>CVC</label>
                                 <input autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' size='4'
-                                type='number'>
+                                type='text'>
                                 </div>
                             </div>
                             <div class='form-row row'>
@@ -151,14 +151,14 @@
                                 <div class='form-group expiration required'>
                                   <label class='control-label'>Expiration Year</label> <input
                                   class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                                  type='number'>
+                                  type='text'>
                                   </div>
-                              </div> 
+                              </div>
                             </div>
                           </div>
-                          <button type="submit" class="btn btn-light fw-bold " style="margin: 50px 0 0 110px; background-color: #3CB815; font-size: 10px; width: 150px;height: 30px; color: #F5F5F5;" 
+                          <button type="submit" class="btn btn-light fw-bold " style="margin: 50px 0 0 110px; background-color: #3CB815; font-size: 10px; width: 150px;height: 30px; color: #F5F5F5;"
                           data-mdb-ripple-color="dark">Pay Now</button>
-                          </div>  
+                          </div>
                            </form>
                     </div>
                   </div>
@@ -181,9 +181,9 @@
     $('form.require-validation').bind('submit', function(e) {
       var $form = $(".require-validation"),
       inputSelector = [
-        'input[type=email]', 
+        'input[type=email]',
         'input[type=password]',
-        'input[type=text]', 
+        'input[type=text]',
         'input[type=file]',
         'textarea'
       ].join(', '),
