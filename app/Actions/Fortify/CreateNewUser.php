@@ -74,7 +74,7 @@ class CreateNewUser implements CreatesNewUsers
             $partner = new Partner();
             $partner->partnership_restaurant = $input['partnership_restaurant'];
             $partner->partnership_duration = $input['partnership_duration'];
-            //$partner->partnership_address =  $input['address'];
+            $partner->partnership_address =  $input['address'];
             $partner->user_id = $user->id;
             // $user->save();
             $partner->save();
