@@ -31,23 +31,4 @@ class ViewAllMenusTest extends TestCase
 
         $response->assertStatus(200);
     }
-
-    public function memberLogin()
-    {
-        $this->get('/login');
-
-        $this->post('/login', [
-            'email'    => 'member@gmail.com',
-            'password' => '12345678',
-        ]);
-    }
-
-    public function test_memberViewAllMenuPage()
-        {
-            $this->memberLogin();
-
-            $response = $this->get('/member/viewAllMenu');
-
-            $response->assertStatus(200);
-        }
 }

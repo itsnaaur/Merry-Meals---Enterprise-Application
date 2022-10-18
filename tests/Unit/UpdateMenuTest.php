@@ -33,7 +33,7 @@ class UpdateMealsTest extends TestCase
         ]);
     }
 
-    use RefreshDatabase;
+    // use RefreshDatabase;
     public function test_createMenu(){
         $menu = Menu::create([
             'id' => 1,
@@ -41,13 +41,15 @@ class UpdateMealsTest extends TestCase
             'menu_title' => 'Spaghetti',
             'menu_description' => 'Spaghetti Layered with Sauce',
             'menu_image' => 'Spaghetti_Image',
+            'menu_time_availability' => 'Monday',
+            'menu_type' => 'Hot'
         ]);
 
-        $meals = Menu::find($menu);
+        $meals = User::find($menu);
         $this->assertNotNull($meals);
     }
 
-    public function test_adminUpdateSpecificMenu()
+    public function test_partnerUpdateSpecificMenu()
     {
         $this->adminLogin();
 
@@ -59,10 +61,11 @@ class UpdateMealsTest extends TestCase
             'partner' => '1',
             'menu_title' => 'especialle espanyola menue',
             'menu_description' => 'The menu from Espanyola, Senporita!!',
+            'menu_type' => 'Hot',
+            'menu_time_availability' => 'Thursday',
             'menu_image' => $file,
         ]);
 
         $response->assertSessionHas('updateData', 'Menu Has Been Updated Sucessfully!');
     }
-
 }

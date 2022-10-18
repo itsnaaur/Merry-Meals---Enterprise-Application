@@ -3,6 +3,7 @@
 @endsection
 @extends('layouts.app')
 
+
 @section('content')
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meals on Wheels - Donation</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-
     <style>
       @media (min-width: 1025px) {
     .h-custom {
@@ -39,6 +39,7 @@
         border-bottom-right-radius: 15px;
     }
 }
+
 .input-control {
       display: flex;
       flex-direction: column;
@@ -70,8 +71,8 @@
       height: 13px;
     }
 
-</style>
-</head>
+    </style>
+  </head>
   <body>
   <section class="h-100 h-custom gradient-custom-2">
   <div class="container py-5 h-100">
@@ -86,8 +87,8 @@
                   <h4 class="fw-bold mb-3 text-center" style="font-size:16px ; margin: 0 0 0 -50px ;">SENIORS <br>NEED YOU</h4>
                       <p class="text-center fw-light mb-5 mb-2" style="font-size:12px; margin:22px 0 0 -50px;">Your gift will help us support local programs that <br> keep seniors safe and living independently <br>nationwide.</p>
                       <form class="form-inline text-center mb-4 mb-2">
-                      <div class="form-group" style="padding: 0 45px 0 25px ; ">
-                          <p style="font-size: 10px;color: black;">1 <br> DONATION</p>
+                      <div class="form-group" style="padding: 0 45px 0 25px ; color: grey; ">
+                          <p style="font-size: 10px;">1 <br> DONATION</p>
                         </div>
                         <div class="form-group" style="padding-right:45px ;color: grey;">
                           <p style="font-size: 10px;">2 <br> BILLING</p>
@@ -144,7 +145,7 @@
                             <h6 class="mb-0">$</h6>
                           </div>
                           <div class="input-control col-md-9 pe-7">
-                            <input id="donor_fee" name="donor_fee" type="number" class="form-control form-control-lg"  />
+                            <input id="donor_fee" name="donor_fee" type="text" class="form-control form-control-lg"  />
                             <div class="error"></div>
                           </div>
                         </div>
@@ -166,7 +167,7 @@
                     </div>
                   </div>
                       </div>
-                      <button type="submit" class="btn btn-light fw-bold " style="margin: 8px 0 0 150px; background-color: #3CB815; font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" 
+                      <button type="submit" class="btn btn-light fw-bold " style="margin: 50px 0 0 150px; background-color: #3CB815; font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" 
                     data-mdb-ripple-color="dark">NEXT</button>
                       </form>
                   </div>

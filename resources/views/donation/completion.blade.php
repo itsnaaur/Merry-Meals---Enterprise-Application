@@ -64,8 +64,8 @@
                         <div class="form-group" style="padding-right:45px ;color: grey;">
                           <p style="font-size: 10px;">3 <br> PAYMENT</p>
                         </div>
-                        <div class="form-group" style="padding-right:45px ;">
-                          <p style="font-size: 10px;color: black;">4 <br> COMPLETION</p>
+                        <div class="form-group" style="padding-right:45px ;color: grey;">
+                          <p style="font-size: 10px;">4 <br> COMPLETION</p>
                         </div>	
                       </form>
                       <div class="mb-4 pb-2" style="padding-top:50px ;">
