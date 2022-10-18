@@ -119,7 +119,7 @@
                               <div class='form-row row' >
                                 <div class='col-xs-12 form-group card required' style="border: none">
                                   <label class='control-label'>Credit Card Number</label> 
-                                  <input autocomplete='off' class='form-control card-number' size='20' type='text'>
+                                  <input autocomplete='off' class='form-control card-number' size='20' type='number'>
                                 </div>
                               </div>
                             </div>
@@ -135,7 +135,7 @@
                               <div class=' form-group cvc required'>
                                 <label class='control-label'>CVC</label> 
                                 <input autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' size='4'
-                                type='text'>
+                                type='number'>
                                 </div>
                             </div>
                             <div class='form-row row'>
@@ -144,14 +144,14 @@
                                 <div class=' form-group expiration required'>
                                   <label class='control-label'>Expiration Month</label> <input
                                   class='form-control card-expiry-month' placeholder='MM' size='2'
-                                  type='text'>
+                                  type='number'>
                                 </div>
                               </div>
                               <div class="col-md-7 mb-4 pb-2">
                                 <div class='form-group expiration required'>
                                   <label class='control-label'>Expiration Year</label> <input
                                   class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                                  type='text'>
+                                  type='number'>
                                   </div>
                               </div> 
                             </div>
