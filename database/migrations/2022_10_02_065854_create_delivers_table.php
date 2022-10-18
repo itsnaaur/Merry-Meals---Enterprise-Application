@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('deliver_menu_name');
             $table->string('deliver_menu_type');
             $table->string('partner_restaurant_name');
+            $table->string('partner_address');
             $table->string('volunteer_name')->nullable();
             $table->string('start_deliver_time')->nullable();
             $table->string('delivery_status')->nullable();

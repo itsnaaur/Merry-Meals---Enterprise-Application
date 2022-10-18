@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string('member_phone');
             $table->string('order_menu_image');
             $table->string('order_menu_name');
-            // $table->string('order_menu_type');
+            $table->string('order_menu_type');
             $table->string('order_menu_restaurant');
+            $table->string('partner_address');
             $table->string('menu_plan');
             $table->string('start_cooking_time')->nullable();
             $table->string('order_cooking_status')->nullable();
