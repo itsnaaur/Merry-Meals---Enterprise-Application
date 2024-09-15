@@ -10,8 +10,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Partners</h3>
-						<p>All the partners that registered to paticipate in MerryMeals charity</p>
+						<h3><strong>Partners</strong></h3>
+						<p style="color: #0e6655;"><strong>All the partners that registered to paticipate in MerryMeals charity</strong></p>
 					</div>
 				</div>
 			</div>
@@ -26,7 +26,7 @@
 								{{ Session::get('partnerDeleted') }}
 							</h4>
 							@endif
-							<h3>{{ $partner->partnership_restaurant }}</h3>
+							<h3><strong>{{ $partner->partnership_restaurant }}</strong></h3>
 							<p>{{ DB::table('users')->where('id',$partner->user_id)->value('address')}}</p>
                             <p>{{ DB::table('users')->where('id',$partner->user_id)->value('phone')}}</p>
 							<p>{{ DB::table('users')->where('id',$partner->user_id)->value('email')}}</p>

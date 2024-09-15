@@ -7,13 +7,6 @@
 @section('content')
 		
 		<div id="fh5co-services-section">
-			{{-- <div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Update Profile</h3>
-					</div>
-				</div>
-			</div> --}}
             @if (Session::has('dataInform'))
                 <h4 class="alert alert-warning animate-box text-center" role="alert">
                     {{ Session::get('dataInform') }}
@@ -24,7 +17,7 @@
 					<div class="col-md-6 col-sm-6 col-md-offset-3">
 						<div class=" animate-box">
 							<div class="col-md-12 ">
-                                <h3>General Information</h3>
+                                <h3><strong>General Information</strong></h3>
                                 <form action="{{ route('admin#userUpdated', $userData->id) }}" method="POST">
                                     @csrf
                                     <label class="userManagement">Name</label><br>
@@ -54,7 +47,7 @@
 						</div>
 						<div class=" animate-box">
 							<div class="col-md-12 ">
-                                <h3 class="mt-5 pt-5">Member Details</h3>
+                                <h3 class="mt-5 pt-5"><strong>Member Details</strong></h3>
                                 <form action="{{ route('admin#memberUpdated', $userData->id) }}" method="POST">
                                     @csrf
                                     <label class="userManagement">Care Giver's Name</label><br>

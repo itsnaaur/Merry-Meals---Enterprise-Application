@@ -8153,7 +8153,7 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #01d28e; }
+  color: #0e6655; }
   a:hover, a:focus {
     text-decoration: none !important;
     outline: none !important;
@@ -8168,7 +8168,7 @@ h1, h2, h3, h4, h5,
   color: #000; }
 
 .bg-primary {
-  background: #01d28e !important; }
+  background: #0e6655 !important; }
 
 .ftco-section {
   padding: 2em 0; }
@@ -8210,7 +8210,7 @@ h1, h2, h3, h4, h5,
     /* Firefox 18- */
     color: rgba(0, 0, 0, 0.3) !important; }
   .form-control:focus, .form-control:active {
-    border-color: #01d28e !important; }
+    border-color: #0e6655 !important; }
 
 textarea.form-control {
   height: inherit !important; }
@@ -8278,8 +8278,8 @@ textarea.form-control {
     -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
     box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important; }
   .btn.btn-primary {
-    background: #01d28e !important;
-    border-color: #01d28e !important;
+    background: #0e6655 !important;
+    border-color: #0e6655 !important;
     color: #fff; }
     .btn.btn-primary:hover, .btn.btn-primary:focus {
       border-color: #019f6c !important;
@@ -8337,7 +8337,7 @@ textarea.form-control {
 						<div class="row no-gutters">
 							<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
 								<div class="contact-wrap w-100 p-md-5 p-4">
-									<h3 class="mb-4">Contact Us</h3>
+									<h3 class="mb-4"><strong>Contact Us</strong></h3>
 									<div id="form-message-warning" class="mb-4"></div> 
 				      		<div id="form-message-success" class="mb-4">
 				            Your message was sent, thank you!
@@ -8380,14 +8380,14 @@ textarea.form-control {
 							</div>
 							<div class="col-lg-4 col-md-5 d-flex align-items-stretch">
 								<div class="info-wrap bg-primary w-100 p-md-5 p-4">
-									<h3>Let's Get In Touch</h3>
-									<p class="mb-4">We're open for any suggestion or just to have a chat</p>
+									<h3 style="color: #FCC74F;"><strong>Reach Out To Us!</strong> <h3>
+									<p class="mb-4" style="color: #FCC74F;">We welcome any suggestions or a friendly conversation.</p>
 				        	<div class="dbox w-100 d-flex align-items-start">
 				        		<div class="icon d-flex align-items-center justify-content-center">
 				        			<span class="fa fa-map-marker"></span>
 				        		</div>
 				        		<div class="text pl-3">
-					            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+					            <p style="color: #FCC74F;" ><span>Address:</span> Mactan Newtown Boulevard</p>
 					          </div>
 				          </div>
 				        	<div class="dbox w-100 d-flex align-items-center">
@@ -8425,18 +8425,20 @@ textarea.form-control {
 
 
       
-      <div className="col-xs-12 col-md-6" style=" margin: auto; width: 100%;">
-          <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.746276190826!2d101.71682325041284!3d3.16143039768678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc37c55a400001%3A0xfd68af3e7aaf036f!2sDigital%20Way%20Academy!5e0!3m2!1sen!2smy!4v1661162237718!5m2!1sen!2smy"
-              width="100%"
-              height="450"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="location">
-          </iframe>
-      </div>
+  <div class="col-xs-12 col-md-6" style="margin: -10px; width: 100%;">
+    <iframe
+    
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15701.91426316317!2d123.99998584000203!3d10.303531948889765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1720960252904!5m2!1sen!2sph"
+        width="1510"
+        height="450"
+        margin-left= "-100"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Location">
+    </iframe>
+</div>
 
 </body>
 @endsection

@@ -28,7 +28,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box" style="padding-top: 50px;">
-						<h3>Menus</h3>
+					<h3 style="font-weight: bold;">Menus</h3>
 					</div>
 					@if (Session::has('menuCreated'))
 						<div class="alert alert-warning animate-box" role="alert">

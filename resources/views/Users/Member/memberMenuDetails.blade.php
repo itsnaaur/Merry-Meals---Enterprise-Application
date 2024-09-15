@@ -16,9 +16,6 @@
 
 									$user_arr = preg_split ("/\,/", $user_geolocation); 
 									$partner_arr = preg_split ("/\,/", $partner_geolocation);
-									// print_r($str_arr);
-									// echo $str_arr[0]. "<br/>";
-									// echo $str_arr[1]. "<br/>";
 
 									$Lat1 = $user_arr[0];
 									$Long1 =  $user_arr[1];
@@ -61,20 +58,7 @@
 									}else{
 										$message ="Within Delivery Range";
 									}
-									// $DistanceMeter = round($DistanceMeter, 0) . " METER";
-
-									//echo $DistanceKM;
-									// echo $DistanceMeter;
-
-									// $weekMap = [
-										// 		0 => 'SU',
-										// 		1 => 'MO',
-										// 		2 => 'TU',
-										// 		3 => 'WE',
-										// 		4 => 'TH',
-										// 		5 => 'FR',
-										// 		6 => 'SA',
-										// ];
+							
 										$weekday=date("w");
 										//  echo $weekday."<br>";
 										if ($weekday == 0 ||$weekday == 6 ) {
@@ -132,13 +116,7 @@
                                 	<h3>Meal Type</h3>
                                 	<p><?php echo $meal_type; ?></p>
 								</div>
-								<!--Test Order-->
-								{{-- Partner ID<input type="text" value="{{ $viewMenu -> partner_id }}"  /></br>
-								Menu ID<input type="text" value="{{ $viewMenu-> id }}" /></br>
-								logged In User ID<input type="text" value="{{ Auth()->user()->id }}" ></br> --}}
-								<!-- User ID equals to Member ID because saved in both table during registration-->
-								{{-- logged In User name<input type="text" value="{{ Auth()->user()->name }}" ></br> --}}
-								<!--Test Order-->
+								
 								<div class="col">
 									<div class="form-group animate-box">
 										<a href="{{ route('member#foodSafety') }}"> <input type="submit" value="Food Safety" class="btn btn-primary"></a>

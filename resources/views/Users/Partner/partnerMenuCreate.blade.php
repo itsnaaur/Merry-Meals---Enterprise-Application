@@ -53,7 +53,7 @@
 										<div>
 											<div class="form-group animate-box">
 												<label for="basic-url">Menu Description</label>
-												<textarea class="form-control" id="" cols="30" rows="7" placeholder="Put your menu description here" name="menu_description" required></textarea>
+												<textarea class="form-control" id="" cols="50" rows="20" placeholder="Put your menu description here" name="menu_description" required></textarea>
 											</div>
 										</div>
 										<div>

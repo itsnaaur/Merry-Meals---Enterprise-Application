@@ -16,12 +16,12 @@
 *
 * ======================================================= */
 body {
-    font-family: "Open Sans", Arial, sans-serif;
+    font-family: system-ui, "Open Sans", Arial, sans-serif;
     line-height: 1.6;
     font-size: 16px;
     background: #fff;
-    color: #848484;
-    font-weight: 300;
+    color: #28282B;
+    font-weight: 400;
     overflow-x: hidden;
 }
 body.fh5co-offcanvas {
@@ -29,14 +29,14 @@ body.fh5co-offcanvas {
 }
 
 a {
-    color: #f65005;
+    color: #0E6655;
     -webkit-transition: 0.5s, ease;
     -o-transition: 0.5s, ease;
     transition: 0.5s, ease;
 }
 a:hover {
     text-decoration: none !important;
-    color: #f65005 !important;
+    color: #0E6655  !important;
 }
 
 p,
@@ -44,8 +44,8 @@ ul,
 ol {
     margin-bottom: 1.5em;
     font-size: 16px;
-    color: #848484;
-    font-family: "Open Sans", Arial, sans-serif;
+    color: #28282B;
+    font-family: system-ui,"Open Sans", Arial, sans-serif;
 }
 
 h1,
@@ -54,8 +54,8 @@ h3,
 h4,
 h5,
 h6 {
-    color: #5a5a5a;
-    font-family: "Open Sans", Arial, sans-serif;
+    color: #000000;
+    font-family: system-ui,"Open Sans", Arial, sans-serif;
     font-weight: 400;
     margin: 0 0 30px 0;
 }
@@ -70,17 +70,17 @@ figure {
 
 ::-webkit-selection {
     color: #fcfcfc;
-    background: #f65005;
+    background: #0E6655 ;
 }
 
 ::-moz-selection {
     color: #fcfcfc;
-    background: #f65005;
+    background: #0E6655 ;
 }
 
 ::selection {
     color: #fcfcfc;
-    background: #f65005;
+    background: #0E6655 ;
 }
 
 #fh5co-header {
@@ -101,12 +101,13 @@ figure {
 
 .header-top {
     padding: 10px 0;
-    background: #f65005;
+    background: #0E6655 ;
 }
 .header-top .fh5co-link a {
     margin-left: 10px;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #fff;
+    font-weight: 20px;
 }
 .header-top .fh5co-link a:first-child {
     margin-left: 0;
@@ -120,7 +121,7 @@ figure {
     }
 }
 .header-top .fh5co-social a {
-    color: rgba(255, 255, 255, 0.7);
+    color: #fff;
     font-size: 14px;
     margin-right: 15px;
     position: relative;
@@ -296,12 +297,12 @@ figure {
 }
 .sf-menu a:hover,
 .sf-menu a:focus {
-    color: #f65005 !important;
+    color: #0E6655  !important;
 }
 
 .sf-menu li.active a:hover,
 .sf-menu li.active a:focus {
-    color: #f65005;
+    color: #0E6655 ;
 }
 
 .sf-menu li,
@@ -325,7 +326,7 @@ figure {
 .sf-menu ul li:hover a,
 .sf-menu ul li.sfHover a,
 .sf-menu li.active a {
-    color: #f65005;
+    color: #0E6655 ;
 }
 
 .sf-menu ul li:hover,
@@ -393,26 +394,33 @@ figure {
     z-index: 2;
     font-size: 22px;
     text-transform: uppercase;
-    margin: 25px;
+    margin: 10px;
     font-weight: 700;
     float: left;
 }
+
+fh5co-logo img{
+    height: 20px;
+    width: auto;
+}
+
+
 #fh5co-logo span {
     font-weight: 700;
 }
 @media screen and (max-width: 768px) {
     #fh5co-logo {
-        width: 100%;
+        width: 80%;
         float: none;
         text-align: center;
     }
 }
 #fh5co-logo a {
-    color: #f65005;
+    color: #0E6655 ;
 }
 #fh5co-logo a:hover,
 #fh5co-logo a:focus {
-    color: #f65005 !important;
+    color: #0E6655 !important;
 }
 
 #fh5co-menu-wrap {
@@ -421,17 +429,18 @@ figure {
     display: block;
     float: right;
     margin-top: 30px;
+    font-weight: 700px;
 }
 #fh5co-menu-wrap .sf-menu a {
     padding: 1em 0.75em;
 }
 
 #fh5co-primary-menu > li > ul li.active > a {
-    color: #f65005 !important;
+    color: #0E6655 !important;
 }
 #fh5co-primary-menu > li > .sf-with-ul:after {
     border: none !important;
-    font-family: "icomoon";
+    font-family: system-ui, "icomoon";
     /* speak: none; */
     font-style: normal;
     font-weight: normal;
@@ -455,7 +464,7 @@ figure {
 }
 #fh5co-primary-menu > li > ul li > .sf-with-ul:after {
     border: none !important;
-    font-family: "icomoon";
+    font-family: system-ui, "icomoon";
     /* speak: none; */
     font-style: normal;
     font-weight: normal;
@@ -547,7 +556,7 @@ figure {
     background: none;
 }
 #fh5co-primary-menu .fh5co-sub-menu a:hover {
-    color: #f65005 !important;
+    color: #0E6655 !important;
 }
 
 #fh5co-work-section,
@@ -585,7 +594,7 @@ figure {
     width: 100px;
     margin-left: -50px;
     height: 2px;
-    background: #f65005;
+    background: #0E6655 ;
 }
 .heading-section h3 {
     font-size: 40px;
@@ -606,7 +615,7 @@ figure {
 }
 .feature-text h3 .number {
     margin-right: 5px;
-    color: #f65005;
+    color: #0E6655;
     display: -moz-inline-stack;
     display: inline-block;
     zoom: 1;
@@ -617,7 +626,7 @@ figure {
 }
 
 .services {
-    background: #f65005;
+    background: #0E6655 ;
     background: #fff;
     padding: 40px 20px 20px 20px;
     margin-bottom: 30px;
@@ -640,12 +649,12 @@ figure {
 }
 .services span i {
     font-size: 40px;
-    color: #f65005 !important;
+    color: #0E6655 !important;
 }
 .services h3 {
     font-size: 20px;
     font-weight: 400;
-    color: #f65005;
+    color: #0E6655 ;
 }
 .services p {
     font-size: 16px;
@@ -677,7 +686,7 @@ figure {
     display: table-cell;
     vertical-align: middle;
     font-size: 40px;
-    color: #f65005;
+    color: #0E6655 ;
 }
 .feature-left .feature-copy {
     float: right;
@@ -918,7 +927,7 @@ figure {
 
 #fh5co-services .fh5co-number {
     font-size: 30px;
-    color: #f65005;
+    color: #0E6655 ;
     position: relative;
     padding-top: 10px;
     font-style: italic;
@@ -934,7 +943,7 @@ figure {
     height: 3px;
     top: 0;
     left: 0;
-    background: #f65005;
+    background: #0E6655;
 }
 #fh5co-services .fh5co-icon {
     margin-bottom: 30px;
@@ -953,7 +962,7 @@ figure {
 }
 #fh5co-services .fh5co-icon i {
     font-size: 200px;
-    color: #f65005;
+    color: #0E6655;
 }
 @media screen and (max-width: 768px) {
     #fh5co-services .fh5co-icon i {
@@ -1057,7 +1066,7 @@ figure {
 .fh5co-team > div h3 {
     margin-bottom: 0;
     font-size: 20px;
-    color: #f65005;
+    color: #0E6655;
 }
 .fh5co-testimonial > div .position,
 .fh5co-team > div .position {
@@ -1127,7 +1136,7 @@ figure {
     color: rgba(0, 0, 0, 0.3);
 }
 .fh5co-blog .blog-text span.comment a i {
-    color: #f65005;
+    color: #0E6655;
     padding-left: 7px;
 }
 .fh5co-blog .blog-text h3 {
@@ -1174,7 +1183,7 @@ figure {
 
 .fh5co-social-icons > a {
     padding: 4px 10px;
-    color: #f65005;
+    color: #0E6655;
 }
 .fh5co-social-icons > a i {
     font-size: 26px;
@@ -1183,12 +1192,13 @@ figure {
 .fh5co-social-icons > a:focus,
 .fh5co-social-icons > a:active {
     text-decoration: none;
-    color: #5a5a5a;
+    color: #000000;
 }
 
 #footer {
-    background: #f65005;
+    background: #0E6655;
     padding: 60px 0 40px;
+    margin-top: 30px, transparent;
 }
 #footer p {
     color: white;
@@ -1217,22 +1227,24 @@ figure {
     transition: 0.3s;
 }
 .btn.btn-primary {
-    background: #f65005;
+    background: #0E6655;
     color: #fff;
     border: none !important;
     border: 2px solid transparent !important;
+    border-radius: 15px;
+    
 }
 .btn.btn-primary:hover,
 .btn.btn-primary:active,
 .btn.btn-primary:focus {
     box-shadow: none;
-    background: #f65005;
+    background: #0E6655 ;
     color: #fff !important;
 }
 .btn:hover,
 .btn:active,
 .btn:focus {
-    background: #393e46 !important;
+    background: #FCC74F !important;
     color: #fff;
     outline: none !important;
 }
@@ -1309,14 +1321,14 @@ figure {
     color: rgba(255, 255, 255, 0.4);
 }
 #offcanvas-menu ul li a:hover {
-    color: #f65005;
+    color: #0E6655 ;
 }
 #offcanvas-menu ul li > .fh5co-sub-menu {
     margin-top: 9px;
     padding-left: 20px;
 }
 #offcanvas-menu ul li.active > a {
-    color: #f65005;
+    color: #0E6655;
 }
 #offcanvas-menu ul .fh5co-sub-menu {
     display: block !important;
@@ -1617,4 +1629,21 @@ figure {
 .grid-container > div {
     text-align: center;
 }
+.blog-img {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+.blog-text {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 30px;
+}
+.full-content {
+    display: none;
+}
+
+
 /*checkout form*/

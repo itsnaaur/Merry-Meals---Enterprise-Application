@@ -76,47 +76,47 @@ flex-direction: column;">
     <div class="container">
         <div class="nav-header">
             <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-            <div id="fh5co-logo"><a href="/" ><img src="{{ url('/images/company_logo.png') }}" alt="company logo"></a></div>
+            <div id="fh5co-logo"><a href="/" ><img src="{{ url('/images/Company_logo.png') }}" alt="company logo"></a></div>
             <!-- START #fh5co-menu-wrap -->
            <!--Start end if -->
        
             <nav id="fh5co-menu-wrap" role="navigation">
                     <ul class="sf-menu" id="fh5co-primary-menu">
                         <li class="active">
-                            <a href="{{ route('admin#index') }}">Home</a>
+                            <a href="{{ route('admin#index') }}" style="color: #000;"><strong>Home</strong></a>
                         </li>
                         <li>
-                          <a href="#" class="fh5co-sub-ddown">Manage Users</a>
+                          <a href="#" class="fh5co-sub-ddown" style="color: #000;"><strong>Manage Users</strong></a>
                           <ul class="fh5co-sub-menu">
-                              <li><a href="{{ route('admin#allMembers') }}">Member and Care Giver</a></li>
-                              <li><a href="{{ route('admin#allPartners') }}">Partners</a></li>
-                              <li><a href="{{ route('admin#allVolunteers') }}">Volunteers</a></li>
-                              <li><a href="{{ route('admin#allDonors') }}">Donors</a></li>
+                              <li><a href="{{ route('admin#allMembers') }}"><strong>Member and Care Giver</strong></a></li>
+                              <li><a href="{{ route('admin#allPartners') }}"><strong>Partners</strong></a></li>
+                              <li><a href="{{ route('admin#allVolunteers') }}"><strong>Volunteers</strong></a></li>
+                              <li><a href="{{ route('admin#allDonors') }}"><strong>Donors</strong></a></li>
                           </ul>
                       </li>
 
-                      <li><a href="{{ route('admin#allMenus') }}">Manage Menus</a></li>
-                        <li><a href="{{ route('admin#allDeliveries') }}">Manage Deliveries</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                      <li><a href="{{ route('admin#allMenus') }}" style="color: #000;"><strong>Manage Menus</strong></a></li>
+                        <li><a href="{{ route('admin#allDeliveries') }}" style="color: #000;"><strong>Manage Deliveries</strong></a></li>
+                        <li><a href="/about" style="color: #000;"><strong>About</strong></a></li>
+                        <li><a href="/contact" style="color: #000;"><strong>Contact</strong></a></li>
                         
                           <button type="button" class="btn btn-blue dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" 
                           style="
-                                padding: 12px 16px;">
-                              {{ Auth()->user()->name }}
+                                padding: 12px 16px;"> <strong>
+                              {{ Auth()->user()->name }} </strong>
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
                               <li>
                                 <a class="dropdown-item" href="{{ route('admin#updateAdmin', Auth()->user()->id) }}">
                                     <button class="btn pt-0 pb-1 px-0 nav-link text-dark" style="button:focus { outline: none; }" >
-                                        Update 
+                                        <strong> Update </strong>
                                     </button>
                                 </a></li>
                               <li>
                                   <a class="dropdown-item" href="#">
                                       <form action="{{ route('logout') }}" method="post">
                                           @csrf
-                                          <button type="submit" class="btn pt-0 pb-1 px-0 nav-link text-dark" style="button:focus { outline: none; }" >  <i class="fas fa-sign-out-alt" ></i> Logout </button>
+                                          <button type="submit" class="btn pt-0 pb-1 px-0 nav-link text-dark" style="button:focus { outline: none; }" >  <i class="fas fa-sign-out-alt" ></i> <strong>Logout </strong></button>
                                       </form>
                                   </a>
                               </li>
@@ -157,7 +157,7 @@ flex-direction: column;">
                         <a href="#"><i class="icon-dribbble2"></i></a>
                         <a href="#"><i class="icon-youtube"></i></a>
                     </p>
-                    <p>Copyright 2022 MerryMeal ~ Meals on Wheels <a href="#">Charity</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Group 1 DEA Team</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+                    <p>Copyright 2024 MerryMeal ~ Meals on Wheels <a href="#">Charity</a>. All Rights Reserved. <br>Made by <a href="https://www.facebook.com/ninome17" target="_blank"> DYNAMIC DEVELOPERS </a> / Demo Images: <a href="https://images.google.com/" target="_blank">Google Images</a></p>
                 </div>
             </div>
         </div>

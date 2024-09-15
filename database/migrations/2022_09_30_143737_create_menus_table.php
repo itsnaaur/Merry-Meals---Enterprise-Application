@@ -16,7 +16,7 @@ return new class extends Migration
         if (!Schema::hasTable('menus')) {
             Schema::create('menus', function (Blueprint $table) {
                 $table->id();
-                $table->integer('partner_id');
+                $table->unsignedBigInteger('partner_id');
                 $table->string('menu_title');
                 $table->string('menu_description');
                 $table->string('menu_image');

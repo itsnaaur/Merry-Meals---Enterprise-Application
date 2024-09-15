@@ -18,7 +18,7 @@
         Please Undergo Reassesment to continue with your 30 days meal plan<a href="{{ route('member#reassesment', Auth()->user()->id) }}"> Click here to apply for reassesment</a>
     </div>
     @endif
-    <h1>Member Details</h1>
+    <h1><strong>Member Details</strong></h1>
 <table class="table table-bordered" >
 
     <thead>
@@ -50,10 +50,10 @@
         
     <div class="fh5co-hero">
         <div class="fh5co-overlay"></div>
-        <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_2.jpg);">
+        <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/Member_home.jpg);">
             <div class="desc animate-box">
-                <h2><strong>Start</strong> Getting Meals <strong> Today!</strong></h2>
-                {{-- <span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span> --}}
+            <h2> <strong style="color: #FCC74F;">START</strong> <strong> RECEIVING MEALS </strong> <strong style="color: #FCC74F;">TODAY!</strong> </h2>
+        
                 <span><a class="btn btn-primary btn-lg" href="{{ route('member#viewAllMenu') }}">View Menu</a></span>
             </div>
         </div>

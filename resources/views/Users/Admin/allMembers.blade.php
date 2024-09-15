@@ -15,8 +15,8 @@
 			@endif
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Members and Care Givers</h3>
-						<p>All the members that registered to MerryMeals charity</p>
+						<h3><strong>Members and Care Givers</strong></h3>
+						<p style="color: #0e6655;"> <strong> All the members that registered to MerryMeals charity</strong></p>
 					</div>
 				</div>
 			</div>
@@ -27,8 +27,8 @@
 							<div class="services animate-box">
 								<span><i class="icon-profile-male"></i></span>
 								{{-- <h3>{{ $member->user_id->name}}</h3> --}}
-								<h3>{{ DB::table('users')->where('id',$member->user_id)->value('name')}}</h3>
-								<h4>{{ $member->member_caregiver_name }}</h4>
+								<h3><strong>{{ DB::table('users')->where('id',$member->user_id)->value('name')}}</strong></h3>
+								<h4 style="color: #FCC74F;"> <strong> Caregiver assigned: {{ $member->member_caregiver_name }}</strong></h4>
 								<p>{{ DB::table('users')->where('id',$member->user_id)->value('address')}}</p>
 								<p>{{ DB::table('users')->where('id',$member->user_id)->value('email')}}</p>
 								<p>Duration: {{ $member->member_meal_duration }}</p>

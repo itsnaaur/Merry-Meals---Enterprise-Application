@@ -12,7 +12,7 @@
                 <div class="col-md-12 offset-md-0">
                     <div class="mt-5 p-4">
                         <h1 class="text-secondary text-center mb-5 display-5">
-                            Deliveries Status
+                            <strong style="color: #000;"> Deliveries Status </strong>
                         </h1>
                         <div class="row">
                             <table class="table table-hover table-responsive">

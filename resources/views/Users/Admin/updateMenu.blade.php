@@ -28,7 +28,7 @@
 		<div id="fh5co-blog-section" class="fh5co-section-gray">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-					<h3><h1>Update {{ $updateMenu->menu_title }}</h1></h3>
+					<h3><h1><strong>Update {{ $updateMenu->menu_title }}</strong></h1></h3>
 				</div>
 			</div>
 			<div class="container">
@@ -63,28 +63,13 @@
 												<textarea class="form-control" id="" cols="30" rows="7" placeholder="Put your menu description here" name="menu_description" required>{{ old('menu_description', $updateMenu->menu_description) }}</textarea>
 											</div>
 										</div>
-										{{-- <div>
-											<div class="form-group animate-box">
-												<label for="basic-url">Time Availability</label>
-												<input type="text" class="form-control" placeholder="Put your menu time availability here" name="menu_time_availability" value="{{ old('menu_time_availability', $updateMenu->menu_time_availability) }}" required>
-											</div>
-										</div> --}}
+										
 										<div>
 											<div class="form-group animate-box">
 												{{-- <label for="basic-url">Partner Organization</label> --}}
                                                 <input type="hidden" class="form-control" placeholder="Put your partner name here" name="partner" value="{{ $updateMenu->partner_id }}" required>
 											</div>
 										</div>
-										{{-- <div>
-											<div class="form-group animate-box">
-												<label for="basic-url">Menu Type</label>
-												<select name="menu_type" class="form-control" required>
-													<option value="" disabled selected hidden>Please Select One Below</option>
-													<option>Hot</option>
-													<option>Cold</option>
-												</select>
-											</div>
-										</div> --}}
 										<div>
 											<div class="form-group animate-box">
 												<input type="submit" value="Update" class="btn btn-primary">

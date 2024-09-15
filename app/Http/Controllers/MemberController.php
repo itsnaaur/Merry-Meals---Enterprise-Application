@@ -24,7 +24,7 @@ class MemberController extends Controller
     public function index()
     {
         $member_data = Member::where('user_id', Auth::id())->first();
-        // dd($member);
+        //dd($member_data);
         return view('Users.Member.memberIndex')->with(['memberData' => $member_data]);
     }
 
@@ -125,8 +125,7 @@ class MemberController extends Controller
         $partner_data =  Partner::get();
         $user_data = User::get();
         $member_data = Member::where('user_id', Auth::id())->first();
-        $viewMenu = Menu::where('id', $id)
-            ->first();
+        $viewMenu = Menu::where('id', $id) ->first();
         return view('Users.Member.memberMenuDetails')->with([
             'viewMenu' => $viewMenu,
             'userData' => $user_data,

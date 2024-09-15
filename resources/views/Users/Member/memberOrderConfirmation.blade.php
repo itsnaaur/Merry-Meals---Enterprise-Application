@@ -56,15 +56,6 @@
 
                     $DistanceKM = round($DistanceKM, 3);
 
-										// $weekMap = [
-										// 		0 => 'SU',
-										// 		1 => 'MO',
-										// 		2 => 'TU',
-										// 		3 => 'WE',
-										// 		4 => 'TH',
-										// 		5 => 'FR',
-										// 		6 => 'SA',
-										// ];
 										$weekday=date("w");
 										//  echo $weekday."<br>";
 										if ($weekday == 0 ||$weekday == 6 ) {
@@ -86,26 +77,7 @@
 											}
 										}
 
-										// if ($DistanceKM > 10 ) {
-											// if (condition) { //current day sat or sun -> provide cold -> laravel function check current user logged in days
-											// 	# code... //cold
-											// }
-											// $message ="Out Of Delivery Range";
-											//menu_type = cold
-											//available sat sun
-										// }elseif ($DistanceKM > 10 ){
-										// 	//check sat/sun
-										// }else{
-										// 	$message ="Within Delivery Range";
-										// }
-
 										
-                    // $DistanceMeter = round($DistanceMeter, 0) . " METER";
-
-                    //echo $DistanceKM;
-                    // echo $DistanceMeter;
-
-                    
 							 ?>
 
 <div style="margin: 60px;">

@@ -10,8 +10,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Volunteers</h3>
-						<p>All the volunteers that registered to paticipate in MerryMeals charity.</p>
+						<h3><strong>Volunteers</strong></h3>
+						<p style="color: #0e6655;"><strong>All the volunteers that registered to paticipate in MerryMeals charity.</strong></p>
 					</div>
 				</div>
 			</div>
@@ -26,8 +26,8 @@
 									{{ Session::get('volunteerDeleted') }}
 								</h4>
 							@endif
-								<h3>{{ DB::table('users')->where('id',$volunteer->user_id)->value('name')}}</h3>
-								<h4>{{ $volunteer->volunteer_duration }}</h4>
+								<h3><strong>{{ DB::table('users')->where('id',$volunteer->user_id)->value('name')}}</strong></h3>
+								<h4 style="color: red;"><strong>{{ $volunteer->volunteer_duration }}</strong></h4>
 								<p>{{ DB::table('users')->where('id',$volunteer->user_id)->value('address')}}</p>
 								<p>{{ DB::table('users')->where('id',$volunteer->user_id)->value('phone')}}</p>
 								<p>{{ DB::table('users')->where('id',$volunteer->user_id)->value('email')}}</p>

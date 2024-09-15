@@ -25,11 +25,11 @@ return new class extends Migration
             $table->string('volunteer_name')->nullable();
             $table->string('start_deliver_time')->nullable();
             $table->string('delivery_status')->nullable();
-            $table->integer('member_id');
-            $table->integer('user_id');
-            $table->integer('menu_id');
-            $table->integer('partner_id');
-            $table->integer('volunteer_id')->nullable();
+            $table->unsignedBigInteger('member_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('menu_id');
+            $table->unsignedBigInteger('partner_id');
+            $table->unsignedBigInteger('volunteer_id')->nullable();
             $table->timestamps();
         });
     }

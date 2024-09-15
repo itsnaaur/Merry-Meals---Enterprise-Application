@@ -25,7 +25,7 @@
 				<div class=" animate-box">
 					<div class="col-md-12 ">
 						<h3>General Information</h3>
-						<form action="{{ route('admin#userUpdated', $userData->id) }}" method="POST">
+						<form action="{{ route('partner#updateProfile', $userData->id) }}" method="GET">
 							@csrf
 							<label class="userManagement">Name</label><br>
 							<input name="name" class="input-md col-md-12" type="text" value="{{ old('name', $userData->name) }}"/>
@@ -47,7 +47,7 @@
 
 							<div class="text-center"> 
 								<button class="btn-primary">Update</button> &nbsp;
-								<a href="{{ route('admin#allMembers') }}">Cancel</a>
+								<a href="{{ route('partner#index') }}">Cancel</a>
 							</div>
 						</form>
 					</div>
@@ -55,7 +55,7 @@
 				<div class=" animate-box">
 					<div class="col-md-12 ">
 						<h3 class="mt-5 pt-5">Partner Details</h3>
-						<form action="{{ route('admin#partnerUpdated', $userData->id) }}" method="POST">
+						<form action="{{ route('partner#updateProfile', $userData->id) }}" method="GET">
 							@csrf
 							<label class="userManagement">Restaurant Name</label><br>
 							<input name="partnership_restaurant" class="input-md col-md-12" type="text" value="{{ old('partnership_restaurant', $partnerData->partnership_restaurant) }}"/><br><br>
@@ -65,7 +65,7 @@
 
 							<div class="text-center"> 
 								<button class="btn-primary">Update</button> &nbsp;
-								<a href="{{ route('admin#allMembers') }}">Cancel</a>
+								<a href="{{ route('partner#index') }}">Cancel</a>
 							</div>
 						</form>
 					</div>

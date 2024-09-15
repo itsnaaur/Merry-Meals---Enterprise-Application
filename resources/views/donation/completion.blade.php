@@ -1,103 +1,89 @@
+@extends('layouts.app')
+
 @section('title')
     Donation
 @endsection
-@extends('layouts.app')
 
 @section('content')
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meals on Wheels - Donation</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
     <style>
-      @media (min-width: 1025px) {
-    .h-custom {
-        height: 100vh !important;
-    }
-}
-.card-registration .select-input.form-control[readonly]:not([disabled]) {
-    font-size: 1rem;
-    line-height: 2.15;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-}
-.card-registration .select-arrow {
-    top: 13px;
-}
+        .gradient-custom-2 {
+            background: url('{{url('/images/thank you.jpg')}}') center center/cover no-repeat;
+            /* Replace with your actual path to the background image */
+            height: 80vh;
+            /* Adjust height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
 
-@media (min-width: 992px) {
-    .card-registration-2 .bg-indigo {
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
-}
-@media (max-width: 1000px) {
-    .card-registration-2 .bg-indigo {
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
-}
+        .card-registration {
+            background-color: rgba(255, 255, 255, 0.7);
+            /* Adjust background color opacity as needed */
+            border-radius: 15px;
+            border: none;
+        }
 
+        .input-control input {
+            border: 2px solid #f0f0f0;
+            border-radius: 4px;
+            display: block;
+            font-size: 12px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .input-control input:focus {
+            outline: 0;
+        }
+
+        .input-control.success input {
+            border-color: #3cb815;
+        }
+
+        .input-control.error input {
+            border-color: #fcc74f;
+        }
+
+        .input-control .error {
+            color: #fcc74f;
+            height: 13px;
+        }
+        .form-group-inline {
+            text-align: center;
+        }
     </style>
-  </head>
-  <body>
-  <section class="h-100 h-custom gradient-custom-2">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12">
-        <div class="card card-registration card-registration-2" style="border-radius: 15px; border:none;">
-          <div class="card-body p-0">
-            <div class="row g-0">
-              <div class="col-lg-6" >
-                <div class="p-5">
-                  <div class="p-5">
-                 
-                      <form class="form-inline text-center mb-4 mb-2">
-                      <div class="form-group" style="padding: 0 45px 0 25px ; color: grey; ">
-                          <p style="font-size: 10px;">1 <br> DONATION</p>
-                        </div>
-                        <div class="form-group" style="padding-right:45px ;color: grey;">
-                          <p style="font-size: 10px;">2 <br> BILLING</p>
-                        </div>
-                        <div class="form-group" style="padding-right:45px ;color: grey;">
-                          <p style="font-size: 10px;">3 <br> PAYMENT</p>
-                        </div>
-                        <div class="form-group" style="padding-right:45px ;">
-                          <p style="font-size: 10px;color: black;">4 <br> COMPLETION</p>
-                        </div>	
-                      </form>
-                      <div class="mb-4 pb-2" style="padding-top:50px ;">
-                        <div class="form-outline form-white" style="text-align: center; color: #3CB815; ">
-                          <i class="bi bi-check-circle-fill" style="font-size: 50px; "></i>
-                          <h6>SUCCESS!</h6>
-                        </div>
-                      </div>
-             
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white " style="padding-top:50px ; padding-bottom:35px ;">
-                          <p class="fw-normal" style="margin: 0 0 0 15px; font-size: 12px">Thank you for your gift! 
-                            Together, we are helping to provide nutritious
-                            meals to seniors around the world!
-                            An email acknowledging that you have donated
-                            will be sent to the email address you provided </p>
-                        </div>
-                      </div>
-                      <button type="button" class="btn btn-light fw-bold " style="margin: 150px 0 0 170px; background-color: #3CB815; font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" 
-                    data-mdb-ripple-color="dark"><a href="/" style="font-size: 10px; width: 80px;height: 30px;; color: #F5F5F5;" >DONE</a></button>
+</head>
 
-                  </div>
+<body>
+    <section class="gradient-custom-2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card card-registration">
+                        <div class="card-body p-5">
+                            <h4 class="fw-bold mb-3 text-center" style="font-size: 24px; ">THANK YOU FOR YOUR GENEROUS DONATION!</h4>
+                            <p class="text-center fw-bold mb-5" style= "color: #0e6655; " >Your support means the world to us and makes 
+                              a significant difference in the lives of those we serve. It's through contributions like yours that we are able to 
+                              continue providing nutritious meals and essential support to seniors, elderly individuals, and persons with 
+                              disabilities in our community. Your kindness and compassion inspire us every day. Thank you again for your invaluable 
+                              support!</p>
+                              <div class="text-center">
+                            <span><a class="btn btn-primary btn-lg" href="/"><strong><- Return to Homepage</strong></a></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-6 bg-indigo text-white">
-              <img style="height:700px; width: auto; border-radius: 7px; " src="{{url('/images/donation.jpg')}}" alt="">              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-  </body>
+    </section>
+</body>
+
 @endsection

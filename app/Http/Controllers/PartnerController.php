@@ -116,7 +116,7 @@ class PartnerController extends Controller
 
             $imageFile = $request->file('menu_image');
             $imageName = uniqid() . '_' . $imageFile->getClientOriginalName();
-            $imageFile->move(public_path() . './uploads/meal', $imageName);
+            $imageFile->move(public_path('./uploads/meal'), $imageName);
 
             $menu->menu_image = $imageName;
         }
@@ -177,7 +177,7 @@ class PartnerController extends Controller
 
         $newImageFile = $request->file('menu_image');
         $newImageName = uniqid() . '_' . $newImageFile->getClientOriginalName();
-        $newImageFile->move(public_path() . './uploads/meal/', $newImageName);
+        $newImageFile->move(public_path('./uploads/meal'), $newImageName);
 
         $updateData['menu_image'] = $newImageName;
 

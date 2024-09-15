@@ -29,9 +29,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3 style="
-						margin-top: 50px;
-				">Menus</h3>
+						<h3> <strong style="margin-top: 50px;">Menus </strong> </h3>
 					</div>
 				</div>
 				<div class="alert alert-warning animate-box" role="alert">
@@ -48,20 +46,16 @@
 					<div class="fh5co-team text-center animate-box" style="padding: 20px 0;">
 						<div class="mini-left-container" >
 							 <?php $partner_id = DB::table('menus')->where('id',$menu->id)->value('partner_id');
-											//echo $partner_id;
+											
 											$partner_user_id = DB::table('partners')->where('id',$partner_id)->value('user_id');
-											//echo $partner_user_id;
+											
 											$partner_geolocation = DB::table('users')->where('id',$partner_user_id)->value('geolocation');
-											//echo $partner_geolocation;
+											
 											$user_geolocation = DB::table('users')->where('id',Auth()->user()->id)->value('geolocation');
-											//echo $user_geolocation;
-
+											
                     $user_arr = preg_split ("/\,/", $user_geolocation); 
 										$partner_arr = preg_split ("/\,/", $partner_geolocation);
-                    // print_r($str_arr);
-                    // echo $str_arr[0]. "<br/>";
-                    // echo $str_arr[1]. "<br/>";
-
+                   
                     $Lat1 = $user_arr[0];
                     $Long1 =  $user_arr[1];
                     $Lat2 = $partner_arr[0] ;
@@ -70,7 +64,6 @@
                     $DistanceMeter = 0;
 
                     if (isset($_POST['Lat1'])) {
-
                     $Lat1 = $_POST['Lat1'];
                     $Long1 = $_POST['Long1'];
                     $Lat2 = $_POST['Lat2'];
@@ -98,17 +91,8 @@
 
                     $DistanceKM = round($DistanceKM, 3);
 
-										// $weekMap = [
-										// 		0 => 'SU',
-										// 		1 => 'MO',
-										// 		2 => 'TU',
-										// 		3 => 'WE',
-										// 		4 => 'TH',
-										// 		5 => 'FR',
-										// 		6 => 'SA',
-										// ];
 										$weekday=date("w");
-										//  echo $weekday."<br>";
+										
 										if ($weekday == 0 ||$weekday == 6 ) {
 											if ($DistanceKM > 10) {
 												$meal_type = "Cold";
@@ -127,27 +111,6 @@
 												$message = "This Meal is available today";
 											}
 										}
-
-										// if ($DistanceKM > 10 ) {
-											// if (condition) { //current day sat or sun -> provide cold -> laravel function check current user logged in days
-											// 	# code... //cold
-											// }
-											// $message ="Out Of Delivery Range";
-											//menu_type = cold
-											//available sat sun
-										// }elseif ($DistanceKM > 10 ){
-										// 	//check sat/sun
-										// }else{
-										// 	$message ="Within Delivery Range";
-										// }
-
-										
-                    // $DistanceMeter = round($DistanceMeter, 0) . " METER";
-
-                    //echo $DistanceKM;
-                    // echo $DistanceMeter;
-
-                    
 							 ?>
 							<div class="topright">{{ $meal_type }}</div>
 							<div class="topleft"><?php echo $DistanceKM; ?>Km&nbsp;near you</div>

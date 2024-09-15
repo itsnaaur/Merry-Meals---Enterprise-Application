@@ -33,12 +33,20 @@ Route::get('/about', function () {
 Route::get('/terms', function () {
     return view('terms');
 });
+Route::get('/gallery', function () {
+    return view('gallery');
+})->name('gallery');
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
 
 // donation can be done without registration
 Route::get('/donationFee', [DonationController::class, 'index']);
 Route::post('/saveDonationFee', [DonationController::class, 'saveDonationFee'])->name('saveDonationFee');
 Route::get('/donor', [DonationController::class, 'donor']);
 Route::post('/saveBilling', [DonationController::class, 'saveBilling'])->name('saveBilling');
+Route::get('/completion', [DonationController::class, 'getCompletion'])->name('donation.completion');
+Route::get('/payment', [DonationController::class, 'payment'])->name(' donation payment');
 
 // stripe 
 route::get('/stripe',[DonationController::class,'stripe']);
@@ -47,7 +55,7 @@ route::post('/stripe',[DonationController::class,'stripePost'])->name('stripe.po
 // completion
 Route::get('/getCompletion', [DonationController::class, 'getCompletion'])->name('getCompletion');
 
-
+//Default Route
 // Route::middleware(['auth:sanctum',
 //     config('jetstream.auth_session'),
 //     'verified'

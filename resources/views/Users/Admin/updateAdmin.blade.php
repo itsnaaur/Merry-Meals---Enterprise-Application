@@ -17,7 +17,7 @@
 			<div class="col-md-6 col-sm-6 col-md-offset-3">
 				<div class=" animate-box">
 					<div class="col-md-12 ">
-						<h3>General Information</h3>
+						<h3><strong>General Information</strong></h3>
 						<form action="{{ route('admin#userUpdated', $userData->id) }}" method="POST">
 							@csrf
 							<label class="userManagement">Name</label><br>

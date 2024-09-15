@@ -7,13 +7,6 @@
 @section('content')
 
 		<div id="fh5co-services-section">
-			{{-- <div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Update Profile</h3>
-					</div>
-				</div>
-			</div> --}}
             @if (Session::has('dataInform'))
                 <h4 class="alert alert-warning animate-box text-center" role="alert">
                     {{ Session::get('dataInform') }}

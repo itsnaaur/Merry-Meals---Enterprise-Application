@@ -5,31 +5,36 @@
 @extends('layouts.app')
 
 @section('content')
-</head>
 
 <style type="text/css">
-  #form{
-          max-width: 500px;
-          padding: 20px;
-          margin: 50px auto;
-          background-color: #fff;
-          border: 1px solid rgba(0,0,0,0.1);
-      }
+    body {
+        background-image: url('images/login.jpg'); 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
 
-   .box{}
+    #form {
+        max-width: 500px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: #fff;
+        border: 1px solid rgba(0,0,0,0.1);
+    }
 
-   label{
-    font-weight: normal;
-   }
+    .box {}
 
+    label {
+        font-weight: normal;
+    }
 </style>
-<body>
 
-<div class="container" style="margin-top: 80px;margin-bottom: 80px;padding-bottom: 50px;">
+<div class="container" style="margin-top: 80px; margin-bottom: 80px; padding-bottom: 50px;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header"><strong>{{ __('Login') }}</strong></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -77,14 +82,14 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary" style="margin-bottom: 20px" >
-                                    {{ __('Login') }}
+                                <button type="submit" class="btn btn-primary" style="margin-bottom: 20px">
+                                    <strong>{{ __('Login') }}</strong>
                                 </button>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" style="
-                                    display: table-row; text-decoration:none; font-size:10px;
-                                " href="{{ route('password.request') }}">
+                                        display: table-row; text-decoration:none; font-size:10px;
+                                    " href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
@@ -96,5 +101,5 @@
         </div>
     </div>
 </div>
-</body>
+
 @endsection

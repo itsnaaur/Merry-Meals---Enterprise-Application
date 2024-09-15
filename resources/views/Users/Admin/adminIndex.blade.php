@@ -10,8 +10,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Hello The Administrator</h3>
-						<p>Please manage this website!!!</p>
+						<h3><strong>Welcome <strong> <strong style="color: #FCC74F;">Administrator!</strong></h3>
+						<p style="color: #0e6655;">Please oversee the management of this website.</p>
 					</div>
 				</div>
 			</div>
@@ -21,11 +21,9 @@
         
 			<div class="fh5co-hero">
 					<div class="fh5co-overlay"></div>
-					<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
+					<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/Admin_home.jpg);">
 							<div class="desc animate-box">
-									<h2><strong>Aim to</strong> Give Meals <strong> To Those in Need</strong></h2>
-									{{-- <span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span> --}}
-									{{-- <span><a class="btn btn-primary btn-lg" href="{{ route('member#viewAllMenu') }}">View Menu</a></span> --}}
+							<h2> <strong> SHARE <strong style="color: #FCC74F;">SUPPORT, INSPIRE</strong> <strong> CHANGE </strong> </h2>
 							</div>
 					</div>
 	

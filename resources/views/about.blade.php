@@ -15,14 +15,15 @@ h1 {
 }
 
 h1 span {
-  color: #F65005;
+  color: #FCC74F;
 }
 
 h4 {
   font-size: 18px;
   font-weight: 500;
   color: #9b9b9b;
-  margin-bottom: 23px;
+  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 
@@ -46,13 +47,15 @@ h4 {
       <h1>About Us 
         <span>MerryMeal</span></h1>
                     <h4>What We Do</h4>
-                    <p style="text-align: justify;" >MerryMeal <strong>Meals on Wheels </strong> is a charitable organization which deliver meals to those in need. Here we will provide you only interesting content,
-                        which you will like very much. We're dedicated to providing you the best of meals for adults who struggle to cook due to disease, disability or old age, with a focus on dependability
-                        and list of menus to choose from made by our partners. 
-                        We hope you enjoy our service as much as we enjoy offering them to you.</p>
+                    <p style="text-align: justify;" >Welcome to MerryMeal's <strong style="color: #0e6655;">Meals on Wheels </strong>, where compassion meets action. We are a charitable organization
+                     dedicated to ensuring that qualified adults living at home, unable to cook for themselves due to age, disease, or disability, receive nutritious meals. Our mission is to 
+                     provide a hot noon meal Monday through Friday, supplemented by frozen meals over the weekend for those outside a 10-kilometer radius from our outsourced kitchens. Through 
+                     partnerships with food service providers nationwide, we strive to deliver meals swiftly, ensuring our members' nutritional needs are met with care and efficiency.
+
+Join us in making a difference in the lives of those in need. Together, we can nourish bodies and uplift spirits one meal at a time.</p>
     </div>
     <div class="grid-item">
-      <a href="http://www.freepik.com"><img className='ml-5 img-fluid' src="images/aboutUs.jpg" height="500" alt="Designed by stories / Freepik" /></a>
+      <a href="http://www.freepik.com"><img className='ml-5 img-fluid' src="images/About_Us.jpg" height="500" alt="Designed by stories / Freepik" /></a>
     </div>
   </div>
 

@@ -8,13 +8,10 @@
         @yield('title')
     </title>
 
-    <!------------CSS-------------->
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('main/css/style.css')}}"> --}}
-
     <!-- Bootstrap CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-      <!-- Facebook and Twitter integration -->
+    <!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content=""/>
@@ -27,8 +24,6 @@
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
-
-	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
 	
 	<!-- Animate.css -->
 	<link rel="stylesheet" type="text/css" href="{{ url('/css/animate.css') }}" >
@@ -44,10 +39,6 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
 
   </head>
 <body style="min-height: 100vh;
@@ -76,46 +67,35 @@ flex-direction: column;">
     <div class="container">
         <div class="nav-header">
             <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-            <div id="fh5co-logo"><a href="/" ><img src="{{ url('/images/company_logo.png') }}" alt="company logo"></a></div>
+            <div id="fh5co-logo"><a href="/" ><img src="{{ url('/images/Company_logo.png') }}" alt="company logo"></a></div>
             <!-- START #fh5co-menu-wrap -->
            <!--Start end if -->
            @if (Route::has('login'))
             <nav id="fh5co-menu-wrap" role="navigation">
                 
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline"><strong>Dashboard</strong></a>
                     @else
                     <ul class="sf-menu" id="fh5co-primary-menu">
                         <li class="active">
-                            <a href="/">Home</a>
+                            <a href="/" style="color: #000;" ><strong>Home</strong></a>
                         </li>
-                        <li><a href="{{ route('register') }}">Get Meal</a></li>
+                        <li><a href="{{ route('register') }}" style="color: #000;"><strong>Get Meal</strong></a></li>
                         <li>
-                            <a href="{{ route('register') }}" class="fh5co-sub-ddown">Support Us</a>
+                            <a href="{{ route('register') }}" class="fh5co-sub-ddown" style="color: #000;"><strong>Support Us</strong></a>
                             <ul class="fh5co-sub-menu">
-                                <li><a href="/donationFee">Donate</a></li>
-                                <li><a href="{{ route('register') }}">Volunteer</a></li>
-                                <li><a href="{{ route('register') }}">Partner</a></li>
-                                {{-- <li><a href="#">Campaign</a></li>
-                                <li><a href="#">Philantrophy</a></li>
-                                <li><a href="#">Volunteer</a></li> --}}
+                                <li><a href="/donationFee" style="color: #000;"><strong>Donate</strong></a></li>
+                                <li><a href="{{ route('register') }}" style="color: #000;"><strong>Volunteer</strong></a></li>
+                                <li><a href="{{ route('register') }}" style="color: #000;"><strong>Partner</strong></a></li>
                             </ul>
                         </li>
-                        {{-- <li>
-                            <a href="#" class="fh5co-sub-ddown">Projects</a>
-                            <ul class="fh5co-sub-menu">
-                                <li><a href="#">Water World</a></li>
-                                <li><a href="#">Cloth Giving</a></li>
-                                <li><a href="#">Medical Mission</a></li>
-                            </ul>
-                        </li> --}}
-                        <li><a href="/about">About</a></li>
-                         <li><a href="/contact">Contact</a></li>
+                        <li><a href="/about" style="color: #000;"><strong>About</strong></a></li>
+                         <li><a href="/contact" style="color: #000;"><strong>Contact</strong></a></li>
                         
-                        <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
+                        <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline" style="color: #000;"><strong>Log in</strong></a></li>
 
                         @if (Route::has('register'))
-                        <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a></li>
+                        <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" style="color: #000;"><strong>Register</strong></a></li>
                     @endif
                     </ul>
                     @endauth
@@ -147,7 +127,7 @@ flex-direction: column;">
                         <a href="#"><i class="icon-dribbble2"></i></a>
                         <a href="#"><i class="icon-youtube"></i></a>
                     </p>
-                    <p>Copyright 2022 MerryMeal ~ Meals on Wheels <a href="#">Charity</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Group 1 DEA Team</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+                    <p>Copyright 2024 MerryMeal ~ Meals on Wheels <a href="#">Charity</a>. All Rights Reserved. <br>Made by <a href="https://www.facebook.com/ninome17" target="_blank"> DYNAMIC DEVELOPERS </a> / Demo Images: <a href="https://images.google.com/" target="_blank">Google Images</a></p>
                 </div>
             </div>
         </div>
@@ -163,23 +143,23 @@ flex-direction: column;">
 
 <!-- jQuery -->
 
-<script src="js/jquery.min.js"></script>
+<script src="{{ asset ('js/jquery.min.js') }} "></script>
 <!-- jQuery Easing -->
-<script src="js/jquery.easing.1.3.js"></script>
+<script src="{{ asset ('js/jquery.easing.1.3.js') }} "></script>
 <!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{ asset ('js/bootstrap.min.js') }} "></script>
 <!-- Waypoints -->
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/sticky.js"></script>
+<script src="{{ asset ('js/jquery.waypoints.min.js') }} "></script>
+<script src="{{ asset ('js/sticky.js') }} "></script>
 
 <!-- Stellar -->
-<script src="js/jquery.stellar.min.js"></script>
+<script src="{{ asset ('js/jquery.stellar.min.js') }} "></script>
 <!-- Superfish -->
-<script src="js/hoverIntent.js"></script>
-<script src="js/superfish.js"></script>
+<script src="{{ asset ('js/hoverIntent.js') }} "></script>
+<script src="{{ asset ('js/superfish.js') }} "></script>
 
 <!-- Main JS -->
-<script src="js/main.js"></script>
+<script src="{{ asset ('js/main.js') }} "></script>
 
   <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

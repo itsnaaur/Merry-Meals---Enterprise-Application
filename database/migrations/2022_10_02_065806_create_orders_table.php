@@ -27,10 +27,10 @@ return new class extends Migration
             $table->string('start_cooking_time')->nullable();
             $table->string('order_cooking_status')->nullable();
             $table->string('order_received_status')->nullable();
-            $table->integer('member_id');
-            $table->integer('user_id');
-            $table->integer('menu_id');
-            $table->integer('partner_id');
+            $table->unsignedBigInteger('member_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('menu_id');
+            $table->unsignedBigInteger('partner_id');
             $table->timestamps();
         });
     }
